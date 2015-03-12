@@ -24,3 +24,4 @@ conekta.tokenizeCard(card, new ConektaCallback() {
     }
 });
 ```
+![alt tag](https://raw.github.com/conekta/conekta-android/master/readme_files/screen.png)
