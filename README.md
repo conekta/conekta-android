@@ -24,4 +24,4 @@ conekta.tokenizeCard(card, new ConektaCallback() {
     }
 });
 ```
-![alt tag](https://raw.github.com/conekta/conekta-android/master/readme_files/screen.png)
+![alt tag](https://raw.githubusercontent.com/conekta/conekta-android/master/readme_files/screen.png?token=AAg1lvVJXYuvYIqmOaIpM0ZW_tMJrM95ks5VCiLhwA%3D%3D)
