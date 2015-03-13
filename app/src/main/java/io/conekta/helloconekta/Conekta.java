@@ -42,7 +42,6 @@ public class Conekta {
                     try {
                         JSONObject tokenParams = new JSONObject();
                         tokenParams.put("card", ((JSONObject) card.get("card")).put("device_fingerprint", Secure.ANDROID_ID));
-                        System.out.println(tokenParams.toString());
                         Token token = Token.create(tokenParams);
                         return new Response(token, null);
                     } catch (Exception e) {
