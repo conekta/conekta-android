@@ -10,13 +10,9 @@ import android.widget.TextView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import com.conekta.*;
-import com.conekta.Error;
 
 public class Form extends ActionBarActivity {
-
-    Conekta conekta = new Conekta("key_KJysdbf6PotS2ut2");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +21,7 @@ public class Form extends ActionBarActivity {
     }
 
     public void tokenizeCard(View view) {
+        ConektaAndroid.setApiKey("key_KJysdbf6PotS2ut2");
         EditText nameText = (EditText) this.findViewById(R.id.nameText);
         EditText numberText = (EditText) this.findViewById(R.id.numberText);
         EditText monthText = (EditText) this.findViewById(R.id.monthText);
@@ -42,7 +39,7 @@ public class Form extends ActionBarActivity {
                             "'cvc': '"+ String.valueOf(cvcText.getText()).trim() + "'" +
                             "}" +
                     "}");
-            conekta.tokenizeCard(card,
+            ConektaAndroid.tokenizeCard(card,
                     new ConektaCallback() {
                         public void success(Token token) {
                             // Send token to your web service to create the charge
