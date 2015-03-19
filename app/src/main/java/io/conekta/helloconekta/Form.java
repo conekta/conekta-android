@@ -1,6 +1,6 @@
 package io.conekta.helloconekta;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,8 +11,8 @@ import android.widget.TextView;
 import org.json.JSONException;
 import org.json.JSONObject;
 import com.conekta.*;
-
-public class Form extends ActionBarActivity {
+import io.conekta.helloconekta.compat.AsyncTask;
+public class Form extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class Form extends ActionBarActivity {
     }
 
     public void tokenizeCard(View view) {
-        ConektaAndroid.setApiKey("key_KJysdbf6PotS2ut2");
+        ConektaAndroid conekta = new ConektaAndroid("key_KJysdbf6PotS2ut2", this);
         EditText nameText = (EditText) this.findViewById(R.id.nameText);
         EditText numberText = (EditText) this.findViewById(R.id.numberText);
         EditText monthText = (EditText) this.findViewById(R.id.monthText);
@@ -39,16 +39,15 @@ public class Form extends ActionBarActivity {
                             "'cvc': '"+ String.valueOf(cvcText.getText()).trim() + "'" +
                             "}" +
                     "}");
-            ConektaAndroid.tokenizeCard(card,
+            conekta.tokenizeCard(card,
                     new ConektaCallback() {
-                        public void success(Token token) {
-                            // Send token to your web service to create the charge
-                            //MyServer.chargeToken(token);
+                        public void success(final Token token) {
+                            // TODO: Send token to your web service to create the charge∫
                             outputView.setText(token.id);
                         }
 
                         public void failure(Exception error) {
-                            // Output the error in your app
+                            // TODO: Output the error in your app
                             String result = null;
                             if (error instanceof com.conekta.Error)
                                 result = ((com.conekta.Error) error).message_to_purchaser;
