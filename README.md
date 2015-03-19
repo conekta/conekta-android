@@ -45,4 +45,5 @@ The tokenizer needs to be able to collect data from the devise for fraud detecti
     ...
 </manifest>
 ```
+# Example
 ![alt tag](https://raw.githubusercontent.com/conekta/conekta-android/master/readme_files/screen.png?token=AAg1lvVJXYuvYIqmOaIpM0ZW_tMJrM95ks5VCiLhwA%3D%3D)
