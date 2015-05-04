@@ -13,6 +13,8 @@ import org.json.JSONObject;
 
 import io.conekta.tokenizer.Tokenizer;
 import io.conekta.tokenizer.TokenizerCallback;
+import com.conekta.Token;
+import com.conekta.Error;
 
 public class Form extends Activity {
 
@@ -43,7 +45,7 @@ public class Form extends Activity {
                     "}");
             conekta.tokenizeCard(card,
                     new TokenizerCallback() {
-                        public void success(final com.conekta.Token token) {
+                        public void success(final Token token) {
                             // TODO: Send token to your web service to create the charge∫
                             outputView.setText(token.id);
                         }
@@ -51,8 +53,8 @@ public class Form extends Activity {
                         public void failure(Exception error) {
                             // TODO: Output the error in your app
                             String result = null;
-                            if (error instanceof com.conekta.Error)
-                                result = ((com.conekta.Error) error).message_to_purchaser;
+                            if (error instanceof Error)
+                                result = ((Error) error).message_to_purchaser;
                             else
                                 result = error.getMessage();
                             outputView.setText(result);

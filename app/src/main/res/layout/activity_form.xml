@@ -23,7 +23,7 @@
         android:layout_toRightOf="@+id/textView"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:text="XXXX XXXX XXXX XXXX" />
+        android:text="4242424242424242" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
         android:layout_below="@+id/numberText"
         android:layout_alignLeft="@+id/numberText"
         android:layout_alignStart="@+id/numberText"
-        android:text="MM" />
+        android:text="01" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -50,7 +50,7 @@
         android:layout_alignBottom="@+id/monthText"
         android:layout_toRightOf="@+id/monthText"
         android:layout_toEndOf="@+id/monthText"
-        android:text="AA" />
+        android:text="2016" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -66,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/cvcText"
-        android:text="XXX"
+        android:text="123"
         android:layout_alignBottom="@+id/textView3"
         android:layout_toRightOf="@+id/textView3"
         android:layout_toEndOf="@+id/textView3" />
