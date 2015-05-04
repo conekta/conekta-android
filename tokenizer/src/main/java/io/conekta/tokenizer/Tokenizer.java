@@ -1,6 +1,5 @@
-package io.conekta.helloconekta;
+package io.conekta.tokenizer;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -8,23 +7,21 @@ import org.json.JSONObject;
  */
 
 import com.conekta.*;
-import io.conekta.helloconekta.compat.AsyncTask;
+import io.conekta.tokenizer.compat.AsyncTask;
 
 import android.app.Activity;
 import android.provider.Settings.Secure;
 
-import com.conekta.Error;
 import com.devicecollector.DeviceCollector;
 import com.devicecollector.DeviceCollector.ErrorCode;
-import java.util.UUID;
 
 
-public class ConektaAndroid implements DeviceCollector.StatusListener {
+public class Tokenizer implements DeviceCollector.StatusListener {
 
     private String publicKey;
     private DeviceCollector dc;
 
-    public ConektaAndroid(String publicKey, Activity activity) {
+    public Tokenizer(String publicKey, Activity activity) {
         this.setApiKey(publicKey);
         this.setDeviceCollector(activity);
     }
@@ -41,7 +38,7 @@ public class ConektaAndroid implements DeviceCollector.StatusListener {
         this.dc.setCollectorUrl("https://api.conekta.io/fraud_providers/kount/logo.htm");
     }
 
-    public void tokenizeCard(final JSONObject card, final ConektaCallback callback) {
+    public void tokenizeCard(final JSONObject card, final TokenizerCallback callback) {
         if (card == null) {
             throw new RuntimeException("Parameter Validation Error: missing card");
         }

@@ -1,4 +1,4 @@
-package io.conekta.helloconekta.compat;
+package io.conekta.tokenizer.compat;
 /*
  * Copyright (C) 2008 The Android Open Source Project
  *
@@ -15,7 +15,8 @@ package io.conekta.helloconekta.compat;
  * limitations under the License.
  */
 
-import android.os.*;
+import android.os.Handler;
+import android.os.Message;
 import android.os.Process;
 
 import java.util.concurrent.BlockingQueue;
@@ -29,14 +30,6 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import android.os.Handler;
-import android.os.Message;
-import android.os.Process;
-
-import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -193,7 +186,7 @@ public abstract class AsyncTask<Params, Progress, Result> {
             TimeUnit.SECONDS, sPoolWorkQueue, sThreadFactory);
 
     /**
-     * An {@link Executor} that executes tasks one at a time in serial
+     * An {@link java.util.concurrent.Executor} that executes tasks one at a time in serial
      * order.  This serialization is global to a particular process.
      */
     public static final Executor SERIAL_EXECUTOR = new ThreadPoolExecutor(1, 1, KEEP_ALIVE,
@@ -248,7 +241,7 @@ public abstract class AsyncTask<Params, Progress, Result> {
             public Result call() throws Exception {
                 mTaskInvoked.set(true);
 
-                android.os.Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
+                Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
                 return postResult(doInBackground(mParams));
             }
         };
@@ -439,8 +432,8 @@ public abstract class AsyncTask<Params, Progress, Result> {
      *
      * @return The computed result.
      *
-     * @throws CancellationException If the computation was cancelled.
-     * @throws ExecutionException If the computation threw an exception.
+     * @throws java.util.concurrent.CancellationException If the computation was cancelled.
+     * @throws java.util.concurrent.ExecutionException If the computation threw an exception.
      * @throws InterruptedException If the current thread was interrupted
      *         while waiting.
      */
@@ -457,8 +450,8 @@ public abstract class AsyncTask<Params, Progress, Result> {
      *
      * @return The computed result.
      *
-     * @throws CancellationException If the computation was cancelled.
-     * @throws ExecutionException If the computation threw an exception.
+     * @throws java.util.concurrent.CancellationException If the computation was cancelled.
+     * @throws java.util.concurrent.ExecutionException If the computation threw an exception.
      * @throws InterruptedException If the current thread was interrupted
      *         while waiting.
      * @throws java.util.concurrent.TimeoutException If the wait timed out.
@@ -503,7 +496,7 @@ public abstract class AsyncTask<Params, Progress, Result> {
      *
      * <p>This method is typically used with {@link #THREAD_POOL_EXECUTOR} to
      * allow multiple tasks to run in parallel on a pool of threads managed by
-     * AsyncTask, however you can also use your own {@link Executor} for custom
+     * AsyncTask, however you can also use your own {@link java.util.concurrent.Executor} for custom
      * behavior.
      *
      * <p><em>Warning:</em> Allowing multiple tasks to run in parallel from

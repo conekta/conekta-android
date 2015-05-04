@@ -1,12 +1,11 @@
-package io.conekta.helloconekta;
-
-/**
- * Created by mauriciomurga on 3/2/15.
- */
+package io.conekta.tokenizer;
 
 import com.conekta.Token;
 
-public abstract class ConektaCallback {
+/**
+ * Created by mauriciomurga on 5/4/15.
+ */
+public abstract class TokenizerCallback {
     public abstract void failure(Exception error);
     public abstract void success(Token token);
 }

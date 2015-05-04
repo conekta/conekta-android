@@ -3,10 +3,6 @@
     package="io.conekta.helloconekta" >
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <!-- device collector permissions -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- device collector permissions -->
 
     <application
         android:allowBackup="true"

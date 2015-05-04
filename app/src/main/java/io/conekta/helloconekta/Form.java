@@ -10,8 +10,10 @@ import android.widget.TextView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import com.conekta.*;
-import io.conekta.helloconekta.compat.AsyncTask;
+
+import io.conekta.tokenizer.Tokenizer;
+import io.conekta.tokenizer.TokenizerCallback;
+
 public class Form extends Activity {
 
     @Override
@@ -21,7 +23,7 @@ public class Form extends Activity {
     }
 
     public void tokenizeCard(View view) {
-        ConektaAndroid conekta = new ConektaAndroid("key_KJysdbf6PotS2ut2", this);
+        Tokenizer conekta = new Tokenizer("key_KJysdbf6PotS2ut2", this);
         EditText nameText = (EditText) this.findViewById(R.id.nameText);
         EditText numberText = (EditText) this.findViewById(R.id.numberText);
         EditText monthText = (EditText) this.findViewById(R.id.monthText);
@@ -40,8 +42,8 @@ public class Form extends Activity {
                             "}" +
                     "}");
             conekta.tokenizeCard(card,
-                    new ConektaCallback() {
-                        public void success(final Token token) {
+                    new TokenizerCallback() {
+                        public void success(final com.conekta.Token token) {
                             // TODO: Send token to your web service to create the charge∫
                             outputView.setText(token.id);
                         }
