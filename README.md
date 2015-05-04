@@ -1,13 +1,17 @@
 # Conekta Android Example
 
-This is an example on how to create Android Apps using conekta-android.
+This is an example on how to create Android Apps using conekta-android Tokenizer.
 
 # Usage
-To be able to use conekta-android a ConektaAndroid object must be initialized with your conekta api public key.
+To be able to use the Tokenizer a Tokenizer object must be initialized with your conekta api public key.
 To tokenize a card you have to create a ConektaCallback that will handle the response.
 ```
-ConektaAndroid tokenizer = new ConektaAndroid("key_KJysdbf6PotS2ut2", this);
-tokenizer.tokenizeCard(card, new ConektaCallback() {
+import io.conekta.tokenizer.Tokenizer;
+import io.conekta.tokenizer.TokenizerCallback;
+import com.conekta.Token;
+import com.conekta.Error;
+Tokenizer tokenizer = new Tokenizer("key_KJysdbf6PotS2ut2", this);
+tokenizer.tokenizeCard(card, new TokenizerCallback() {
     public void success(Token token) {
         // Send token to your web service to create the charge
         AsyncTask<Void, Void, ChargeResponse> task = new AsyncTask<Void, Void, ChargeResponse>() {
@@ -24,26 +28,31 @@ tokenizer.tokenizeCard(card, new ConektaCallback() {
     public void failure(Exception error) {
         // Output the error in your app
         String result = null;
-        if (error instanceof com.conekta.Error)
-            result = ((com.conekta.Error) error).message_to_purchaser;
+        if (error instanceof Error)
+            result = ((Error) error).message_to_purchaser;
         else
             result = error.getMessage();
         outputView.setText(result);
     }
 });
 ```
-# Manifest
-The tokenizer needs to be able to collect data from the devise for fraud detection. The following permissions need to be added in the manifest.xml:
-
+# Installation
+This example uses mavenLocal to install the .aar (Tokenizer) artefact.
 ```
-<manifest ...>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- device collector permissions -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- device collector permissions -->
-    ...
-</manifest>
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+...
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'io.conekta:tokenizer:1.0'
+}
+```
+To install the tokenizer in Maven locally use the following command:
+```
+mvn install:install-file -Dfile=app/libs/tokenizer-release.aar -DgroupId=io.conekta -DartifactId=tokenizer -Dversion=1.0 -Dpackaging=aar
 ```
 # Example
 ![alt tag](https://raw.githubusercontent.com/conekta/conekta-android/master/readme_files/screen.png?token=AAg1lvVJXYuvYIqmOaIpM0ZW_tMJrM95ks5VCiLhwA%3D%3D)
