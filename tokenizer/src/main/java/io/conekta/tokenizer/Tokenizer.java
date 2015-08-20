@@ -20,6 +20,7 @@ public class Tokenizer implements DeviceCollector.StatusListener {
 
     private String publicKey;
     private DeviceCollector dc;
+    private String sessionId;
 
     public Tokenizer(String publicKey, Activity activity) {
         this.setApiKey(publicKey);
@@ -36,6 +37,7 @@ public class Tokenizer implements DeviceCollector.StatusListener {
         this.dc.setStatusListener(this);
         this.dc.setMerchantId("205000");
         this.dc.setCollectorUrl("https://api.conekta.io/fraud_providers/kount/logo.htm");
+        this.sessionId = Secure.getString(activity.getApplicationContext().getContentResolver(), Secure.ANDROID_ID);
     }
 
     public void tokenizeCard(final JSONObject card, final TokenizerCallback callback) {
@@ -43,15 +45,15 @@ public class Tokenizer implements DeviceCollector.StatusListener {
             throw new RuntimeException("Parameter Validation Error: missing card");
         }
         if (callback == null) {
-            throw new RuntimeException("Parameter Validation Error: missing callback to hander errors");
+            throw new RuntimeException("Parameter Validation Error: missing callback to handler errors");
         }
-        final String sessionId = Secure.ANDROID_ID;
-        this.dc.collect(sessionId);
+        final String s = this.sessionId;
+        this.dc.collect(s);
         AsyncTask<Void, Void, Response> task = new AsyncTask<Void, Void, Response>() {
             protected Response doInBackground(Void... params) {
                 try {
                     JSONObject tokenParams = new JSONObject();
-                    tokenParams.put("card", ((JSONObject) card.get("card")).put("device_fingerprint", sessionId));
+                    tokenParams.put("card", ((JSONObject) card.get("card")).put("device_fingerprint", s));
                     Token token = Token.create(tokenParams);
                     return new Response(token, null);
                 } catch (Exception e) {
@@ -78,7 +80,7 @@ public class Tokenizer implements DeviceCollector.StatusListener {
 
     @Override
     public void onCollectorSuccess() {
-        System.out.println("Device Collector Finished Successfully");
+        System.out.println("Device Collector Finished Successfully!!!!");
     }
 
     @Override
