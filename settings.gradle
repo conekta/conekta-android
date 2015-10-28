@@ -1,1 +1,1 @@
-include ':app', ':tokenizer'
+include ':app', ':conektasdk'

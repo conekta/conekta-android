@@ -4,8 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/conekta-android.iml" filepath="$PROJECT_DIR$/conekta-android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tokenizer/tokenizer.iml" filepath="$PROJECT_DIR$/tokenizer/tokenizer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/conektasdk/conektasdk.iml" filepath="$PROJECT_DIR$/conektasdk/conektasdk.iml" />
     </modules>
   </component>
 </project>
-

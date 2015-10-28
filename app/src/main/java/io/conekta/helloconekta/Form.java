@@ -1,68 +1,57 @@
 package io.conekta.helloconekta;
 
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.content.Context;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.Button;
 import android.widget.TextView;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import io.conekta.tokenizer.Tokenizer;
-import io.conekta.tokenizer.TokenizerCallback;
-import com.conekta.Token;
-import com.conekta.Error;
+import com.conekta.conektasdk.*;
 
 public class Form extends Activity {
+
+    private Button btnTokenize;
+    private TextView outputView;
+    private Activity activity = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
+
+
+        btnTokenize.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Boolean haveInternet = isOnline();
+                if (haveInternet) {
+                    Conekta.publicKey = "key_KJysdbf6PotS2ut2";
+                    Conekta.apiVersion = "0.3.0";
+                    String id = Conekta.collectDevice(activity);
+                    Card card = new Card("Josue Camara", "4242424242424242", "456", "11", "2016");
+                    Token token = new Token();
+
+                    outputView.setText("");
+                } else {
+                    outputView.setText("No hay internet");
+                }
+            }
+        });
     }
 
-    public void tokenizeCard(View view) {
-        Tokenizer conekta = new Tokenizer("key_KJysdbf6PotS2ut2", this);
-        EditText nameText = (EditText) this.findViewById(R.id.nameText);
-        EditText numberText = (EditText) this.findViewById(R.id.numberText);
-        EditText monthText = (EditText) this.findViewById(R.id.monthText);
-        EditText yearText = (EditText) this.findViewById(R.id.yearText);
-        EditText cvcText = (EditText) this.findViewById(R.id.cvcText);
-        final TextView outputView = (TextView) this.findViewById(R.id.outputView);
-        try {
-            JSONObject card = new JSONObject(
-                    "{'card':" +
-                            "{" +
-                            "'name': '"+ String.valueOf(nameText.getText()) + "'," +
-                            "'number': '"+ String.valueOf(numberText.getText()).trim() + "'," +
-                            "'exp_month': '"+ String.valueOf(monthText.getText()).trim() + "'," +
-                            "'exp_year': '"+ String.valueOf(yearText.getText()).trim() + "'," +
-                            "'cvc': '"+ String.valueOf(cvcText.getText()).trim() + "'" +
-                            "}" +
-                    "}");
-            conekta.tokenizeCard(card,
-                    new TokenizerCallback() {
-                        public void success(final Token token) {
-                            // TODO: Send token to your web service to create the charge∫
-                            outputView.setText(token.id);
-                        }
-
-                        public void failure(Exception error) {
-                            // TODO: Output the error in your app
-                            String result = null;
-                            if (error instanceof Error)
-                                result = ((Error) error).message_to_purchaser;
-                            else
-                                result = error.getMessage();
-                            outputView.setText(result);
-                        }
-                    });
-        } catch (JSONException e) {
-            e.printStackTrace();
+    public boolean isOnline () {
+        ConnectivityManager cm =
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        if (netInfo != null && netInfo.isConnected()) {
+            return true;
         }
+        return false;
     }
 
 
