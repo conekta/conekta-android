@@ -57,6 +57,16 @@ To install the tokenizer in Maven locally use the following command:
 ```
 mvn install:install-file -Dfile=app/libs/tokenizer-release.aar -DgroupId=io.conekta -DartifactId=tokenizer -Dversion=1.0 -Dpackaging=aar
 ```
+
+# Use conekta-android with Proguard
+
+Just add
+
+```
+-keep class com.conekta.** { ; }
+```
+
+
 # Example
 ![alt tag](https://raw.githubusercontent.com/conekta/conekta-android/master/readme_files/screen.png?token=AAg1lvVJXYuvYIqmOaIpM0ZW_tMJrM95ks5VCiLhwA%3D%3D)
 
