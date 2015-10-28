@@ -26,6 +26,9 @@ public class Form extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
 
+        btnTokenize = (Button) findViewById(R.id.btnTokenize);
+        outputView = (TextView) findViewById(R.id.outputView);
+
         btnTokenize.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,7 +40,7 @@ public class Form extends Activity {
                     Card card = new Card("Josue Camara", "4242424242424242", "456", "11", "2016");
                     Token token = new Token();
 
-                    outputView.setText("");
+                    outputView.setText("Device id:: "+ id);
                 } else {
                     outputView.setText("No hay internet");
                 }

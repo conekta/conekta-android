@@ -11,10 +11,6 @@ public class Conekta {
     public static String baseUril = "https://api.conekta.io";
     public static String publicKey = "";
 
-    public static String hola() {
-        return "hola";
-    }
-
     public static String collectDevice(Activity activity) {
         String sessionId = Settings.Secure.getString(activity.getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
         return sessionId;

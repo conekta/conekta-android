@@ -76,8 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tokenize!"
-        android:id="@+id/button"
-        android:onClick="tokenizeCard"
+        android:id="@+id/btnTokenize"
         android:layout_marginBottom="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
