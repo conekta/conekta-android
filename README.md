@@ -1,5 +1,5 @@
 # Conekta Android
-You can use conekta for tokenize credit cards.
+You can use conekta-android for tokenize credit cards.
 
 You have two methods for integration conekta-android. Use artifacts or import our module.
 
