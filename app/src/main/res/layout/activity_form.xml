@@ -24,7 +24,7 @@
         android:layout_toRightOf="@+id/textView"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:text="4242424242424242" />
+        android:text="371449635398431" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -109,5 +109,15 @@
         android:layout_below="@+id/nameText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="85dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="OUTPUT"
+        android:id="@+id/uuidDevice"
+        android:layout_below="@+id/outputView"
+        android:layout_alignLeft="@+id/nameText"
+        android:layout_alignStart="@+id/nameText" />
 
 </RelativeLayout>
