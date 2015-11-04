@@ -1,10 +1,10 @@
 # Conekta Android
 You can use conekta-android for tokenize credit cards.
 
-You have two methods for integration conekta-android. Use artifacts or import our module.
+You have two methods to integrate conekta-android. Use artifacts or include our module.
 
 ## Install Conekta Android Artifacts (AAR) 2.0
-The artifact contains everything you need to start processing mobile payments.
+The artifact contains everything you need to start.
 
 ### Instructions
 This example uses mavenLocal to install the .aar (conektasdk) artefact.
@@ -29,16 +29,16 @@ mvn install:install-file -Dfile=app/libs/conektasdk-release.aar -DgroupId=com.co
 
 ## Import Conekta Android module 2.0
 
-This is an example on how to create Android Apps importing module conekta.
+This is an example about how to create Android Apps importing conekta module.
 
 ### Instructions
-- Clone this project
+1. Clone this project
 
-- From your project go to: ```File -> New -> Import Module``` and select ```conektasdk``` folder.
+2. On your Android Studio go to: ```File -> New -> Import Module``` and select ```conektasdk``` folder.
 
-- Now, go to: ```File -> Project Structure...``` in ```modules``` select you app and ```Dependencies``` at top left tab.
+3. Go to: ```File -> Project Structure...``` in ```modules``` menu select your app, then ```Dependencies``` at top left tab.
 
-- Click plus button (+) and select ```conektasdk```. That's it.
+4. Click plus button (+) and select ```conektasdk```.
 
 
 ## Usage Conekta SDK
@@ -66,17 +66,17 @@ Just import all conekta classes from com.conekta namespace
     @Override
     public void onCreateTokenReady(JSONObject data) {
       try {
-        //TODO: Make a charge
+        //TODO: Create charge
         Log.d("Token::::", data.getString("id"));
       } catch (Exception err) {
-      //TODO: Manage error
+      //TODO: Handle error
         Log.d("Error: " + err.toString());
       }
     }
   });
 
-  token.create(card);//Create the token
-  // Your code....
+  token.create(card);//Create token
+  // Your code below....
 ```
 
 We are hiring
