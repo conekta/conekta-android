@@ -21,7 +21,7 @@ dependencies {
 }
 
 ```
-To install the tokenizer in Maven locally use the following command:
+To install the conektasdk in Maven locally use the following command:
 
 ```
 mvn install:install-file -Dfile=app/libs/conektasdk-release.aar -DgroupId=com.conekta -DartifactId=conektasdk -Dversion=1.0 -Dpackaging=aar
