@@ -1,67 +1,51 @@
-# Conekta Android Artifacts (AAR) 1.1
+# Conekta Android
+You can use conekta for tokenize credit cards.
+
+You have two methods for integration conekta-android. Use artifacts or import our module.
+
+## Conekta Android Artifacts (AAR) 1.1
 The artifact contains everything you need to start processing mobile payments.
 
-# Conekta Android Example
+## Conekta Android module
 
 This is an example on how to create Android Apps using conekta-android Tokenizer.
 
-# Usage
-To be able to use the Tokenizer a Tokenizer object must be initialized with your conekta api public key.
-To tokenize a card you have to create a ConektaCallback that will handle the response.
-```
-import io.conekta.tokenizer.Tokenizer;
-import io.conekta.tokenizer.TokenizerCallback;
-import com.conekta.Token;
-import com.conekta.Error;
-Tokenizer tokenizer = new Tokenizer("key_KJysdbf6PotS2ut2", this);
-tokenizer.tokenizeCard(card, new TokenizerCallback() {
-    public void success(Token token) {
-        // Send token to your web service to create the charge
-        AsyncTask<Void, Void, ChargeResponse> task = new AsyncTask<Void, Void, ChargeResponse>() {
-          protected ChargeResponse doInBackground(Void... params) {
-            return WebService.Charge.create(token);
-          }
-          protected void onPostExecute(ChargeResponse response) {
-            // Handle Response
-          }
-          task.execte();
-        };
-    }
+### Instructions
+- Clone this project
 
-    public void failure(Exception error) {
-        // Output the error in your app
-        String result = null;
-        if (error instanceof Error)
-            result = ((Error) error).message_to_purchaser;
-        else
-            result = error.getMessage();
-        outputView.setText(result);
-    }
-});
-```
-# Installation
-This example uses mavenLocal to install the .aar (Tokenizer) artefact.
-```
-repositories {
-    mavenCentral()
-    mavenLocal()
-}
-...
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'io.conekta:tokenizer:1.0'
-}
-```
-To install the tokenizer in Maven locally use the following command:
-```
-mvn install:install-file -Dfile=app/libs/tokenizer-release.aar -DgroupId=io.conekta -DartifactId=tokenizer -Dversion=1.0 -Dpackaging=aar
-```
-# Example
-![alt tag](https://raw.githubusercontent.com/conekta/conekta-android/master/readme_files/screen.png?token=AAg1lvVJXYuvYIqmOaIpM0ZW_tMJrM95ks5VCiLhwA%3D%3D)
+- From your project go to: File -> New -> Import Module and select conektasdk folder.
 
-We are hiring
--------------
+- Now, go to: File -> Project Structure... At "modules" select you app and "Dependencies" at top left tab.
 
-If you are a comfortable working with a range of backend languages (Java, Python, Ruby, PHP, etc) and frameworks, you have solid foundation in data structures, algorithms and software design with strong analytical and debugging skills. 
-Send your CV, github to quieroser@conekta.io
+- Click plus button (+) and select "conektasdk". That's it.
+
+- Now just import all conekta classes
+
+
+```java
+  // ....
+  import com.conekta.conektasdk.Conekta;
+  import com.conekta.conektasdk.Card;
+  import com.conekta.conektasdk.Token;
+  import org.json.JSONObject;
+  // ...
+  Conekta.setPublicKey("zbp4axNG4xVUMcDzTLNz");
+  Conekta.setApiVersion("0.3.0");
+  Conekta.collectDevice(activity);
+  Card card = new Card("Josue Camara", "4242424242424242", "332", "11", "2017");
+  Token token = new Token(activity);
+  
+  token.onCreateTokenListener( new Token.CreateToken(){
+  @Override
+  public void onCreateTokenReady(JSONObject data) {
+  try {
+     Log.d("Token::::", data.getString("id"));
+     outputToken.setText("Token: " + data.getString("id"));
+  } catch (Exception err) {
+     outputToken.setText("Error: " + err.toString());
+  }
+  }
+  });
+  token.create(card);//Create the token
+  //....
+```
