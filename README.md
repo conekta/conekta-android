@@ -24,7 +24,7 @@ dependencies {
 To install the conektasdk in Maven locally use the following command:
 
 ```
-mvn install:install-file -Dfile=app/libs/conektasdk-release.aar -DgroupId=com.conekta -DartifactId=conektasdk -Dversion=1.0 -Dpackaging=aar
+mvn install:install-file -Dfile=app/libs/conektasdk-release.aar -DgroupId=com.conekta -DartifactId=conektasdk -Dversion=2.0 -Dpackaging=aar
 ```
 
 ## Import Conekta Android module 2.0
