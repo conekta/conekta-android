@@ -23,29 +23,31 @@ This is an example on how to create Android Apps using conekta-android Tokenizer
 
 
 ```java
-  // ....
+  // Your code....
   import com.conekta.conektasdk.Conekta;
   import com.conekta.conektasdk.Card;
   import com.conekta.conektasdk.Token;
   import org.json.JSONObject;
-  // ...
+  // Your code...
+  
   Conekta.setPublicKey("zbp4axNG4xVUMcDzTLNz");
   Conekta.setApiVersion("0.3.0");
   Conekta.collectDevice(activity);
+
   Card card = new Card("Josue Camara", "4242424242424242", "332", "11", "2017");
   Token token = new Token(activity);
   
   token.onCreateTokenListener( new Token.CreateToken(){
-  @Override
-  public void onCreateTokenReady(JSONObject data) {
-  try {
-     Log.d("Token::::", data.getString("id"));
-     outputToken.setText("Token: " + data.getString("id"));
-  } catch (Exception err) {
-     outputToken.setText("Error: " + err.toString());
-  }
-  }
+    @Override
+    public void onCreateTokenReady(JSONObject data) {
+      try {
+        Log.d("Token::::", data.getString("id"));
+      } catch (Exception err) {
+        Log.d("Error: " + err.toString());
+      }
+    }
   });
+
   token.create(card);//Create the token
-  //....
+  // Your code....
 ```
