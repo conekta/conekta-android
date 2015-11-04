@@ -77,6 +77,18 @@ Just import all conekta classes from com.conekta namespace
   // Your code below....
 ```
 
+# Use conekta-android with Proguard
+
+Just add
+
+```
+-keep class com.conekta.** { ; }
+```
+
+
+### Example
+![alt tag](https://raw.githubusercontent.com/conekta/conekta-android/master/readme_files/screen.png?token=AAg1lvVJXYuvYIqmOaIpM0ZW_tMJrM95ks5VCiLhwA%3D%3D)
+
 We are hiring
 -------------
 
