@@ -7,7 +7,7 @@ You have two methods for integration conekta-android. Use artifacts or import ou
 The artifact contains everything you need to start processing mobile payments.
 
 ### Instructions
-This example uses mavenLocal to install the .aar (Tokenizer) artefact.
+This example uses mavenLocal to install the .aar (conektasdk) artefact.
 ```
 repositories {
     mavenCentral()
@@ -17,21 +17,15 @@ repositories {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'io.conekta:tokenizer:1.0'
+    compile 'com.conekta:conektasdk:2.0'
 }
+
 ```
 To install the tokenizer in Maven locally use the following command:
-```
-mvn install:install-file -Dfile=app/libs/tokenizer-release.aar -DgroupId=io.conekta -DartifactId=tokenizer -Dversion=1.0 -Dpackaging=aar
-```
-
-# Use conekta-android with Proguard
-
-Just add
 
 ```
--keep class com.conekta.** { ; }
-
+mvn install:install-file -Dfile=app/libs/conektasdk-release.aar -DgroupId=com.conekta -DartifactId=conektasdk -Dversion=1.0 -Dpackaging=aar
+```
 
 ## Conekta Android module 2.0
 
