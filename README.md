@@ -34,14 +34,12 @@ This is an example about how to create Android Apps importing conekta module.
 ### Instructions
 1. Clone this project
 
-2. On your Android Studio go to: ```File -> New -> Import Module``` and select ```conektasdk``` folder.
+2. On your Android Studio go to: ```File -> New -> Import Module``` and find ```conektasdk``` folder on your file system.
 
-3. Go to: ```File -> Project Structure...``` in ```modules``` menu select your app, then ```Dependencies``` at top left tab.
-
-4. Click plus button (+) and select ```conektasdk```.
-
+3. Go to ```File -> Project Structure...```, this will open a window, then choose on Modules section your app, then click on Dependencies tab, then click on + button, and on Module dependency dialog, choose conektasdk.
 
 ## Usage Conekta SDK
+
 Just import all conekta classes from com.conekta namespace
 
 
