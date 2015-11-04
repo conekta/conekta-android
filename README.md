@@ -8,7 +8,7 @@ The artifact contains everything you need to start processing mobile payments.
 
 ## Conekta Android module
 
-This is an example on how to create Android Apps using conekta-android Tokenizer.
+This is an example on how to create Android Apps using conekta-android SDK.
 
 ### Instructions
 - Clone this project
