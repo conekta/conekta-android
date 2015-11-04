@@ -41,7 +41,7 @@ This is an example on how to create Android Apps importing module conekta.
 - Click plus button (+) and select ```conektasdk```. That's it.
 
 
-### Use Conekta SDK
+## Use Conekta SDK
 Just import all conekta classes from com.conekta namespace
 
 
