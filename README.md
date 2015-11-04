@@ -15,7 +15,7 @@ This is an example on how to create Android Apps using conekta-android Tokenizer
 
 - From your project go to: File -> New -> Import Module and select conektasdk folder.
 
-- Now, go to: File -> Project Structure... At "modules" select you app and "Dependencies" at top left tab.
+- Now, go to: File -> Project Structure... in "modules" select you app and "Dependencies" at top left tab.
 
 - Click plus button (+) and select "conektasdk". That's it.
 
@@ -30,13 +30,15 @@ This is an example on how to create Android Apps using conekta-android Tokenizer
   import org.json.JSONObject;
   // Your code...
   
-  Conekta.setPublicKey("zbp4axNG4xVUMcDzTLNz");
-  Conekta.setApiVersion("0.3.0");
-  Conekta.collectDevice(activity);
+  private Activity activity = this;
+
+  Conekta.setPublicKey("key_KJysdbf6PotS2ut2"); //Set public key
+  Conekta.setApiVersion("0.3.0"); //Set api version (optional)
+  Conekta.collectDevice(activity); //Collect device
 
   Card card = new Card("Josue Camara", "4242424242424242", "332", "11", "2017");
   Token token = new Token(activity);
-  
+
   token.onCreateTokenListener( new Token.CreateToken(){
     @Override
     public void onCreateTokenReady(JSONObject data) {
