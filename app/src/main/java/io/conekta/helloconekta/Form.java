@@ -14,7 +14,9 @@ import android.widget.TextView;
 import org.json.JSONObject;
 import android.util.Log;
 
-import com.conekta.conektasdk.*;
+import io.conekta.conektasdk.Card;
+import io.conekta.conektasdk.Conekta;
+import io.conekta.conektasdk.Token;
 
 public class Form extends Activity {
 
