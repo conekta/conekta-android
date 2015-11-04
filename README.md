@@ -13,11 +13,11 @@ This is an example on how to create Android Apps using conekta-android Tokenizer
 ### Instructions
 - Clone this project
 
-- From your project go to: File -> New -> Import Module and select conektasdk folder.
+- From your project go to: ```File -> New -> Import Module``` and select ```conektasdk``` folder.
 
-- Now, go to: File -> Project Structure... in "modules" select you app and "Dependencies" at top left tab.
+- Now, go to: ```File -> Project Structure...``` in ```modules``` select you app and ```Dependencies``` at top left tab.
 
-- Click plus button (+) and select "conektasdk". That's it.
+- Click plus button (+) and select ```conektasdk```. That's it.
 
 - Now just import all conekta classes
 
@@ -43,8 +43,10 @@ This is an example on how to create Android Apps using conekta-android Tokenizer
     @Override
     public void onCreateTokenReady(JSONObject data) {
       try {
+        //TODO: Make a charge
         Log.d("Token::::", data.getString("id"));
       } catch (Exception err) {
+      //TODO: Manage error
         Log.d("Error: " + err.toString());
       }
     }
