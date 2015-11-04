@@ -1,46 +1,13 @@
-# Conekta Android Artifacts (AAR) 1.1
-The artifact contains everything you need to start processing mobile payments.
+# Conekta Android
+You can use conekta-android for tokenize credit cards.
 
-# Conekta Android Example
+You have two methods to integrate conekta-android. Use artifacts or include our module.
 
-This is an example on how to create Android Apps using conekta-android Tokenizer.
+## Install Conekta Android Artifacts (AAR) 2.0
+The artifact contains everything you need to start.
 
-# Usage
-To be able to use the Tokenizer a Tokenizer object must be initialized with your conekta api public key.
-To tokenize a card you have to create a ConektaCallback that will handle the response.
-```
-import io.conekta.tokenizer.Tokenizer;
-import io.conekta.tokenizer.TokenizerCallback;
-import com.conekta.Token;
-import com.conekta.Error;
-Tokenizer tokenizer = new Tokenizer("key_KJysdbf6PotS2ut2", this);
-tokenizer.tokenizeCard(card, new TokenizerCallback() {
-    public void success(Token token) {
-        // Send token to your web service to create the charge
-        AsyncTask<Void, Void, ChargeResponse> task = new AsyncTask<Void, Void, ChargeResponse>() {
-          protected ChargeResponse doInBackground(Void... params) {
-            return WebService.Charge.create(token);
-          }
-          protected void onPostExecute(ChargeResponse response) {
-            // Handle Response
-          }
-          task.execte();
-        };
-    }
-
-    public void failure(Exception error) {
-        // Output the error in your app
-        String result = null;
-        if (error instanceof Error)
-            result = ((Error) error).message_to_purchaser;
-        else
-            result = error.getMessage();
-        outputView.setText(result);
-    }
-});
-```
-# Installation
-This example uses mavenLocal to install the .aar (Tokenizer) artefact.
+### Instructions
+This example uses mavenLocal to install the .aar (conektasdk) artefact.
 ```
 repositories {
     mavenCentral()
@@ -50,15 +17,65 @@ repositories {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'io.conekta:tokenizer:1.0'
+    compile 'com.conekta:conektasdk:2.0'
 }
+
 ```
-To install the tokenizer in Maven locally use the following command:
+To install the conektasdk in Maven locally use the following command:
+
 ```
-mvn install:install-file -Dfile=app/libs/tokenizer-release.aar -DgroupId=io.conekta -DartifactId=tokenizer -Dversion=1.0 -Dpackaging=aar
+mvn install:install-file -Dfile=app/libs/conektasdk-release.aar -DgroupId=com.conekta -DartifactId=conektasdk -Dversion=1.0 -Dpackaging=aar
 ```
-# Example
-![alt tag](https://raw.githubusercontent.com/conekta/conekta-android/master/readme_files/screen.png?token=AAg1lvVJXYuvYIqmOaIpM0ZW_tMJrM95ks5VCiLhwA%3D%3D)
+
+## Import Conekta Android module 2.0
+
+This is an example about how to create Android Apps importing conekta module.
+
+### Instructions
+1. Clone this project
+
+2. On your Android Studio go to: ```File -> New -> Import Module``` and find ```conektasdk``` folder on your file system.
+
+3. Go to ```File -> Project Structure...```, this will open a window, then choose on Modules section your app, then click on Dependencies tab, then click on + button, and on Module dependency dialog, choose ```conektasdk```.
+
+## Usage Conekta SDK
+
+Just import all conekta classes from com.conekta namespace
+
+
+```java
+  // Your code....
+  import com.conekta.conektasdk.Conekta;
+  import com.conekta.conektasdk.Card;
+  import com.conekta.conektasdk.Token;
+  import org.json.JSONObject;
+  // Your code...
+  
+  private Activity activity = this;
+
+  Conekta.setPublicKey("key_KJysdbf6PotS2ut2"); //Set public key
+  Conekta.setApiVersion("0.3.0"); //Set api version (optional)
+  Conekta.collectDevice(activity); //Collect device
+
+  Card card = new Card("Josue Camara", "4242424242424242", "332", "11", "2017");
+  Token token = new Token(activity);
+
+  token.onCreateTokenListener( new Token.CreateToken(){
+    @Override
+    public void onCreateTokenReady(JSONObject data) {
+      try {
+        //TODO: Create charge
+        Log.d("Token::::", data.getString("id"));
+      } catch (Exception err) {
+      //TODO: Handle error
+        Log.d("Error: " + err.toString());
+      }
+    }
+  });
+
+  token.create(card);//Create token
+  // Your code below....
+```
 
 We are hiring
 -------------
