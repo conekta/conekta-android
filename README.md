@@ -3,10 +3,10 @@ You can use conekta-android for tokenize credit cards.
 
 You have two methods for integration conekta-android. Use artifacts or import our module.
 
-## Conekta Android Artifacts (AAR) 1.1
+## Conekta Android Artifacts (AAR) 2.0
 The artifact contains everything you need to start processing mobile payments.
 
-## Conekta Android module
+## Conekta Android module 2.0
 
 This is an example on how to create Android Apps using conekta-android SDK.
 
