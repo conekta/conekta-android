@@ -51,7 +51,7 @@ public class Form extends Activity {
 
                     Conekta.setPublicKey("zbp4axNG4xVUMcDzTLNz");
                     Conekta.setApiVersion("0.3.0");
-                    Conekta.deviceFingerPrint(activity);
+                    Conekta.collectDevice(activity);
                     Card card = new Card(nameText.getText().toString(), numberText.getText().toString(), cvcText.getText().toString(), monthText.getText().toString(), yearText.getText().toString());
                     Token token = new Token(activity);
 
@@ -67,7 +67,7 @@ public class Form extends Activity {
                             } catch (Exception err) {
                                 outputView.setText("Error: " + err.toString());
                             }
-                            uuidDevice.setText("Uuid device: " + Conekta.collectDevice(activity));
+                            uuidDevice.setText("Uuid device: " + Conekta.deviceFingerPrint(activity));
                         }
                     });
 

@@ -1,6 +1,7 @@
 package com.conekta.conektasdk;
 
 import android.app.Activity;
+import android.os.Build;
 import android.provider.Settings;
 import android.webkit.WebView;
 import android.webkit.CookieManager;
@@ -45,14 +46,8 @@ public abstract class Conekta {
         return Conekta.language;
     }
 
-    public static String collectDevice(Activity activity) {
-        String sessionId = Settings.Secure.getString(activity.getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
-        return sessionId;
-    }
-
-    public static void deviceFingerPrint(final Activity activity) {
-
-        String sessionId = Conekta.collectDevice(activity);
+    public static void collectDevice(final Activity activity) {
+        String sessionId = Conekta.deviceFingerPrint(activity);
         String publicKey = Conekta.getPublicKey();
         if(publicKey.isEmpty())
             throw new RuntimeException("publicKey empty");
@@ -64,14 +59,17 @@ public abstract class Conekta {
         WebView webView = new WebView(activity);
 
         CookieManager.getInstance().setAcceptCookie(true);
-        CookieManager.getInstance().setAcceptThirdPartyCookies(webView, true);
+        if (Build.VERSION.SDK_INT >= 21)
+            CookieManager.getInstance().setAcceptThirdPartyCookies(webView, true);
 
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setAllowContentAccess(true);
         webView.getSettings().setDatabaseEnabled(true);
         webView.getSettings().setDomStorageEnabled(true);
         webView.loadDataWithBaseURL("https://conektaapi.s3.amazonaws.com/v0.5.0/js/conekta.js", html, "text/html", "UTF-8", null);
+    }
 
-        Log.e("Agregado webview", "Agredado");
+    public static String deviceFingerPrint(Activity activity) {
+        return Settings.Secure.getString(activity.getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
     }
 }

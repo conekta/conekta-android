@@ -43,7 +43,7 @@ public class Token {
         nameValuePair.add(new BasicNameValuePair("card[cvc]", card.getCvc()));
         nameValuePair.add(new BasicNameValuePair("card[exp_month]", card.getExpMonth()));
         nameValuePair.add(new BasicNameValuePair("card[exp_year]", card.getExpYear()));
-        nameValuePair.add(new BasicNameValuePair("card[device_fingerprint]", Conekta.collectDevice(activity)));
+        nameValuePair.add(new BasicNameValuePair("card[device_fingerprint]", Conekta.deviceFingerPrint(activity)));
 
         Connection connection = new Connection();
 
