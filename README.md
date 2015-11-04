@@ -17,14 +17,14 @@ repositories {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.conekta:conektasdk:2.0'
+    compile 'io.conekta:conektasdk:2.0'
 }
 
 ```
 To install the conektasdk in Maven locally use the following command:
 
 ```
-mvn install:install-file -Dfile=app/libs/conektasdk-release.aar -DgroupId=com.conekta -DartifactId=conektasdk -Dversion=2.0 -Dpackaging=aar
+mvn install:install-file -Dfile=app/libs/conektasdk-release.aar -DgroupId=io.conekta -DartifactId=conektasdk -Dversion=2.0 -Dpackaging=aar
 ```
 
 ## Import Conekta Android module 2.0
@@ -45,9 +45,9 @@ Just import all conekta classes from com.conekta namespace
 
 ```java
   // Your code....
-  import com.conekta.conektasdk.Conekta;
-  import com.conekta.conektasdk.Card;
-  import com.conekta.conektasdk.Token;
+  import io.conekta.conektasdk.Conekta;
+  import io.conekta.conektasdk.Card;
+  import io.conekta.conektasdk.Token;
   import org.json.JSONObject;
   // Your code...
   
