@@ -3,7 +3,7 @@ You can use conekta-android for tokenize credit cards.
 
 You have two methods for integration conekta-android. Use artifacts or import our module.
 
-## Conekta Android Artifacts (AAR) 2.0
+## Install Conekta Android Artifacts (AAR) 2.0
 The artifact contains everything you need to start processing mobile payments.
 
 ### Instructions
@@ -27,7 +27,7 @@ To install the tokenizer in Maven locally use the following command:
 mvn install:install-file -Dfile=app/libs/conektasdk-release.aar -DgroupId=com.conekta -DartifactId=conektasdk -Dversion=1.0 -Dpackaging=aar
 ```
 
-## Conekta Android module 2.0
+## Import Conekta Android module 2.0
 
 This is an example on how to create Android Apps importing module conekta.
 
@@ -40,7 +40,9 @@ This is an example on how to create Android Apps importing module conekta.
 
 - Click plus button (+) and select ```conektasdk```. That's it.
 
-- Now just import all conekta classes
+
+### Use Conekta SDK
+Just import all conekta classes from com.conekta namespace
 
 
 ```java
