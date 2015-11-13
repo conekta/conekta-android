@@ -7,25 +7,19 @@ You have two methods to integrate conekta-android. Use artifacts or include our 
 The artifact contains everything you need to start.
 
 ### Instructions
-This example uses mavenLocal to install the .aar (conektasdk) artefact.
+This example uses mavenCentral to install the .aar (conektasdk) artefact.
 ```
 repositories {
     mavenCentral()
-    mavenLocal()
 }
 ...
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.conekta:conektasdk:2.0'
+    compile 'io.conekta:conektasdk:2.0'
 }
-
 ```
-To install the conektasdk in Maven locally use the following command:
-
-```
-mvn install:install-file -Dfile=app/libs/conektasdk-release.aar -DgroupId=com.conekta -DartifactId=conektasdk -Dversion=2.0 -Dpackaging=aar
-```
+Now just Sync gradle
 
 ## Import Conekta Android module 2.0
 
