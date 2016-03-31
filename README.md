@@ -1,3 +1,5 @@
+![alt tag](https://raw.github.com/conekta/conekta-android/master/readme_files/cover.png)
+
 # Conekta Android
 You can use conekta-android for tokenize credit cards.
 
