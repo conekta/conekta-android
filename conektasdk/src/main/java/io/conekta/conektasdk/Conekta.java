@@ -1,13 +1,10 @@
-package com.conekta.conektasdk;
+package io.conekta.conektasdk;
 
 import android.app.Activity;
 import android.os.Build;
 import android.provider.Settings;
 import android.webkit.WebView;
 import android.webkit.CookieManager;
-import android.util.Log;
-import android.webkit.JavascriptInterface;
-import android.content.SharedPreferences.Editor;
 
 /**
  * Created by picharras on 27/10/15.

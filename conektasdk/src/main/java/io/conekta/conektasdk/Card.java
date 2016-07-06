@@ -1,4 +1,4 @@
-package com.conekta.conektasdk;
+package io.conekta.conektasdk;
 
 /**
  * Created by picharras on 27/10/15.

@@ -5,7 +5,7 @@ You can use conekta-android for tokenize credit cards.
 
 You have two methods to integrate conekta-android. Use artifacts or include our module.
 
-## Install Conekta Android Artifacts (AAR) 2.0
+## Install Conekta Android Artifacts (AAR) 2.1
 The artifact contains everything you need to start.
 
 ### Instructions
@@ -18,12 +18,13 @@ repositories {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'io.conekta:conektasdk:2.0'
+    compile 'io.conekta:conektasdk:2.1'
 }
+
 ```
 Now just Sync gradle
 
-## Import Conekta Android module 2.0
+## Import Conekta Android module 2.1
 
 This is an example about how to create Android Apps importing conekta module.
 
@@ -41,9 +42,9 @@ Just import all conekta classes from com.conekta namespace
 
 ```java
   // Your code....
-  import com.conekta.conektasdk.Conekta;
-  import com.conekta.conektasdk.Card;
-  import com.conekta.conektasdk.Token;
+  import io.conekta.conektasdk.Conekta;
+  import io.conekta.conektasdk.Card;
+  import io.conekta.conektasdk.Token;
   import org.json.JSONObject;
   // Your code...
   

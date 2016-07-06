@@ -1,4 +1,4 @@
-package com.conekta.conektasdk;
+package io.conekta.conektasdk;
 
 import android.app.Activity;
 

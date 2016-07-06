@@ -1,8 +1,7 @@
-package com.conekta.conektasdk;
+package io.conekta.conektasdk;
 
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.HttpClient;
 import org.apache.http.util.EntityUtils;
@@ -10,15 +9,14 @@ import org.apache.http.NameValuePair;
 import org.apache.http.HttpResponse;
 import android.os.AsyncTask;
 import android.util.Base64;
-import java.util.ArrayList;
-import android.util.Log;
+
 import java.util.List;
 
 /**
  * Created by picharras on 27/10/15.
  */
 public class Connection {
-    private List<NameValuePair> nameValuePair;
+    private List<NameValuePair> nameValuePairs;
     private String endPoint;
 
     public interface Request {
@@ -36,8 +34,8 @@ public class Connection {
         this.listener = listener;
     }
 
-    public void request(List<NameValuePair> nameValuePair, String endPoint) {
-        this.nameValuePair = nameValuePair;
+    public void request(List<NameValuePair> nameValuePairs, String endPoint) {
+        this.nameValuePairs = nameValuePairs;
         this.endPoint = endPoint;
         new Task().execute();
     }
@@ -56,7 +54,7 @@ public class Connection {
                 httpRequest.setHeader("Accept-Language", Conekta.getLanguage());
                 httpRequest.setHeader("Conekta-Client-User-Agent", "{\"agent\": \"Conekta Android SDK\"}");
                 httpRequest.setHeader("Authorization", "Basic " + encoding);
-                httpRequest.setEntity(new UrlEncodedFormEntity(nameValuePair));
+                httpRequest.setEntity(new UrlEncodedFormEntity(nameValuePairs, "UTF-8"));
 
                 HttpResponse response = http.execute(httpRequest);
                 result = EntityUtils.toString(response.getEntity());
