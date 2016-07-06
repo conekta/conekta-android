@@ -1,3 +1,5 @@
+![alt tag](https://raw.github.com/conekta/conekta-android/master/readme_files/cover.png)
+
 # Conekta Android
 You can use conekta-android for tokenize credit cards.
 
@@ -7,27 +9,22 @@ You have two methods to integrate conekta-android. Use artifacts or include our 
 The artifact contains everything you need to start.
 
 ### Instructions
-This example uses mavenLocal to install the .aar (conektasdk) artefact.
+This example uses mavenCentral to install the .aar (conektasdk) artefact.
 ```
 repositories {
     mavenCentral()
-    mavenLocal()
 }
 ...
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'io.conekta:conektasdk:2.0'
+    compile 'io.conekta:conektasdk:2.1'
 }
 
 ```
-To install the conektasdk in Maven locally use the following command:
+Now just Sync gradle
 
-```
-mvn install:install-file -Dfile=app/libs/conektasdk-release.aar -DgroupId=io.conekta -DartifactId=conektasdk -Dversion=2.0 -Dpackaging=aar
-```
-
-## Import Conekta Android module 2.0
+## Import Conekta Android module 2.1
 
 This is an example about how to create Android Apps importing conekta module.
 
