@@ -1,6 +1,7 @@
 package io.conekta.conektasdk;
 
 import android.app.Activity;
+import android.content.Context;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -14,7 +15,7 @@ import java.util.List;
  */
 public class Token {
     private String endPoint = "/tokens";
-    private Activity activity;
+    private Context context;
 
     public interface CreateToken {
         public void onCreateTokenReady(JSONObject data);
@@ -31,7 +32,11 @@ public class Token {
     }
 
     public Token(Activity activity) {
-        this.activity = activity;
+        this.context = activity;
+    }
+
+    public Token(Context context){
+        this.context = context;
     }
 
     public void create(Card card) {
@@ -43,7 +48,7 @@ public class Token {
         nameValuePair.add(new BasicNameValuePair("card[cvc]", card.getCvc()));
         nameValuePair.add(new BasicNameValuePair("card[exp_month]", card.getExpMonth()));
         nameValuePair.add(new BasicNameValuePair("card[exp_year]", card.getExpYear()));
-        nameValuePair.add(new BasicNameValuePair("card[device_fingerprint]", Conekta.deviceFingerPrint(activity)));
+        nameValuePair.add(new BasicNameValuePair("card[device_fingerprint]", Conekta.deviceFingerPrint(context)));
 
         Connection connection = new Connection();
 

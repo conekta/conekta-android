@@ -1,6 +1,6 @@
 package io.conekta.conektasdk;
 
-import android.app.Activity;
+import android.content.Context;
 import android.os.Build;
 import android.provider.Settings;
 import android.webkit.WebView;
@@ -43,8 +43,8 @@ public abstract class Conekta {
         return Conekta.language;
     }
 
-    public static void collectDevice(final Activity activity) {
-        String sessionId = Conekta.deviceFingerPrint(activity);
+    public static void collectDevice(final Context context) {
+        String sessionId = Conekta.deviceFingerPrint(context);
         String publicKey = Conekta.getPublicKey();
         if(publicKey.isEmpty())
             throw new RuntimeException("publicKey empty");
@@ -53,7 +53,7 @@ public abstract class Conekta {
         html += "<script type=\"text/javascript\" src=\"https://conektaapi.s3.amazonaws.com/v0.5.0/js/conekta.js\" data-conekta-public-key=\"" + publicKey + "\" data-conekta-session-id=\"" + sessionId + "\"></script>";
         html += "</body></html>";
 
-        WebView webView = new WebView(activity);
+        WebView webView = new WebView(context);
 
         CookieManager.getInstance().setAcceptCookie(true);
         if (Build.VERSION.SDK_INT >= 21)
@@ -66,7 +66,7 @@ public abstract class Conekta {
         webView.loadDataWithBaseURL("https://conektaapi.s3.amazonaws.com/v0.5.0/js/conekta.js", html, "text/html", "UTF-8", null);
     }
 
-    public static String deviceFingerPrint(Activity activity) {
-        return Settings.Secure.getString(activity.getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+    public static String deviceFingerPrint(Context context) {
+        return Settings.Secure.getString(context.getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
     }
 }
