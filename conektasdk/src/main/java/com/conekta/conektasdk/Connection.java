@@ -39,7 +39,11 @@ public class Connection {
     public void request(List<NameValuePair> nameValuePair, String endPoint) {
         this.nameValuePair = nameValuePair;
         this.endPoint = endPoint;
-        new Task().execute();
+        try {
+            new Task().execute();
+        } catch (RuntimeException ex) {
+            ex.printStackTrace();
+        }
     }
 
     private class Task extends AsyncTask<Void, Void, String> {
