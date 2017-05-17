@@ -1,4 +1,4 @@
-![alt tag](https://raw.github.com/conekta/conekta-android/master/readme_files/cover.png)
+![README Cover Image](readme_cover.png)
 
 # Conekta Android
 You can use conekta-android for tokenize credit cards.
@@ -86,8 +86,12 @@ Just add
 ### Example
 ![alt tag](https://raw.githubusercontent.com/conekta/conekta-android/master/readme_files/screen.png?token=AAg1lvVJXYuvYIqmOaIpM0ZW_tMJrM95ks5VCiLhwA%3D%3D)
 
-We are hiring
--------------
+## License
 
-If you are a comfortable working with a range of backend languages (Java, Python, Ruby, PHP, etc) and frameworks, you have solid foundation in data structures, algorithms and software design with strong analytical and debugging skills. 
-Send your CV, github to quieroser@conekta.io
+Developed in Mexico by [Conekta](https://www.conekta.com) in. Available with [MIT License](LICENSE).
+
+***
+
+## We are always hiring!
+
+If you are a comfortable working with a range of backend languages (Java, Python, Ruby, PHP, etc) and frameworks, you have solid foundation in data structures, algorithms and software design with strong analytical and debugging skills. Send us your CV and GitHub to quieroser@conekta.com
