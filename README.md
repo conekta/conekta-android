@@ -1,15 +1,33 @@
 ![README Cover Image](readme_cover.png)
+<div align="center">
 
 # Conekta Android
-You can use conekta-android for tokenize credit cards.
 
-You have two methods to integrate conekta-android. Use artifacts or include our module.
+[![Made with Java](https://img.shields.io/badge/made%20for-android-green.svg?style=for-the-badge&colorA=a4c639&colorB=586a1e&logo=android&logoColor=white)](https://www.ruby-lang.org)
+[![By Conekta](https://img.shields.io/badge/by-conekta-red.svg?style=for-the-badge&colorA=ee6130&colorB=00a4ac)](https://conekta.com)
+</div>
 
-## Install Conekta Android Artifacts (AAR) 2.1
+This is an [Android](https://www.android.com/) module that allows interaction with [Conekta's API](https://api.conekta.io).
+
+## Requeriments
+
+Add them!
+
+## Installation
+
+You have two methods to integrate conekta-android:
+
+1. Using artifacts
+2. including our module.
+
+### Install Conekta Android Artifacts (AAR) 2.1
+
 The artifact contains everything you need to start.
 
-### Instructions
+#### Instructions
+
 This example uses mavenCentral to install the .aar (conektasdk) artefact.
+
 ```
 repositories {
     mavenCentral()
@@ -22,10 +40,11 @@ dependencies {
 }
 
 ```
+
 Now just Sync gradle
 
-## Import Conekta Android module 2.0
-### Android Studio tested in versions 2.3, 3.0.1
+### Install Conekta Android module 2.0
+###### Tested with Android Studio (2.3 & 3.0.1)
 
 This is an example about how to create Android Apps importing conekta module.
 
@@ -33,32 +52,25 @@ This is an example about how to create Android Apps importing conekta module.
 
 1. Clone this project
 
+First you will need to open a new Android Project with ´empty´ activity
+2 Set Android Environment
+2.1 Add repositories
+Gradle Scripts>Build.gradle(Project:YourProject)
 
-
-## First you will need to open a new Android Project with ´empty´ activity
-
-### 2 Set Android Environment
-
-### 2.1 Add repositories
-
-#### Gradle Scripts>Build.gradle(Project:YourProject)
 ```java
 buildscript {
     
     repositories {
         google()
         jcenter()
-  ```    
-  ### Add the repository
-  
-```java    
+        // Add the repository
         mavenCentral()
     }
 ```
 
-### 1.2 Set versions and dependencies
+1.2 Set versions and dependencies
+Gradle Scripts>Build.gradle(Project:Module:app)
 
-#### Gradle Scripts>Build.gradle(Project:Module:app)
 ```java
 android {
     compileSdkVersion 26
@@ -87,7 +99,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 ```
-  ### Add the dependency
+
+Add the dependency
  
 ```java
   
@@ -95,9 +108,11 @@ dependencies {
 }
 
 ```
-### 2 Build tokenize form
 
-#### App>res>layout>activity_main.xml
+2. Build tokenized form
+
+App>res>layout>activity_main.xml
+
 ````java
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -385,12 +400,46 @@ Please see [developers.conekta.com/api](https://developers.conekta.com/api) for 
 ### Example
 ![alt tag](https://raw.githubusercontent.com/conekta/conekta-android/master/readme_files/screen.png?token=AAg1lvVJXYuvYIqmOaIpM0ZW_tMJrM95ks5VCiLhwA%3D%3D)
 
-## License
+***
 
-Developed in Mexico by [Conekta](https://www.conekta.com) in. Available with [MIT License](LICENSE).
+## How to contribute to the project
+
+1. Fork the repository
+ 
+2. Clone the repository
+```
+    git clone git@github.com:yourUserName/conekta-ruby.git
+```
+3. Create a branch
+```
+    git checkout develop
+    git pull origin develop
+    # You should choose the name of your branch
+    git checkout -b <feature/my_branch>
+```    
+4. Make necessary changes and commit those changes
+```
+    git add .
+    git commit -m "my changes"
+```
+5. Push changes to GitHub
+```
+    git push origin <feature/my_branch>
+```
+6. Submit your changes for review, create a pull request
+
+   To create a pull request, you need to have made your code changes on a separate branch. This branch should be named like this: **feature/my_feature** or **fix/my_fix**.
+
+   Make sure that, if you add new features to our library, be sure that corresponding **unit tests** are added.
+
+   If you go to your repository on GitHub, you’ll see a Compare & pull request button. Click on that button.
 
 ***
 
 ## We are always hiring!
 
 If you are a comfortable working with a range of backend languages (Java, Python, Ruby, PHP, etc) and frameworks, you have solid foundation in data structures, algorithms and software design with strong analytical and debugging skills. Send us your CV and GitHub to quieroser@conekta.com
+
+## License
+
+Developed in Mexico by [Conekta](https://www.conekta.com) in. Available with [MIT License](LICENSE).
