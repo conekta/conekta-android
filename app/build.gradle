@@ -5,14 +5,22 @@ repositories {
     mavenLocal()
 }
 
+configurations {
+    all {
+        exclude group: 'commons-logging', module: 'commons-logging'
+        exclude module: 'httpclient'
+    }
+}
+
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+    useLibrary  'org.apache.http.legacy'
 
     defaultConfig {
         applicationId "io.conekta.helloconekta"
         minSdkVersion 21
-        targetSdkVersion 21
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
@@ -25,7 +33,8 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.2.1'
-    compile project(':conektasdk')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+    implementation project(':conektasdk')
 }
