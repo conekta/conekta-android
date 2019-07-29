@@ -49,7 +49,7 @@ public class Form extends Activity {
                 Boolean haveInternet = isOnline();
                 if (haveInternet) {
 
-                    Conekta.setPublicKey("EpnQNGMghzDrytvfpqtG");
+                    Conekta.setPublicKey("zbp4axNG4xVUMcDzTLNz");
                     Conekta.setApiVersion("0.3.0");
                     Conekta.collectDevice(activity);
                     Card card = new Card(nameText.getText().toString(), numberText.getText().toString(), cvcText.getText().toString(), monthText.getText().toString(), yearText.getText().toString());
