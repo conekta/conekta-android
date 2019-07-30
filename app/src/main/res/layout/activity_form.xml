@@ -51,7 +51,7 @@
         android:layout_alignBottom="@+id/monthText"
         android:layout_toRightOf="@+id/monthText"
         android:layout_toEndOf="@+id/monthText"
-        android:text="2016" />
+        android:text="2020" />
 
     <TextView
         android:layout_width="wrap_content"

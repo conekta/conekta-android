@@ -15,10 +15,18 @@ repositories {
     mavenCentral()
 }
 ...
+configurations {
+    all {
+        exclude group: 'commons-logging', module: 'commons-logging'
+        exclude module: 'httpclient'
+    }
+}
+...
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'io.conekta:conektasdk:2.1'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+    implementation project(':conektasdk')
 }
 
 ```
@@ -61,11 +69,11 @@ buildscript {
 #### Gradle Scripts>Build.gradle(Project:Module:app)
 ```java
 android {
-    compileSdkVersion 26
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.conekta.conektatokenizeandroid"
-        minSdkVersion 26
-        targetSdkVersion 26
+        minSdkVersion 21
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -81,17 +89,18 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:appcompat-v7:28.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 ```
   ### Add the dependency
  
 ```java
   
-    implementation 'io.conekta:conektasdk:2.1'
+    implementation 'io.conekta:conektasdk:2.2'
 }
 
 ```
@@ -163,7 +172,7 @@ dependencies {
         android:layout_below="@+id/cardHolder"
         android:layout_toEndOf="@+id/month"
         android:layout_toRightOf="@+id/month"
-        android:text="2019" />
+        android:text="2020" />
 
     <TextView
         android:id="@+id/cvcLabel"
@@ -305,6 +314,9 @@ import org.json.JSONObject;
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <uses-library android:name ="org.apache.http.legacy" android:required ="false"/>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
