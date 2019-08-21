@@ -3,4 +3,8 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="needInternetConnection">Necesitas conexión a internet</string>
+    <string name="theTokenIdLabel">The token id:</string>
+    <string name="errorLabel">Error:</string>
+    <string name="uuidDeviceLabel">Uuid device:</string>
 </resources>
