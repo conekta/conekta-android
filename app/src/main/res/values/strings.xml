@@ -7,4 +7,18 @@
     <string name="theTokenIdLabel">The token id:</string>
     <string name="errorLabel">Error:</string>
     <string name="uuidDeviceLabel">Uuid device:</string>
+    <string name="XXXX">XXXX-XXXX-XXXX-XXXX</string>
+    <string name="cardNumber">Número de tarjeta:</string>
+    <string name="cardName">Nombre que aparece en la tarjeta:</string>
+    <string name="expire">Expira:</string>
+    <string name="cardCvc">Código de seguridad:</string>
+    <string name="mm">MM</string>
+    <string name="yyyy">YYYY</string>
+    <string name="name">Nombre</string>
+    <string name="cvc">CVC</string>
+    <string name="outputData">Datos de salida:</string>
+    <string name="outputTokenData">Salida de Token</string>
+    <string name="outputUUIDData">Salida de UUID</string>
+    <string name="tokenize">Tokenize!</string>
+    <string name="noteYouCanModify">***Nota: Puedes Modificar los datos de la tarjeta para realizar diferentes pruebas</string>
 </resources>
