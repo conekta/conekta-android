@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.util.Log;
+import android.widget.Toast;
+
 import org.json.JSONObject;
 
 import io.conekta.conektasdk.Card;
@@ -26,6 +28,7 @@ public class Form extends Activity {
     //--------------------------------------------------------- Variables
     private Button buttonTokenize;
     private Activity activity = this;
+    private Boolean hasValidCardData;
     private TextView outputView, uuidDevice;
     private EditText numberText, monthText, yearText, cvcText, nameText;
     private String cardName, cardNumber, cardCvc, cardMonth, cardYear; //card data strings
@@ -136,19 +139,23 @@ public class Form extends Activity {
 
             getCardData();
 
-            Card card = new Card(cardName, cardNumber, cardCvc, cardMonth, cardYear);
-            Token token = new Token(activity);
+            if (hasValidCardData) {
+                Card card = new Card(cardName, cardNumber, cardCvc, cardMonth, cardYear);
+                Token token = new Token(activity);
 
-            //Listen when token is returned
-            token.onCreateTokenListener(new Token.CreateToken() {
-                @Override
-                public void onCreateTokenReady(JSONObject data) {
-                    showTokenResult(data);
-                }
-            });
+                //Listen when token is returned
+                token.onCreateTokenListener(new Token.CreateToken() {
+                    @Override
+                    public void onCreateTokenReady(JSONObject data) {
+                        showTokenResult(data);
+                    }
+                });
 
-            //Request for create token
-            token.create(card);
+                //Request for create token
+                token.create(card);
+            } else {
+                Toast.makeText(Form.this, getResources().getString(R.string.cardDataIncomplete), Toast.LENGTH_LONG).show();
+            }
         } else {
             outputView.setText(getResources().getString(R.string.needInternetConnection));
         }
@@ -158,11 +165,17 @@ public class Form extends Activity {
      * Method to get card data
      */
     private void getCardData(){
+        hasValidCardData = true;
+
         cardName = nameText.getText().toString();
         cardNumber = numberText.getText().toString();
         cardCvc = cvcText.getText().toString();
         cardMonth = monthText.getText().toString();
         cardYear = yearText.getText().toString();
+
+        if (cardName.equals("") || cardNumber.equals("") || cardCvc.equals("") || cardMonth.equals("") || cardYear.equals("")) {
+            hasValidCardData = false;
+        }
     }
 
     /**
