@@ -173,7 +173,7 @@ public class Form extends Activity {
         cardMonth = monthText.getText().toString();
         cardYear = yearText.getText().toString();
 
-        if (cardName.equals("") || cardNumber.equals("") || cardCvc.equals("") || cardMonth.equals("") || cardYear.equals("")) {
+        if (cardName.isEmpty() || cardNumber.isEmpty() || cardCvc.isEmpty() || cardMonth.isEmpty() || cardYear.isEmpty()) {
             hasValidCardData = false;
         }
     }
