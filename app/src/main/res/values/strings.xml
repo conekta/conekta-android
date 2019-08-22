@@ -13,7 +13,7 @@
     <string name="expire">Expira:</string>
     <string name="cardCvc">Código de seguridad:</string>
     <string name="mm">MM</string>
-    <string name="yyyy">YYYY</string>
+    <string name="yyyy">AAAA</string>
     <string name="name">Nombre</string>
     <string name="cvc">CVC</string>
     <string name="outputData">Datos de salida:</string>
