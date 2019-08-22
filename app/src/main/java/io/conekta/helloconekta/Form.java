@@ -11,10 +11,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.util.Log;
 import android.widget.Toast;
-
 import org.json.JSONObject;
 
 import io.conekta.conektasdk.Card;
@@ -33,6 +33,9 @@ public class Form extends Activity {
     private EditText numberText, monthText, yearText, cvcText, nameText;
     private String cardName, cardNumber, cardCvc, cardMonth, cardYear; //card data strings
     private String tokenIdTag, errorTag, uuidDeviceTag; //tags strings
+
+    private ProgressBar progressBar;
+    private View fadeRect;
     //--------------------------------------------------------- Constants
     private static final String PUBLIC_KEY = "zbp4axNG4xVUMcDzTLNz";
     private static final String API_VERSION = "0.3.0";
@@ -59,6 +62,8 @@ public class Form extends Activity {
     protected void onStart() {
         super.onStart();
         initializeTags();
+        enableInputs();
+        disableProgressBar();
     }
 
     /**
@@ -114,6 +119,9 @@ public class Form extends Activity {
         monthText = findViewById(R.id.monthText);
         yearText = findViewById(R.id.yearText);
         cvcText = findViewById(R.id.cvcText);
+
+        progressBar = findViewById(R.id.progress_bar_form);
+        fadeRect = findViewById(R.id.shadow_view_form);
     }
 
     /**
@@ -129,9 +137,52 @@ public class Form extends Activity {
     }
 
     /**
+     * Method to enable all inputs
+     */
+    private void enableInputs() {
+        buttonTokenize.setEnabled(true);
+        numberText.setEnabled(true);
+        nameText.setEnabled(true);
+        monthText.setEnabled(true);
+        yearText.setEnabled(true);
+        cvcText.setEnabled(true);
+    }
+
+    /**
+     * Method to disable all inputs
+     */
+    private void disableInputs() {
+        buttonTokenize.setEnabled(false);
+        numberText.setEnabled(false);
+        nameText.setEnabled(false);
+        monthText.setEnabled(false);
+        yearText.setEnabled(false);
+        cvcText.setEnabled(false);
+    }
+
+    /**
+     * Method to enable the progress bar
+     */
+    private void enableProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);
+        fadeRect.setVisibility((View.VISIBLE));
+    }
+
+    /**
+     * Method to disable the progress bar
+     */
+    private void disableProgressBar() {
+        progressBar.setVisibility(View.GONE);
+        fadeRect.setVisibility((View.GONE));
+    }
+
+    /**
      * Method triggered when press tokenize button to get a token from the card data received
      */
     private void onPressTokenizeButton(){
+        disableInputs();
+        enableProgressBar();
+
         if (hasInternetConnection()) {
             Conekta.setPublicKey(PUBLIC_KEY);
             Conekta.setApiVersion(API_VERSION);
@@ -155,9 +206,14 @@ public class Form extends Activity {
                 token.create(card);
             } else {
                 Toast.makeText(Form.this, getResources().getString(R.string.cardDataIncomplete), Toast.LENGTH_LONG).show();
+                enableInputs();
+                disableProgressBar();
             }
         } else {
+            Toast.makeText(Form.this, getResources().getString(R.string.needInternetConnection), Toast.LENGTH_LONG).show();
             outputView.setText(getResources().getString(R.string.needInternetConnection));
+            enableInputs();
+            disableProgressBar();
         }
     }
 
@@ -200,9 +256,15 @@ public class Form extends Activity {
 
             outputView.setText(tokenMessage);
             Log.d(tokenIdTag, tokenId);
+
+            enableInputs();
+            disableProgressBar();
         } catch (Exception error) {
             String errorMessage = errorTag +" "+ error.toString();
             outputView.setText(errorMessage);
+
+            enableInputs();
+            disableProgressBar();
         }
 
         String uuidMessage = uuidDeviceTag +" "+ Conekta.deviceFingerPrint(activity);
