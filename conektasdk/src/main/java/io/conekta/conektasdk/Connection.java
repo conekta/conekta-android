@@ -13,27 +13,40 @@ import android.util.Base64;
 import java.util.List;
 
 /**
- * Created by picharras on 27/10/15.
+ * POJO of the object Connection.
  */
 public class Connection {
     private List<NameValuePair> nameValuePairs;
     private String endPoint;
 
+    /**
+     * Create a Request interface.
+     */
     public interface Request {
         public void onRequestReady(String data);
     }
 
     private Request listener;
 
+    /**
+     * Connection constructor.
+     */
     public Connection() {
         this.listener = null;
     }
 
-    // Assign the listener implementing events interface that will receive the events
+    /**
+     * Assign the listener implementing events interface that will receive the events
+     */
     public void onRequestListener (Request listener) {
         this.listener = listener;
     }
 
+    /**
+     *
+     * @param nameValuePairs
+     * @param endPoint
+     */
     public void request(List<NameValuePair> nameValuePairs, String endPoint) {
         this.nameValuePairs = nameValuePairs;
         this.endPoint = endPoint;

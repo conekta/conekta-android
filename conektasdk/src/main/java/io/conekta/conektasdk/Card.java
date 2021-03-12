@@ -1,7 +1,7 @@
 package io.conekta.conektasdk;
 
 /**
- * Created by picharras on 27/10/15.
+ * POJO of the object Card.
  */
 public class Card {
     private String number;
@@ -30,22 +30,42 @@ public class Card {
         this.expYear = expYear;
     }
 
+    /**
+     * Return the number of the card.
+     * @return a number of the card in string.
+     */
     public String getNumber() {
         return this.number;
     }
 
+    /**
+     * Return the name of the card.
+     * @return a string name of the card.
+     */
     public String getName() {
         return this.name;
     }
 
+    /**
+     * Return the Cvc of the card.
+     * @return a String of the cvc of the card.
+     */
     public String getCvc() {
         return this.cvc;
     }
 
+    /**
+     * Return the date of expired month
+     * @return a string for the number of the month.
+     */
     public String getExpMonth() {
         return this.expMonth;
     }
 
+    /**
+     * Return the year of the expired card.
+     * @return a string for the year.
+     */
     public String getExpYear() {
         return this.expYear;
     }
