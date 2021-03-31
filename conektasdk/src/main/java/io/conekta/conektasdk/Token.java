@@ -10,30 +10,48 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by picharras on 27/10/15.
+ * POJO of the object Token.
  */
 public class Token {
     private String endPoint = "/tokens";
     private Activity activity;
 
+    /**
+     * Create a interface of token.
+     */
     public interface CreateToken {
         public void onCreateTokenReady(JSONObject data);
     }
 
     private CreateToken listener;
 
+    /**
+     * The default constructor of the class.
+     */
     public Token() {
         this.listener = null;
     }
 
+    /**
+     * Set the listener
+     * @param listener
+     */
     public void onCreateTokenListener (CreateToken listener) {
         this.listener = listener;
     }
 
+    /**
+     * The custom consturctor.
+     * @param activity from where it was called.
+     */
     public Token(Activity activity) {
         this.activity = activity;
     }
 
+    /**
+     * Create a connection with a Card object to send.
+     * @param card
+     */
     public void create(Card card) {
         /* Remember add to index of nameValuePair if you add more rows */
         List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>(6);
