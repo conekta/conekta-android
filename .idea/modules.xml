@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/conekta-android.iml" filepath="$PROJECT_DIR$/conekta-android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/conektasdk/conektasdk.iml" filepath="$PROJECT_DIR$/conektasdk/conektasdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/conekta-android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/conekta-android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/conektasdk/conekta-android.conektasdk.iml" filepath="$PROJECT_DIR$/.idea/modules/conektasdk/conekta-android.conektasdk.iml" />
     </modules>
   </component>
 </project>

@@ -219,7 +219,9 @@ dependencies {
 
 ```java
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -229,6 +231,7 @@ import android.widget.TextView;
 import io.conekta.conektasdk.Conekta;
 import io.conekta.conektasdk.Card;
 import io.conekta.conektasdk.Token;
+
 import org.json.JSONObject;
 
 ```
