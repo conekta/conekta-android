@@ -41,6 +41,6 @@ class Token(private val activity: Activity, private val listener: CreateToken? =
                 listener?.onError(message)
             }
         })
-        connection.request(card, endPoint)
+        connection.request(card, Conekta().deviceFingerPrint(activity))
     }
 }
