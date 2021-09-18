@@ -3,9 +3,6 @@ package io.conekta.helloconekta
 
 import android.app.Activity
 import android.os.Bundle
-import io.conekta.conektasdk.Conekta
-import io.conekta.conektasdk.Token.CreateToken
-import org.json.JSONObject
 import android.net.ConnectivityManager
 import android.util.Log
 import android.view.Menu
@@ -14,6 +11,7 @@ import android.view.View
 import android.widget.*
 import io.conekta.conektasdk.Card
 import io.conekta.conektasdk.CardResponse
+import io.conekta.conektasdk.Conekta
 import io.conekta.conektasdk.Conekta.Companion.apiVersion
 import io.conekta.conektasdk.Conekta.Companion.publicKey
 import io.conekta.conektasdk.Token
@@ -24,7 +22,7 @@ import java.lang.Exception
 /**
  * Application form class
  */
-class Form : Activity(), CreateToken {
+class Form : Activity(), Token.CreateToken {
     //--------------------------------------------------------- Variables
     private var buttonTokenize: Button? = null
     private val activity: Activity = this
