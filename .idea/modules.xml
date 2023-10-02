@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/conekta-android.iml" filepath="$PROJECT_DIR$/conekta-android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/conektasdk/conektasdk.iml" filepath="$PROJECT_DIR$/conektasdk/conektasdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/conekta-android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/conekta-android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/conekta-android.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/conekta-android.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/conekta-android.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/conekta-android.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/conekta-android.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/conekta-android.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/conektasdk/conekta-android.conektasdk.iml" filepath="$PROJECT_DIR$/.idea/modules/conektasdk/conekta-android.conektasdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/conektasdk/conekta-android.conektasdk.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/conektasdk/conekta-android.conektasdk.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/conektasdk/conekta-android.conektasdk.main.iml" filepath="$PROJECT_DIR$/.idea/modules/conektasdk/conekta-android.conektasdk.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/conektasdk/conekta-android.conektasdk.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/conektasdk/conekta-android.conektasdk.unitTest.iml" />
     </modules>
   </component>
 </project>
