@@ -1,11 +1,13 @@
-apply plugin: 'com.android.library'
-
+plugins {
+    id 'maven-publish'
+    id 'com.android.library'
+}
 android {
-    compileSdkVersion 31
-    buildToolsVersion '31'
+    compileSdk 31
     useLibrary  'org.apache.http.legacy'
 
     defaultConfig {
+        compileSdk 31
         minSdkVersion 15
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -13,6 +15,13 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    publishing {
+        singleVariant("release") {
+            // if you don't want sources/javadoc, remove these lines
+            withSourcesJar()
+            withJavadocJar()
         }
     }
 
@@ -27,6 +36,18 @@ android {
     }
     namespace 'io.conekta.conektasdk'
 }
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId GROUP
+                artifactId 'conektasdk'
+                version VERSION_NAME
+            }
+        }
+    }
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -38,4 +59,3 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-//apply from: '../maven_push.gradle'
