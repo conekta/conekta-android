@@ -1,23 +1,20 @@
 
-
 # OrderResponseShippingContact
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**phone** | **String** |  |  [optional]
-**receiver** | **String** |  |  [optional]
-**betweenStreets** | **String** |  |  [optional]
+**phone** | **kotlin.String** |  |  [optional]
+**&#x60;receiver&#x60;** | **kotlin.String** |  |  [optional]
+**betweenStreets** | **kotlin.String** |  |  [optional]
 **address** | [**CustomerShippingContactsResponseAddress**](CustomerShippingContactsResponseAddress.md) |  |  [optional]
-**parentId** | **String** |  |  [optional]
-**_default** | **Boolean** |  |  [optional]
-**id** | **String** |  |  [optional]
-**createdAt** | **Long** |  |  [optional]
-**metadata** | [**Map&lt;String, OasAnyTypeNotMapped&gt;**](OasAnyTypeNotMapped.md) | Metadata associated with the shipping contact |  [optional]
-**_object** | **String** |  |  [optional]
-**deleted** | **Boolean** |  |  [optional]
-
+**parentId** | **kotlin.String** |  |  [optional]
+**default** | **kotlin.Boolean** |  |  [optional]
+**id** | **kotlin.String** |  |  [optional]
+**createdAt** | **kotlin.Long** |  |  [optional]
+**metadata** | [**kotlin.collections.Map&lt;kotlin.String, kotlin.Any&gt;**](kotlin.Any.md) | Metadata associated with the shipping contact |  [optional]
+**&#x60;object&#x60;** | **kotlin.String** |  |  [optional]
+**deleted** | **kotlin.Boolean** |  |  [optional]
 
 
 

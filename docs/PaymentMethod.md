@@ -1,14 +1,11 @@
 
-
 # PaymentMethod
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **String** |  |  [optional]
-**_object** | **String** |  | 
-
+**&#x60;object&#x60;** | **kotlin.String** |  | 
+**type** | **kotlin.String** |  |  [optional]
 
 
 

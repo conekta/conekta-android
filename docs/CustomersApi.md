@@ -13,9 +13,8 @@ Method | HTTP request | Description
 [**updateCustomerFiscalEntities**](CustomersApi.md#updateCustomerFiscalEntities) | **PUT** /customers/{id}/fiscal_entities/{fiscal_entities_id} | Update  Fiscal Entity
 
 
-
-## createCustomer
-
+<a id="createCustomer"></a>
+# **createCustomer**
 > CustomerResponse createCustomer(customer, acceptLanguage, xChildCompanyId)
 
 Create customer
@@ -23,32 +22,34 @@ Create customer
 The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [https://developers.conekta.com/page/web-checkout-tokenizer](https://developers.conekta.com/page/web-checkout-tokenizer) 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.CustomersApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-CustomersApi apiInstance = new CustomersApi();
-Customer customer = new Customer(); // Customer | requested field for customer
-String acceptLanguage = es; // String | Use for knowing which language to use
-String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+val apiInstance = CustomersApi()
+val customer : Customer =  // Customer | requested field for customer
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
 try {
-    CustomerResponse result = apiInstance.createCustomer(customer, acceptLanguage, xChildCompanyId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CustomersApi#createCustomer");
-    e.printStackTrace();
+    val result : CustomerResponse = apiInstance.createCustomer(customer, acceptLanguage, xChildCompanyId)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling CustomersApi#createCustomer")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling CustomersApi#createCustomer")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer** | [**Customer**](Customer.md)| requested field for customer |
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
 
 ### Return type
 
@@ -56,16 +57,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## createCustomerFiscalEntities
-
+<a id="createCustomerFiscalEntities"></a>
+# **createCustomerFiscalEntities**
 > CreateCustomerFiscalEntitiesResponse createCustomerFiscalEntities(id, customerFiscalEntitiesRequest, acceptLanguage, xChildCompanyId)
 
 Create Fiscal Entity
@@ -73,34 +75,36 @@ Create Fiscal Entity
 Create Fiscal entity resource that corresponds to a customer ID.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.CustomersApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-CustomersApi apiInstance = new CustomersApi();
-String id = 6307a60c41de27127515a575; // String | Identifier of the resource
-CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest = new CustomerFiscalEntitiesRequest(); // CustomerFiscalEntitiesRequest | requested field for customer fiscal entities
-String acceptLanguage = es; // String | Use for knowing which language to use
-String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+val apiInstance = CustomersApi()
+val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
+val customerFiscalEntitiesRequest : CustomerFiscalEntitiesRequest =  // CustomerFiscalEntitiesRequest | requested field for customer fiscal entities
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
 try {
-    CreateCustomerFiscalEntitiesResponse result = apiInstance.createCustomerFiscalEntities(id, customerFiscalEntitiesRequest, acceptLanguage, xChildCompanyId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CustomersApi#createCustomerFiscalEntities");
-    e.printStackTrace();
+    val result : CreateCustomerFiscalEntitiesResponse = apiInstance.createCustomerFiscalEntities(id, customerFiscalEntitiesRequest, acceptLanguage, xChildCompanyId)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling CustomersApi#createCustomerFiscalEntities")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling CustomersApi#createCustomerFiscalEntities")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Identifier of the resource | [default to null]
+ **id** | **kotlin.String**| Identifier of the resource |
  **customerFiscalEntitiesRequest** | [**CustomerFiscalEntitiesRequest**](CustomerFiscalEntitiesRequest.md)| requested field for customer fiscal entities |
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
 
 ### Return type
 
@@ -108,16 +112,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## deleteCustomerById
-
+<a id="deleteCustomerById"></a>
+# **deleteCustomerById**
 > CustomerResponse deleteCustomerById(id, acceptLanguage, xChildCompanyId)
 
 Delete Customer
@@ -125,32 +130,34 @@ Delete Customer
 Deleted a customer resource that corresponds to a customer ID.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.CustomersApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-CustomersApi apiInstance = new CustomersApi();
-String id = 6307a60c41de27127515a575; // String | Identifier of the resource
-String acceptLanguage = es; // String | Use for knowing which language to use
-String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+val apiInstance = CustomersApi()
+val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
 try {
-    CustomerResponse result = apiInstance.deleteCustomerById(id, acceptLanguage, xChildCompanyId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CustomersApi#deleteCustomerById");
-    e.printStackTrace();
+    val result : CustomerResponse = apiInstance.deleteCustomerById(id, acceptLanguage, xChildCompanyId)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling CustomersApi#deleteCustomerById")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling CustomersApi#deleteCustomerById")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Identifier of the resource | [default to null]
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
+ **id** | **kotlin.String**| Identifier of the resource |
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
 
 ### Return type
 
@@ -158,16 +165,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## getCustomerById
-
+<a id="getCustomerById"></a>
+# **getCustomerById**
 > CustomerResponse getCustomerById(id, acceptLanguage, xChildCompanyId)
 
 Get Customer
@@ -175,32 +183,34 @@ Get Customer
 Gets a customer resource that corresponds to a customer ID.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.CustomersApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-CustomersApi apiInstance = new CustomersApi();
-String id = 6307a60c41de27127515a575; // String | Identifier of the resource
-String acceptLanguage = es; // String | Use for knowing which language to use
-String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+val apiInstance = CustomersApi()
+val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
 try {
-    CustomerResponse result = apiInstance.getCustomerById(id, acceptLanguage, xChildCompanyId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CustomersApi#getCustomerById");
-    e.printStackTrace();
+    val result : CustomerResponse = apiInstance.getCustomerById(id, acceptLanguage, xChildCompanyId)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling CustomersApi#getCustomerById")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling CustomersApi#getCustomerById")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Identifier of the resource | [default to null]
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
+ **id** | **kotlin.String**| Identifier of the resource |
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
 
 ### Return type
 
@@ -208,16 +218,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## getCustomers
-
+<a id="getCustomers"></a>
+# **getCustomers**
 > CustomersResponse getCustomers(acceptLanguage, xChildCompanyId, limit, search, next, previous)
 
 Get a list of customers
@@ -225,38 +236,40 @@ Get a list of customers
 The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.CustomersApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-CustomersApi apiInstance = new CustomersApi();
-String acceptLanguage = es; // String | Use for knowing which language to use
-String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
-Integer limit = 20; // Integer | The numbers of items to return, the maximum value is 250
-String search = null; // String | General order search, e.g. by mail, reference etc.
-String next = null; // String | next page
-String previous = null; // String | previous page
+val apiInstance = CustomersApi()
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
+val limit : kotlin.Int = 56 // kotlin.Int | The numbers of items to return, the maximum value is 250
+val search : kotlin.String = search_example // kotlin.String | General order search, e.g. by mail, reference etc.
+val next : kotlin.String = next_example // kotlin.String | next page
+val previous : kotlin.String = previous_example // kotlin.String | previous page
 try {
-    CustomersResponse result = apiInstance.getCustomers(acceptLanguage, xChildCompanyId, limit, search, next, previous);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CustomersApi#getCustomers");
-    e.printStackTrace();
+    val result : CustomersResponse = apiInstance.getCustomers(acceptLanguage, xChildCompanyId, limit, search, next, previous)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling CustomersApi#getCustomers")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling CustomersApi#getCustomers")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
- **limit** | **Integer**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20]
- **search** | **String**| General order search, e.g. by mail, reference etc. | [optional] [default to null]
- **next** | **String**| next page | [optional] [default to null]
- **previous** | **String**| previous page | [optional] [default to null]
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **limit** | **kotlin.Int**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20]
+ **search** | **kotlin.String**| General order search, e.g. by mail, reference etc. | [optional]
+ **next** | **kotlin.String**| next page | [optional]
+ **previous** | **kotlin.String**| previous page | [optional]
 
 ### Return type
 
@@ -264,16 +277,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## updateCustomer
-
+<a id="updateCustomer"></a>
+# **updateCustomer**
 > CustomerResponse updateCustomer(id, updateCustomer, acceptLanguage, xChildCompanyId)
 
 Update customer
@@ -281,34 +295,36 @@ Update customer
 You can update customer-related data
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.CustomersApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-CustomersApi apiInstance = new CustomersApi();
-String id = 6307a60c41de27127515a575; // String | Identifier of the resource
-UpdateCustomer updateCustomer = new UpdateCustomer(); // UpdateCustomer | requested field for customer
-String acceptLanguage = es; // String | Use for knowing which language to use
-String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+val apiInstance = CustomersApi()
+val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
+val updateCustomer : UpdateCustomer =  // UpdateCustomer | requested field for customer
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
 try {
-    CustomerResponse result = apiInstance.updateCustomer(id, updateCustomer, acceptLanguage, xChildCompanyId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CustomersApi#updateCustomer");
-    e.printStackTrace();
+    val result : CustomerResponse = apiInstance.updateCustomer(id, updateCustomer, acceptLanguage, xChildCompanyId)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling CustomersApi#updateCustomer")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling CustomersApi#updateCustomer")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Identifier of the resource | [default to null]
+ **id** | **kotlin.String**| Identifier of the resource |
  **updateCustomer** | [**UpdateCustomer**](UpdateCustomer.md)| requested field for customer |
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
 
 ### Return type
 
@@ -316,16 +332,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## updateCustomerFiscalEntities
-
+<a id="updateCustomerFiscalEntities"></a>
+# **updateCustomerFiscalEntities**
 > UpdateCustomerFiscalEntitiesResponse updateCustomerFiscalEntities(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage, xChildCompanyId)
 
 Update  Fiscal Entity
@@ -333,36 +350,38 @@ Update  Fiscal Entity
 Update Fiscal Entity resource that corresponds to a customer ID.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.CustomersApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-CustomersApi apiInstance = new CustomersApi();
-String id = 6307a60c41de27127515a575; // String | Identifier of the resource
-String fiscalEntitiesId = fis_ent_2tQ8HkkfbauaKP9Ho; // String | identifier
-CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest = new CustomerUpdateFiscalEntitiesRequest(); // CustomerUpdateFiscalEntitiesRequest | requested field for customer update fiscal entities
-String acceptLanguage = es; // String | Use for knowing which language to use
-String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+val apiInstance = CustomersApi()
+val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
+val fiscalEntitiesId : kotlin.String = fis_ent_2tQ8HkkfbauaKP9Ho // kotlin.String | identifier
+val customerUpdateFiscalEntitiesRequest : CustomerUpdateFiscalEntitiesRequest =  // CustomerUpdateFiscalEntitiesRequest | requested field for customer update fiscal entities
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
 try {
-    UpdateCustomerFiscalEntitiesResponse result = apiInstance.updateCustomerFiscalEntities(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage, xChildCompanyId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CustomersApi#updateCustomerFiscalEntities");
-    e.printStackTrace();
+    val result : UpdateCustomerFiscalEntitiesResponse = apiInstance.updateCustomerFiscalEntities(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage, xChildCompanyId)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling CustomersApi#updateCustomerFiscalEntities")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling CustomersApi#updateCustomerFiscalEntities")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Identifier of the resource | [default to null]
- **fiscalEntitiesId** | **String**| identifier | [default to null]
+ **id** | **kotlin.String**| Identifier of the resource |
+ **fiscalEntitiesId** | **kotlin.String**| identifier |
  **customerUpdateFiscalEntitiesRequest** | [**CustomerUpdateFiscalEntitiesRequest**](CustomerUpdateFiscalEntitiesRequest.md)| requested field for customer update fiscal entities |
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
 
 ### Return type
 
@@ -370,10 +389,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 

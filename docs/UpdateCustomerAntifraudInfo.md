@@ -1,14 +1,11 @@
 
-
 # UpdateCustomerAntifraudInfo
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accountCreatedAt** | **Long** |  |  [optional]
-**firstPaidAt** | **Integer** |  |  [optional]
-
+**accountCreatedAt** | **kotlin.Long** |  |  [optional]
+**firstPaidAt** | **kotlin.Int** |  |  [optional]
 
 
 

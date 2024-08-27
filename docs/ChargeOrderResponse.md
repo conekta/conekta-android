@@ -1,31 +1,28 @@
 
-
 # ChargeOrderResponse
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **Integer** |  |  [optional]
+**amount** | **kotlin.Int** |  |  [optional]
 **channel** | [**ChargeResponseChannel**](ChargeResponseChannel.md) |  |  [optional]
-**createdAt** | **Long** |  |  [optional]
-**currency** | **String** |  |  [optional]
-**customerId** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**deviceFingerprint** | **String** |  |  [optional]
-**failureCode** | **String** |  |  [optional]
-**failureMessage** | **String** |  |  [optional]
-**id** | **String** |  |  [optional]
-**livemode** | **Boolean** |  |  [optional]
-**monthlyInstallments** | **Integer** |  |  [optional]
-**_object** | **String** |  |  [optional]
-**orderId** | **String** |  |  [optional]
-**paidAt** | **Integer** |  |  [optional]
+**createdAt** | **kotlin.Long** |  |  [optional]
+**currency** | **kotlin.String** |  |  [optional]
+**customerId** | **kotlin.String** |  |  [optional]
+**description** | **kotlin.String** |  |  [optional]
+**deviceFingerprint** | **kotlin.String** |  |  [optional]
+**failureCode** | **kotlin.String** |  |  [optional]
+**failureMessage** | **kotlin.String** |  |  [optional]
+**id** | **kotlin.String** |  |  [optional]
+**livemode** | **kotlin.Boolean** |  |  [optional]
+**monthlyInstallments** | **kotlin.Int** |  |  [optional]
+**&#x60;object&#x60;** | **kotlin.String** |  |  [optional]
+**orderId** | **kotlin.String** |  |  [optional]
+**paidAt** | **kotlin.Int** |  |  [optional]
 **paymentMethod** | [**ChargeOrderResponsePaymentMethod**](ChargeOrderResponsePaymentMethod.md) |  |  [optional]
-**referenceId** | **String** | Reference ID of the charge |  [optional]
-**refunds** | **List&lt;Object&gt;** |  |  [optional]
-**status** | **String** |  |  [optional]
-
+**referenceId** | **kotlin.String** | Reference ID of the charge |  [optional]
+**refunds** | [**kotlin.collections.List&lt;kotlin.Any&gt;**](kotlin.Any.md) |  |  [optional]
+**status** | **kotlin.String** |  |  [optional]
 
 
 

@@ -1,15 +1,12 @@
 
-
 # ChargeRequest
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **Integer** | Amount to be charged in cents |  [optional]
 **paymentMethod** | [**ChargeRequestPaymentMethod**](ChargeRequestPaymentMethod.md) |  | 
-**referenceId** | **String** | Custom reference to add to the charge |  [optional]
-
+**amount** | **kotlin.Int** | Amount to be charged in cents |  [optional]
+**referenceId** | **kotlin.String** | Custom reference to add to the charge |  [optional]
 
 
 

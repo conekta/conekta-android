@@ -7,9 +7,8 @@ Method | HTTP request | Description
 [**getBalance**](BalancesApi.md#getBalance) | **GET** /balance | Get a company&#39;s balance
 
 
-
-## getBalance
-
+<a id="getBalance"></a>
+# **getBalance**
 > BalanceResponse getBalance(acceptLanguage)
 
 Get a company&#39;s balance
@@ -17,28 +16,30 @@ Get a company&#39;s balance
 Get a company&#39;s balance
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.BalancesApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-BalancesApi apiInstance = new BalancesApi();
-String acceptLanguage = es; // String | Use for knowing which language to use
+val apiInstance = BalancesApi()
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 try {
-    BalanceResponse result = apiInstance.getBalance(acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling BalancesApi#getBalance");
-    e.printStackTrace();
+    val result : BalanceResponse = apiInstance.getBalance(acceptLanguage)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling BalancesApi#getBalance")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling BalancesApi#getBalance")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
 
 ### Return type
 
@@ -46,10 +47,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 

@@ -1,30 +1,29 @@
 
-
 # CompanyPayoutDestinationResponse
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_object** | [**_objectEnum**](#_objectEnum) | The resource&#39;s type |  [optional]
-**currency** | **String** | currency of the receiving account |  [optional]
-**accountHolderName** | **String** | Name of the account holder |  [optional]
-**bank** | **String** | Name of the bank |  [optional]
-**type** | [**TypeEnum**](#TypeEnum) | Type of the payout destination |  [optional]
-**accountNumber** | **String** | Account number of the receiving account |  [optional]
+**&#x60;object&#x60;** | [**inline**](#&#x60;Object&#x60;) | The resource&#39;s type |  [optional]
+**currency** | **kotlin.String** | currency of the receiving account |  [optional]
+**accountHolderName** | **kotlin.String** | Name of the account holder |  [optional]
+**bank** | **kotlin.String** | Name of the bank |  [optional]
+**type** | [**inline**](#Type) | Type of the payout destination |  [optional]
+**accountNumber** | **kotlin.String** | Account number of the receiving account |  [optional]
 
 
-## Enum: _objectEnum
-
+<a id="`Object`"></a>
+## Enum: object
 Name | Value
 ---- | -----
+&#x60;object&#x60; | payout_destination
 
 
-## Enum: TypeEnum
-
+<a id="Type"></a>
+## Enum: type
 Name | Value
 ---- | -----
-
+type | bank_account
 
 
 

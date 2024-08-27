@@ -1,16 +1,13 @@
 
-
 # DeletedBlacklistRuleResponse
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | Blacklist rule id |  [optional]
-**field** | **String** | field used for blacklists rule deleted |  [optional]
-**value** | **String** | value used for blacklists rule deleted |  [optional]
-**description** | **String** | use an description for blacklisted rule |  [optional]
-
+**id** | **kotlin.String** | Blacklist rule id |  [optional]
+**&#x60;field&#x60;** | **kotlin.String** | field used for blacklists rule deleted |  [optional]
+**&#x60;value&#x60;** | **kotlin.String** | value used for blacklists rule deleted |  [optional]
+**description** | **kotlin.String** | use an description for blacklisted rule |  [optional]
 
 
 

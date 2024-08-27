@@ -7,9 +7,8 @@ Method | HTTP request | Description
 [**createToken**](TokensApi.md#createToken) | **POST** /tokens | Create Token
 
 
-
-## createToken
-
+<a id="createToken"></a>
+# **createToken**
 > TokenResponse createToken(token, acceptLanguage)
 
 Create Token
@@ -17,30 +16,32 @@ Create Token
 Generate a payment token, to associate it with a card 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.TokensApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-TokensApi apiInstance = new TokensApi();
-Token token = new Token(); // Token | requested field for token
-String acceptLanguage = es; // String | Use for knowing which language to use
+val apiInstance = TokensApi()
+val token : Token =  // Token | requested field for token
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 try {
-    TokenResponse result = apiInstance.createToken(token, acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TokensApi#createToken");
-    e.printStackTrace();
+    val result : TokenResponse = apiInstance.createToken(token, acceptLanguage)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling TokensApi#createToken")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling TokensApi#createToken")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | [**Token**](Token.md)| requested field for token |
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
 
 ### Return type
 
@@ -48,10 +49,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 

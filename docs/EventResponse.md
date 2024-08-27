@@ -1,20 +1,17 @@
 
-
 # EventResponse
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**createdAt** | **Long** |  |  [optional]
-**data** | [**Map&lt;String, OasAnyTypeNotMapped&gt;**](OasAnyTypeNotMapped.md) |  |  [optional]
-**id** | **String** |  |  [optional]
-**livemode** | **Boolean** |  |  [optional]
-**_object** | **String** |  |  [optional]
-**type** | **String** |  |  [optional]
-**webhookLogs** | [**List&lt;WebhookLog&gt;**](WebhookLog.md) |  |  [optional]
-**webhookStatus** | **String** |  |  [optional]
-
+**createdAt** | **kotlin.Long** |  |  [optional]
+**&#x60;data&#x60;** | [**kotlin.collections.Map&lt;kotlin.String, kotlin.Any&gt;**](kotlin.Any.md) |  |  [optional]
+**id** | **kotlin.String** |  |  [optional]
+**livemode** | **kotlin.Boolean** |  |  [optional]
+**&#x60;object&#x60;** | **kotlin.String** |  |  [optional]
+**type** | **kotlin.String** |  |  [optional]
+**webhookLogs** | [**kotlin.collections.List&lt;WebhookLog&gt;**](WebhookLog.md) |  |  [optional]
+**webhookStatus** | **kotlin.String** |  |  [optional]
 
 
 

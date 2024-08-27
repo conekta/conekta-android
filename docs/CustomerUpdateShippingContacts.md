@@ -1,19 +1,16 @@
 
-
 # CustomerUpdateShippingContacts
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**phone** | **String** | Phone contact |  [optional]
-**receiver** | **String** | Name of the person who will receive the order |  [optional]
-**betweenStreets** | **String** | The street names between which the order will be delivered. |  [optional]
+**phone** | **kotlin.String** | Phone contact |  [optional]
+**&#x60;receiver&#x60;** | **kotlin.String** | Name of the person who will receive the order |  [optional]
+**betweenStreets** | **kotlin.String** | The street names between which the order will be delivered. |  [optional]
 **address** | [**CustomerShippingContactsAddress**](CustomerShippingContactsAddress.md) |  |  [optional]
-**parentId** | **String** |  |  [optional]
-**_default** | **Boolean** |  |  [optional]
-**deleted** | **Boolean** |  |  [optional]
-
+**parentId** | **kotlin.String** |  |  [optional]
+**default** | **kotlin.Boolean** |  |  [optional]
+**deleted** | **kotlin.Boolean** |  |  [optional]
 
 
 

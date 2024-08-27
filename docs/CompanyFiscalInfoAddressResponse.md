@@ -1,27 +1,25 @@
 
-
 # CompanyFiscalInfoAddressResponse
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_object** | [**_objectEnum**](#_objectEnum) | The resource&#39;s type |  [optional]
-**street1** | **String** | Street Address |  [optional]
-**street2** | **String** | Colonia |  [optional]
-**city** | **String** | City |  [optional]
-**state** | **String** | State |  [optional]
-**country** | **String** | Country |  [optional]
-**postalCode** | **String** | Postal code |  [optional]
-**externalNumber** | **String** | Street number |  [optional]
-**internalNumber** | **String** | Unit / apartment number |  [optional]
+**&#x60;object&#x60;** | [**inline**](#&#x60;Object&#x60;) | The resource&#39;s type |  [optional]
+**street1** | **kotlin.String** | Street Address |  [optional]
+**street2** | **kotlin.String** | Colonia |  [optional]
+**city** | **kotlin.String** | City |  [optional]
+**state** | **kotlin.String** | State |  [optional]
+**country** | **kotlin.String** | Country |  [optional]
+**postalCode** | **kotlin.String** | Postal code |  [optional]
+**externalNumber** | **kotlin.String** | Street number |  [optional]
+**internalNumber** | **kotlin.String** | Unit / apartment number |  [optional]
 
 
-## Enum: _objectEnum
-
+<a id="`Object`"></a>
+## Enum: object
 Name | Value
 ---- | -----
-
+&#x60;object&#x60; | address
 
 
 

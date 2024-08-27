@@ -1,16 +1,13 @@
 
-
 # DetailsError
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **String** |  |  [optional]
-**param** | **String** |  |  [optional]
-**message** | **String** |  |  [optional]
-**debugMessage** | **String** |  |  [optional]
-
+**code** | **kotlin.String** |  |  [optional]
+**&#x60;param&#x60;** | **kotlin.String** |  |  [optional]
+**message** | **kotlin.String** |  |  [optional]
+**debugMessage** | **kotlin.String** |  |  [optional]
 
 
 

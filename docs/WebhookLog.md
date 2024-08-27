@@ -1,19 +1,16 @@
 
-
 # WebhookLog
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**failedAttempts** | **Integer** |  |  [optional]
-**id** | **String** |  |  [optional]
-**lastAttemptedAt** | **Integer** |  |  [optional]
-**lastHttpResponseStatus** | **Integer** |  |  [optional]
-**_object** | **String** |  |  [optional]
-**responseData** | [**Map&lt;String, OasAnyTypeNotMapped&gt;**](OasAnyTypeNotMapped.md) |  |  [optional]
-**url** | [**URI**](URI.md) |  |  [optional]
-
+**failedAttempts** | **kotlin.Int** |  |  [optional]
+**id** | **kotlin.String** |  |  [optional]
+**lastAttemptedAt** | **kotlin.Int** |  |  [optional]
+**lastHttpResponseStatus** | **kotlin.Int** |  |  [optional]
+**&#x60;object&#x60;** | **kotlin.String** |  |  [optional]
+**responseData** | [**kotlin.collections.Map&lt;kotlin.String, kotlin.Any&gt;**](kotlin.Any.md) |  |  [optional]
+**url** | [**java.net.URI**](java.net.URI.md) |  |  [optional]
 
 
 

@@ -12,38 +12,39 @@ Method | HTTP request | Description
 [**getRuleWhitelist**](AntifraudApi.md#getRuleWhitelist) | **GET** /antifraud/whitelists | Get a list of whitelisted rules
 
 
-
-## createRuleBlacklist
-
+<a id="createRuleBlacklist"></a>
+# **createRuleBlacklist**
 > BlacklistRuleResponse createRuleBlacklist(createRiskRulesData, acceptLanguage)
 
 Create blacklisted rule
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.AntifraudApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-AntifraudApi apiInstance = new AntifraudApi();
-CreateRiskRulesData createRiskRulesData = new CreateRiskRulesData(); // CreateRiskRulesData | requested field for blacklist rule
-String acceptLanguage = es; // String | Use for knowing which language to use
+val apiInstance = AntifraudApi()
+val createRiskRulesData : CreateRiskRulesData =  // CreateRiskRulesData | requested field for blacklist rule
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 try {
-    BlacklistRuleResponse result = apiInstance.createRuleBlacklist(createRiskRulesData, acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AntifraudApi#createRuleBlacklist");
-    e.printStackTrace();
+    val result : BlacklistRuleResponse = apiInstance.createRuleBlacklist(createRiskRulesData, acceptLanguage)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling AntifraudApi#createRuleBlacklist")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling AntifraudApi#createRuleBlacklist")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createRiskRulesData** | [**CreateRiskRulesData**](CreateRiskRulesData.md)| requested field for blacklist rule |
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
 
 ### Return type
 
@@ -51,44 +52,47 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## createRuleWhitelist
-
+<a id="createRuleWhitelist"></a>
+# **createRuleWhitelist**
 > WhitelistlistRuleResponse createRuleWhitelist(acceptLanguage, createRiskRulesData)
 
 Create whitelisted rule
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.AntifraudApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-AntifraudApi apiInstance = new AntifraudApi();
-String acceptLanguage = es; // String | Use for knowing which language to use
-CreateRiskRulesData createRiskRulesData = new CreateRiskRulesData(); // CreateRiskRulesData | 
+val apiInstance = AntifraudApi()
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val createRiskRulesData : CreateRiskRulesData =  // CreateRiskRulesData | 
 try {
-    WhitelistlistRuleResponse result = apiInstance.createRuleWhitelist(acceptLanguage, createRiskRulesData);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AntifraudApi#createRuleWhitelist");
-    e.printStackTrace();
+    val result : WhitelistlistRuleResponse = apiInstance.createRuleWhitelist(acceptLanguage, createRiskRulesData)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling AntifraudApi#createRuleWhitelist")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling AntifraudApi#createRuleWhitelist")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
  **createRiskRulesData** | [**CreateRiskRulesData**](CreateRiskRulesData.md)|  | [optional]
 
 ### Return type
@@ -97,47 +101,50 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## deleteRuleBlacklist
-
+<a id="deleteRuleBlacklist"></a>
+# **deleteRuleBlacklist**
 > DeletedBlacklistRuleResponse deleteRuleBlacklist(id, acceptLanguage, xChildCompanyId)
 
 Delete blacklisted rule
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.AntifraudApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-AntifraudApi apiInstance = new AntifraudApi();
-String id = 6307a60c41de27127515a575; // String | Identifier of the resource
-String acceptLanguage = es; // String | Use for knowing which language to use
-String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+val apiInstance = AntifraudApi()
+val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
 try {
-    DeletedBlacklistRuleResponse result = apiInstance.deleteRuleBlacklist(id, acceptLanguage, xChildCompanyId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AntifraudApi#deleteRuleBlacklist");
-    e.printStackTrace();
+    val result : DeletedBlacklistRuleResponse = apiInstance.deleteRuleBlacklist(id, acceptLanguage, xChildCompanyId)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling AntifraudApi#deleteRuleBlacklist")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling AntifraudApi#deleteRuleBlacklist")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Identifier of the resource | [default to null]
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
+ **id** | **kotlin.String**| Identifier of the resource |
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
 
 ### Return type
 
@@ -145,47 +152,50 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## deleteRuleWhitelist
-
+<a id="deleteRuleWhitelist"></a>
+# **deleteRuleWhitelist**
 > DeletedWhitelistRuleResponse deleteRuleWhitelist(id, acceptLanguage, xChildCompanyId)
 
 Delete whitelisted rule
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.AntifraudApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-AntifraudApi apiInstance = new AntifraudApi();
-String id = 6307a60c41de27127515a575; // String | Identifier of the resource
-String acceptLanguage = es; // String | Use for knowing which language to use
-String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+val apiInstance = AntifraudApi()
+val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
 try {
-    DeletedWhitelistRuleResponse result = apiInstance.deleteRuleWhitelist(id, acceptLanguage, xChildCompanyId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AntifraudApi#deleteRuleWhitelist");
-    e.printStackTrace();
+    val result : DeletedWhitelistRuleResponse = apiInstance.deleteRuleWhitelist(id, acceptLanguage, xChildCompanyId)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling AntifraudApi#deleteRuleWhitelist")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling AntifraudApi#deleteRuleWhitelist")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Identifier of the resource | [default to null]
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
+ **id** | **kotlin.String**| Identifier of the resource |
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
 
 ### Return type
 
@@ -193,16 +203,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## getRuleBlacklist
-
+<a id="getRuleBlacklist"></a>
+# **getRuleBlacklist**
 > RiskRulesList getRuleBlacklist(acceptLanguage)
 
 Get list of blacklisted rules
@@ -210,28 +221,30 @@ Get list of blacklisted rules
 Return all rules
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.AntifraudApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-AntifraudApi apiInstance = new AntifraudApi();
-String acceptLanguage = es; // String | Use for knowing which language to use
+val apiInstance = AntifraudApi()
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 try {
-    RiskRulesList result = apiInstance.getRuleBlacklist(acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AntifraudApi#getRuleBlacklist");
-    e.printStackTrace();
+    val result : RiskRulesList = apiInstance.getRuleBlacklist(acceptLanguage)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling AntifraudApi#getRuleBlacklist")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling AntifraudApi#getRuleBlacklist")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
 
 ### Return type
 
@@ -239,16 +252,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## getRuleWhitelist
-
+<a id="getRuleWhitelist"></a>
+# **getRuleWhitelist**
 > RiskRulesList getRuleWhitelist(acceptLanguage)
 
 Get a list of whitelisted rules
@@ -256,28 +270,30 @@ Get a list of whitelisted rules
 Return all rules
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.AntifraudApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-AntifraudApi apiInstance = new AntifraudApi();
-String acceptLanguage = es; // String | Use for knowing which language to use
+val apiInstance = AntifraudApi()
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 try {
-    RiskRulesList result = apiInstance.getRuleWhitelist(acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AntifraudApi#getRuleWhitelist");
-    e.printStackTrace();
+    val result : RiskRulesList = apiInstance.getRuleWhitelist(acceptLanguage)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling AntifraudApi#getRuleWhitelist")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling AntifraudApi#getRuleWhitelist")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
 
 ### Return type
 
@@ -285,10 +301,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 

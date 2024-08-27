@@ -11,9 +11,8 @@ Method | HTTP request | Description
 [**updatePlan**](PlansApi.md#updatePlan) | **PUT** /plans/{id} | Update Plan
 
 
-
-## createPlan
-
+<a id="createPlan"></a>
+# **createPlan**
 > PlanResponse createPlan(planRequest, acceptLanguage, xChildCompanyId)
 
 Create Plan
@@ -21,32 +20,34 @@ Create Plan
 Create a new plan for an existing order
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.PlansApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-PlansApi apiInstance = new PlansApi();
-PlanRequest planRequest = new PlanRequest(); // PlanRequest | requested field for plan
-String acceptLanguage = es; // String | Use for knowing which language to use
-String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+val apiInstance = PlansApi()
+val planRequest : PlanRequest =  // PlanRequest | requested field for plan
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
 try {
-    PlanResponse result = apiInstance.createPlan(planRequest, acceptLanguage, xChildCompanyId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PlansApi#createPlan");
-    e.printStackTrace();
+    val result : PlanResponse = apiInstance.createPlan(planRequest, acceptLanguage, xChildCompanyId)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling PlansApi#createPlan")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling PlansApi#createPlan")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **planRequest** | [**PlanRequest**](PlanRequest.md)| requested field for plan |
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
 
 ### Return type
 
@@ -54,45 +55,48 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## deletePlan
-
+<a id="deletePlan"></a>
+# **deletePlan**
 > PlanResponse deletePlan(id, acceptLanguage)
 
 Delete Plan
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.PlansApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-PlansApi apiInstance = new PlansApi();
-String id = 6307a60c41de27127515a575; // String | Identifier of the resource
-String acceptLanguage = es; // String | Use for knowing which language to use
+val apiInstance = PlansApi()
+val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 try {
-    PlanResponse result = apiInstance.deletePlan(id, acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PlansApi#deletePlan");
-    e.printStackTrace();
+    val result : PlanResponse = apiInstance.deletePlan(id, acceptLanguage)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling PlansApi#deletePlan")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling PlansApi#deletePlan")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Identifier of the resource | [default to null]
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **id** | **kotlin.String**| Identifier of the resource |
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
 
 ### Return type
 
@@ -100,47 +104,50 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## getPlan
-
+<a id="getPlan"></a>
+# **getPlan**
 > PlanResponse getPlan(id, acceptLanguage, xChildCompanyId)
 
 Get Plan
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.PlansApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-PlansApi apiInstance = new PlansApi();
-String id = 6307a60c41de27127515a575; // String | Identifier of the resource
-String acceptLanguage = es; // String | Use for knowing which language to use
-String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+val apiInstance = PlansApi()
+val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
 try {
-    PlanResponse result = apiInstance.getPlan(id, acceptLanguage, xChildCompanyId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PlansApi#getPlan");
-    e.printStackTrace();
+    val result : PlanResponse = apiInstance.getPlan(id, acceptLanguage, xChildCompanyId)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling PlansApi#getPlan")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling PlansApi#getPlan")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Identifier of the resource | [default to null]
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
+ **id** | **kotlin.String**| Identifier of the resource |
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
 
 ### Return type
 
@@ -148,53 +155,56 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## getPlans
-
+<a id="getPlans"></a>
+# **getPlans**
 > GetPlansResponse getPlans(acceptLanguage, xChildCompanyId, limit, search, next, previous)
 
 Get A List of Plans
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.PlansApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-PlansApi apiInstance = new PlansApi();
-String acceptLanguage = es; // String | Use for knowing which language to use
-String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
-Integer limit = 20; // Integer | The numbers of items to return, the maximum value is 250
-String search = null; // String | General order search, e.g. by mail, reference etc.
-String next = null; // String | next page
-String previous = null; // String | previous page
+val apiInstance = PlansApi()
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
+val limit : kotlin.Int = 56 // kotlin.Int | The numbers of items to return, the maximum value is 250
+val search : kotlin.String = search_example // kotlin.String | General order search, e.g. by mail, reference etc.
+val next : kotlin.String = next_example // kotlin.String | next page
+val previous : kotlin.String = previous_example // kotlin.String | previous page
 try {
-    GetPlansResponse result = apiInstance.getPlans(acceptLanguage, xChildCompanyId, limit, search, next, previous);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PlansApi#getPlans");
-    e.printStackTrace();
+    val result : GetPlansResponse = apiInstance.getPlans(acceptLanguage, xChildCompanyId, limit, search, next, previous)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling PlansApi#getPlans")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling PlansApi#getPlans")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
- **limit** | **Integer**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20]
- **search** | **String**| General order search, e.g. by mail, reference etc. | [optional] [default to null]
- **next** | **String**| next page | [optional] [default to null]
- **previous** | **String**| previous page | [optional] [default to null]
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **limit** | **kotlin.Int**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20]
+ **search** | **kotlin.String**| General order search, e.g. by mail, reference etc. | [optional]
+ **next** | **kotlin.String**| next page | [optional]
+ **previous** | **kotlin.String**| previous page | [optional]
 
 ### Return type
 
@@ -202,49 +212,52 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## updatePlan
-
+<a id="updatePlan"></a>
+# **updatePlan**
 > PlanResponse updatePlan(id, planUpdateRequest, acceptLanguage, xChildCompanyId)
 
 Update Plan
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.PlansApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-PlansApi apiInstance = new PlansApi();
-String id = 6307a60c41de27127515a575; // String | Identifier of the resource
-PlanUpdateRequest planUpdateRequest = new PlanUpdateRequest(); // PlanUpdateRequest | requested field for plan
-String acceptLanguage = es; // String | Use for knowing which language to use
-String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+val apiInstance = PlansApi()
+val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
+val planUpdateRequest : PlanUpdateRequest =  // PlanUpdateRequest | requested field for plan
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
 try {
-    PlanResponse result = apiInstance.updatePlan(id, planUpdateRequest, acceptLanguage, xChildCompanyId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PlansApi#updatePlan");
-    e.printStackTrace();
+    val result : PlanResponse = apiInstance.updatePlan(id, planUpdateRequest, acceptLanguage, xChildCompanyId)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling PlansApi#updatePlan")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling PlansApi#updatePlan")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Identifier of the resource | [default to null]
+ **id** | **kotlin.String**| Identifier of the resource |
  **planUpdateRequest** | [**PlanUpdateRequest**](PlanUpdateRequest.md)| requested field for plan |
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
 
 ### Return type
 
@@ -252,10 +265,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 

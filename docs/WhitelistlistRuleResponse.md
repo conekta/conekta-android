@@ -1,16 +1,13 @@
 
-
 # WhitelistlistRuleResponse
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | Whitelist rule id |  [optional]
-**field** | **String** | field used for whitelists rule |  [optional]
-**value** | **String** | value used for whitelists rule |  [optional]
-**description** | **String** | use an description for whitelisted rule |  [optional]
-
+**id** | **kotlin.String** | Whitelist rule id |  [optional]
+**&#x60;field&#x60;** | **kotlin.String** | field used for whitelists rule |  [optional]
+**&#x60;value&#x60;** | **kotlin.String** | value used for whitelists rule |  [optional]
+**description** | **kotlin.String** | use an description for whitelisted rule |  [optional]
 
 
 

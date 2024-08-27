@@ -1,30 +1,27 @@
 
-
 # ChargeResponse
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **Integer** |  |  [optional]
+**amount** | **kotlin.Int** |  |  [optional]
 **channel** | [**ChargeResponseChannel**](ChargeResponseChannel.md) |  |  [optional]
-**createdAt** | **Long** |  |  [optional]
-**currency** | **String** |  |  [optional]
-**customerId** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**deviceFingerprint** | **String** |  |  [optional]
-**failureCode** | **String** |  |  [optional]
-**failureMessage** | **String** |  |  [optional]
-**id** | **String** | Charge ID |  [optional]
-**livemode** | **Boolean** | Whether the charge was made in live mode or not |  [optional]
-**_object** | **String** |  |  [optional]
-**orderId** | **String** | Order ID |  [optional]
-**paidAt** | **Long** | Payment date |  [optional]
+**createdAt** | **kotlin.Long** |  |  [optional]
+**currency** | **kotlin.String** |  |  [optional]
+**customerId** | **kotlin.String** |  |  [optional]
+**description** | **kotlin.String** |  |  [optional]
+**deviceFingerprint** | **kotlin.String** |  |  [optional]
+**failureCode** | **kotlin.String** |  |  [optional]
+**failureMessage** | **kotlin.String** |  |  [optional]
+**id** | **kotlin.String** | Charge ID |  [optional]
+**livemode** | **kotlin.Boolean** | Whether the charge was made in live mode or not |  [optional]
+**&#x60;object&#x60;** | **kotlin.String** |  |  [optional]
+**orderId** | **kotlin.String** | Order ID |  [optional]
+**paidAt** | **kotlin.Long** | Payment date |  [optional]
 **paymentMethod** | [**ChargeResponsePaymentMethod**](ChargeResponsePaymentMethod.md) |  |  [optional]
-**referenceId** | **String** | Reference ID of the charge |  [optional]
+**referenceId** | **kotlin.String** | Reference ID of the charge |  [optional]
 **refunds** | [**ChargeResponseRefunds**](ChargeResponseRefunds.md) |  |  [optional]
-**status** | **String** |  |  [optional]
-
+**status** | **kotlin.String** |  |  [optional]
 
 
 

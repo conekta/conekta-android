@@ -1,14 +1,11 @@
 
-
 # CustomerAntifraudInfoResponse
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**firstPaidAt** | **Integer** |  |  [optional]
-**accountCreatedAt** | **Long** |  |  [optional]
-
+**firstPaidAt** | **kotlin.Int** |  |  [optional]
+**accountCreatedAt** | **kotlin.Long** |  |  [optional]
 
 
 

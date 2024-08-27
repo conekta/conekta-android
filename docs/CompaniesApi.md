@@ -8,9 +8,8 @@ Method | HTTP request | Description
 [**getCompany**](CompaniesApi.md#getCompany) | **GET** /companies/{id} | Get Company
 
 
-
-## getCompanies
-
+<a id="getCompanies"></a>
+# **getCompanies**
 > GetCompaniesResponse getCompanies(acceptLanguage, limit, search, next, previous)
 
 Get List of Companies
@@ -18,36 +17,38 @@ Get List of Companies
 Consume the list of child companies.  This is used for holding companies with several child entities.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.CompaniesApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-CompaniesApi apiInstance = new CompaniesApi();
-String acceptLanguage = es; // String | Use for knowing which language to use
-Integer limit = 20; // Integer | The numbers of items to return, the maximum value is 250
-String search = null; // String | General order search, e.g. by mail, reference etc.
-String next = null; // String | next page
-String previous = null; // String | previous page
+val apiInstance = CompaniesApi()
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val limit : kotlin.Int = 56 // kotlin.Int | The numbers of items to return, the maximum value is 250
+val search : kotlin.String = search_example // kotlin.String | General order search, e.g. by mail, reference etc.
+val next : kotlin.String = next_example // kotlin.String | next page
+val previous : kotlin.String = previous_example // kotlin.String | previous page
 try {
-    GetCompaniesResponse result = apiInstance.getCompanies(acceptLanguage, limit, search, next, previous);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CompaniesApi#getCompanies");
-    e.printStackTrace();
+    val result : GetCompaniesResponse = apiInstance.getCompanies(acceptLanguage, limit, search, next, previous)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling CompaniesApi#getCompanies")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling CompaniesApi#getCompanies")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **limit** | **Integer**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20]
- **search** | **String**| General order search, e.g. by mail, reference etc. | [optional] [default to null]
- **next** | **String**| next page | [optional] [default to null]
- **previous** | **String**| previous page | [optional] [default to null]
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **limit** | **kotlin.Int**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20]
+ **search** | **kotlin.String**| General order search, e.g. by mail, reference etc. | [optional]
+ **next** | **kotlin.String**| next page | [optional]
+ **previous** | **kotlin.String**| previous page | [optional]
 
 ### Return type
 
@@ -55,45 +56,48 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## getCompany
-
+<a id="getCompany"></a>
+# **getCompany**
 > CompanyResponse getCompany(id, acceptLanguage)
 
 Get Company
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.CompaniesApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-CompaniesApi apiInstance = new CompaniesApi();
-String id = 6307a60c41de27127515a575; // String | Identifier of the resource
-String acceptLanguage = es; // String | Use for knowing which language to use
+val apiInstance = CompaniesApi()
+val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 try {
-    CompanyResponse result = apiInstance.getCompany(id, acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CompaniesApi#getCompany");
-    e.printStackTrace();
+    val result : CompanyResponse = apiInstance.getCompany(id, acceptLanguage)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling CompaniesApi#getCompany")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling CompaniesApi#getCompany")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Identifier of the resource | [default to null]
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **id** | **kotlin.String**| Identifier of the resource |
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
 
 ### Return type
 
@@ -101,10 +105,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 

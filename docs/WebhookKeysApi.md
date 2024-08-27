@@ -11,9 +11,8 @@ Method | HTTP request | Description
 [**updateWebhookKey**](WebhookKeysApi.md#updateWebhookKey) | **PUT** /webhook_keys/{id} | Update Webhook Key
 
 
-
-## createWebhookKey
-
+<a id="createWebhookKey"></a>
+# **createWebhookKey**
 > WebhookKeyCreateResponse createWebhookKey(acceptLanguage, webhookKeyRequest)
 
 Create Webhook Key
@@ -21,29 +20,31 @@ Create Webhook Key
 Create a webhook key
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.WebhookKeysApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-WebhookKeysApi apiInstance = new WebhookKeysApi();
-String acceptLanguage = es; // String | Use for knowing which language to use
-WebhookKeyRequest webhookKeyRequest = new WebhookKeyRequest(); // WebhookKeyRequest | 
+val apiInstance = WebhookKeysApi()
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val webhookKeyRequest : WebhookKeyRequest =  // WebhookKeyRequest | 
 try {
-    WebhookKeyCreateResponse result = apiInstance.createWebhookKey(acceptLanguage, webhookKeyRequest);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling WebhookKeysApi#createWebhookKey");
-    e.printStackTrace();
+    val result : WebhookKeyCreateResponse = apiInstance.createWebhookKey(acceptLanguage, webhookKeyRequest)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling WebhookKeysApi#createWebhookKey")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling WebhookKeysApi#createWebhookKey")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
  **webhookKeyRequest** | [**WebhookKeyRequest**](WebhookKeyRequest.md)|  | [optional]
 
 ### Return type
@@ -52,45 +53,48 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## deleteWebhookKey
-
+<a id="deleteWebhookKey"></a>
+# **deleteWebhookKey**
 > WebhookKeyDeleteResponse deleteWebhookKey(id, acceptLanguage)
 
 Delete Webhook key
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.WebhookKeysApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-WebhookKeysApi apiInstance = new WebhookKeysApi();
-String id = 6307a60c41de27127515a575; // String | Identifier of the resource
-String acceptLanguage = es; // String | Use for knowing which language to use
+val apiInstance = WebhookKeysApi()
+val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 try {
-    WebhookKeyDeleteResponse result = apiInstance.deleteWebhookKey(id, acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling WebhookKeysApi#deleteWebhookKey");
-    e.printStackTrace();
+    val result : WebhookKeyDeleteResponse = apiInstance.deleteWebhookKey(id, acceptLanguage)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling WebhookKeysApi#deleteWebhookKey")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling WebhookKeysApi#deleteWebhookKey")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Identifier of the resource | [default to null]
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **id** | **kotlin.String**| Identifier of the resource |
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
 
 ### Return type
 
@@ -98,47 +102,50 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## getWebhookKey
-
+<a id="getWebhookKey"></a>
+# **getWebhookKey**
 > WebhookKeyResponse getWebhookKey(id, acceptLanguage, xChildCompanyId)
 
 Get Webhook Key
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.WebhookKeysApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-WebhookKeysApi apiInstance = new WebhookKeysApi();
-String id = 6307a60c41de27127515a575; // String | Identifier of the resource
-String acceptLanguage = es; // String | Use for knowing which language to use
-String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+val apiInstance = WebhookKeysApi()
+val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
 try {
-    WebhookKeyResponse result = apiInstance.getWebhookKey(id, acceptLanguage, xChildCompanyId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling WebhookKeysApi#getWebhookKey");
-    e.printStackTrace();
+    val result : WebhookKeyResponse = apiInstance.getWebhookKey(id, acceptLanguage, xChildCompanyId)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling WebhookKeysApi#getWebhookKey")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling WebhookKeysApi#getWebhookKey")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Identifier of the resource | [default to null]
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
+ **id** | **kotlin.String**| Identifier of the resource |
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
 
 ### Return type
 
@@ -146,16 +153,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## getWebhookKeys
-
+<a id="getWebhookKeys"></a>
+# **getWebhookKeys**
 > GetWebhookKeysResponse getWebhookKeys(acceptLanguage, xChildCompanyId, limit, search, next, previous)
 
 Get List of Webhook Keys
@@ -163,38 +171,40 @@ Get List of Webhook Keys
 Consume the list of webhook keys you have
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.WebhookKeysApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-WebhookKeysApi apiInstance = new WebhookKeysApi();
-String acceptLanguage = es; // String | Use for knowing which language to use
-String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
-Integer limit = 20; // Integer | The numbers of items to return, the maximum value is 250
-String search = null; // String | General order search, e.g. by mail, reference etc.
-String next = null; // String | next page
-String previous = null; // String | previous page
+val apiInstance = WebhookKeysApi()
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
+val limit : kotlin.Int = 56 // kotlin.Int | The numbers of items to return, the maximum value is 250
+val search : kotlin.String = search_example // kotlin.String | General order search, e.g. by mail, reference etc.
+val next : kotlin.String = next_example // kotlin.String | next page
+val previous : kotlin.String = previous_example // kotlin.String | previous page
 try {
-    GetWebhookKeysResponse result = apiInstance.getWebhookKeys(acceptLanguage, xChildCompanyId, limit, search, next, previous);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling WebhookKeysApi#getWebhookKeys");
-    e.printStackTrace();
+    val result : GetWebhookKeysResponse = apiInstance.getWebhookKeys(acceptLanguage, xChildCompanyId, limit, search, next, previous)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling WebhookKeysApi#getWebhookKeys")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling WebhookKeysApi#getWebhookKeys")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
- **limit** | **Integer**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20]
- **search** | **String**| General order search, e.g. by mail, reference etc. | [optional] [default to null]
- **next** | **String**| next page | [optional] [default to null]
- **previous** | **String**| previous page | [optional] [default to null]
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **limit** | **kotlin.Int**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20]
+ **search** | **kotlin.String**| General order search, e.g. by mail, reference etc. | [optional]
+ **next** | **kotlin.String**| next page | [optional]
+ **previous** | **kotlin.String**| previous page | [optional]
 
 ### Return type
 
@@ -202,16 +212,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 
-
-## updateWebhookKey
-
+<a id="updateWebhookKey"></a>
+# **updateWebhookKey**
 > WebhookKeyResponse updateWebhookKey(id, acceptLanguage, webhookKeyUpdateRequest)
 
 Update Webhook Key
@@ -219,31 +230,33 @@ Update Webhook Key
 updates an existing webhook key
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-//import io.conekta.WebhookKeysApi;
+//import org.openapitools.client.infrastructure.*
+//import io.conekta.model.*
 
-WebhookKeysApi apiInstance = new WebhookKeysApi();
-String id = 6307a60c41de27127515a575; // String | Identifier of the resource
-String acceptLanguage = es; // String | Use for knowing which language to use
-WebhookKeyUpdateRequest webhookKeyUpdateRequest = new WebhookKeyUpdateRequest(); // WebhookKeyUpdateRequest | 
+val apiInstance = WebhookKeysApi()
+val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
+val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
+val webhookKeyUpdateRequest : WebhookKeyUpdateRequest =  // WebhookKeyUpdateRequest | 
 try {
-    WebhookKeyResponse result = apiInstance.updateWebhookKey(id, acceptLanguage, webhookKeyUpdateRequest);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling WebhookKeysApi#updateWebhookKey");
-    e.printStackTrace();
+    val result : WebhookKeyResponse = apiInstance.updateWebhookKey(id, acceptLanguage, webhookKeyUpdateRequest)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling WebhookKeysApi#updateWebhookKey")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling WebhookKeysApi#updateWebhookKey")
+    e.printStackTrace()
 }
 ```
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Identifier of the resource | [default to null]
- **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **id** | **kotlin.String**| Identifier of the resource |
+ **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
  **webhookKeyUpdateRequest** | [**WebhookKeyUpdateRequest**](WebhookKeyUpdateRequest.md)|  | [optional]
 
 ### Return type
@@ -252,10 +265,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/vnd.conekta-v2.1.0+json
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.conekta-v2.1.0+json
 

@@ -1,13 +1,10 @@
 
-
 # UpdatePaymentMethods
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  |  [optional]
-
+**name** | **kotlin.String** |  |  [optional]
 
 
 

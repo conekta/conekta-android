@@ -1,13 +1,10 @@
 
-
 # SmsCheckoutRequest
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**phonenumber** | **String** |  | 
-
+**phonenumber** | **kotlin.String** |  | 
 
 
 

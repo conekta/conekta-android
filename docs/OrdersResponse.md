@@ -1,13 +1,10 @@
 
-
 # OrdersResponse
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**List&lt;OrderResponse&gt;**](OrderResponse.md) |  | 
-
+**&#x60;data&#x60;** | [**kotlin.collections.List&lt;OrderResponse&gt;**](OrderResponse.md) |  | 
 
 
 

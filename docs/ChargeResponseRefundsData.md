@@ -1,19 +1,16 @@
 
-
 # ChargeResponseRefundsData
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **Long** |  | 
-**authCode** | **String** |  |  [optional]
-**createdAt** | **Long** |  | 
-**expiresAt** | **Long** | refund expiration date |  [optional]
-**id** | **String** |  | 
-**_object** | **String** |  | 
-**status** | **String** | refund status |  [optional]
-
+**amount** | **kotlin.Long** |  | 
+**createdAt** | **kotlin.Long** |  | 
+**id** | **kotlin.String** |  | 
+**&#x60;object&#x60;** | **kotlin.String** |  | 
+**authCode** | **kotlin.String** |  |  [optional]
+**expiresAt** | **kotlin.Long** | refund expiration date |  [optional]
+**status** | **kotlin.String** | refund status |  [optional]
 
 
 

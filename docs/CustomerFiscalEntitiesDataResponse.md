@@ -1,23 +1,20 @@
 
-
 # CustomerFiscalEntitiesDataResponse
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | [**CustomerAddress**](CustomerAddress.md) |  | 
-**taxId** | **String** |  |  [optional]
-**email** | **String** |  |  [optional]
-**phone** | **String** |  |  [optional]
-**metadata** | **Map&lt;String, Object&gt;** |  |  [optional]
-**companyName** | **String** |  |  [optional]
-**id** | **String** |  | 
-**_object** | **String** |  | 
-**createdAt** | **Long** |  | 
-**parentId** | **String** |  |  [optional]
-**_default** | **Boolean** |  |  [optional]
-
+**id** | **kotlin.String** |  | 
+**&#x60;object&#x60;** | **kotlin.String** |  | 
+**createdAt** | **kotlin.Long** |  | 
+**taxId** | **kotlin.String** |  |  [optional]
+**email** | **kotlin.String** |  |  [optional]
+**phone** | **kotlin.String** |  |  [optional]
+**metadata** | [**kotlin.collections.Map&lt;kotlin.String, kotlin.Any&gt;**](kotlin.Any.md) |  |  [optional]
+**companyName** | **kotlin.String** |  |  [optional]
+**parentId** | **kotlin.String** |  |  [optional]
+**default** | **kotlin.Boolean** |  |  [optional]
 
 
 

@@ -1,39 +1,36 @@
 
-
 # OrderResponseCheckout
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**allowedPaymentMethods** | **List&lt;String&gt;** |  |  [optional]
-**canNotExpire** | **Boolean** |  |  [optional]
-**emailsSent** | **Integer** |  |  [optional]
-**excludeCardNetworks** | **List&lt;Object&gt;** |  |  [optional]
-**expiresAt** | **Long** |  |  [optional]
-**failureUrl** | **String** |  |  [optional]
-**force3dsFlow** | **Boolean** |  |  [optional]
-**id** | **String** |  |  [optional]
-**isRedirectOnFailure** | **Boolean** |  |  [optional]
-**livemode** | **Boolean** |  |  [optional]
-**metadata** | [**Map&lt;String, OasAnyTypeNotMapped&gt;**](OasAnyTypeNotMapped.md) |  |  [optional]
-**monthlyInstallmentsEnabled** | **Boolean** |  |  [optional]
-**monthlyInstallmentsOptions** | **List&lt;Integer&gt;** |  |  [optional]
-**name** | **String** |  |  [optional]
-**needsShippingContact** | **Boolean** |  |  [optional]
-**_object** | **String** |  |  [optional]
-**onDemandEnabled** | **Boolean** |  |  [optional]
-**paidPaymentsCount** | **Integer** |  |  [optional]
-**recurrent** | **Boolean** |  |  [optional]
-**redirectionTime** | **Integer** | number of seconds to wait before redirecting to the success_url |  [optional]
-**slug** | **String** |  |  [optional]
-**smsSent** | **Integer** |  |  [optional]
-**successUrl** | **String** |  |  [optional]
-**startsAt** | **Integer** |  |  [optional]
-**status** | **String** |  |  [optional]
-**type** | **String** |  |  [optional]
-**url** | **String** |  |  [optional]
-
+**allowedPaymentMethods** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  [optional]
+**canNotExpire** | **kotlin.Boolean** |  |  [optional]
+**emailsSent** | **kotlin.Int** |  |  [optional]
+**excludeCardNetworks** | [**kotlin.collections.List&lt;kotlin.Any&gt;**](kotlin.Any.md) |  |  [optional]
+**expiresAt** | **kotlin.Long** |  |  [optional]
+**failureUrl** | **kotlin.String** |  |  [optional]
+**force3dsFlow** | **kotlin.Boolean** |  |  [optional]
+**id** | **kotlin.String** |  |  [optional]
+**isRedirectOnFailure** | **kotlin.Boolean** |  |  [optional]
+**livemode** | **kotlin.Boolean** |  |  [optional]
+**metadata** | [**kotlin.collections.Map&lt;kotlin.String, kotlin.Any&gt;**](kotlin.Any.md) |  |  [optional]
+**monthlyInstallmentsEnabled** | **kotlin.Boolean** |  |  [optional]
+**monthlyInstallmentsOptions** | **kotlin.collections.List&lt;kotlin.Int&gt;** |  |  [optional]
+**name** | **kotlin.String** |  |  [optional]
+**needsShippingContact** | **kotlin.Boolean** |  |  [optional]
+**&#x60;object&#x60;** | **kotlin.String** |  |  [optional]
+**onDemandEnabled** | **kotlin.Boolean** |  |  [optional]
+**paidPaymentsCount** | **kotlin.Int** |  |  [optional]
+**recurrent** | **kotlin.Boolean** |  |  [optional]
+**redirectionTime** | **kotlin.Int** | number of seconds to wait before redirecting to the success_url |  [optional]
+**slug** | **kotlin.String** |  |  [optional]
+**smsSent** | **kotlin.Int** |  |  [optional]
+**successUrl** | **kotlin.String** |  |  [optional]
+**startsAt** | **kotlin.Int** |  |  [optional]
+**status** | **kotlin.String** |  |  [optional]
+**type** | **kotlin.String** |  |  [optional]
+**url** | **kotlin.String** |  |  [optional]
 
 
 
