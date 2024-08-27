@@ -20,7 +20,6 @@
   "scmDeveloperConnection": "scm:git:git@github.com:conekta/conekta-android..git",
   "scmUrl": "https://github.com/conekta/conekta-android./tree/main",
   "library": "jvm-okhttp4",
-  "javaMinVersion": 11,
   "swagger1AnnotationLibrary": false,
   "javaxPackage": "javax",
   "disallowAdditionalPropertiesIfNotPresent": true,

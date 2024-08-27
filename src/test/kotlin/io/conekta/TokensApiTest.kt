@@ -21,20 +21,27 @@ import io.kotlintest.specs.ShouldSpec
 import io.conekta.TokensApi
 import io.conekta.model.Error
 import io.conekta.model.Token
+import io.conekta.model.TokenCard
 import io.conekta.model.TokenResponse
+import io.kotlintest.matchers.types.shouldNotBeNull
+import io.kotlintest.shouldNot
+import org.openapitools.client.infrastructure.ApiClient
 
 class TokensApiTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of TokensApi
-        //val apiInstance = TokensApi()
+        ApiClient.accessToken = "key_xxxxx"
+        val apiInstance = TokensApi(basePath = BaseTest.host)
 
-        // to test createToken
         should("test createToken") {
-            // uncomment below to test createToken
-            //val token : Token =  // Token | requested field for token
-            //val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-            //val result : TokenResponse = apiInstance.createToken(token, acceptLanguage)
-            //result shouldBe ("TODO")
+            val token : Token =  Token(
+                card = TokenCard(
+                   "123", "11" , "29", "fran carrero", "5475040095304607"
+                )
+            )
+            val result : TokenResponse = apiInstance.createToken(token)
+
+            result.shouldNotBeNull()
+            result.id shouldBe ("tok_2toPJUcZ27AH5LsZk")
         }
 
     }

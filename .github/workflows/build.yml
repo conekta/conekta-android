@@ -1,0 +1,32 @@
+name: Build
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Set up JDK
+              uses: actions/setup-java@v2
+              with:
+                java-version: '1.8'
+                distribution: 'temurin'
+            - name: Build and test
+              run: |
+                ./gradlew clean build
+
+            - name: Archive artifacts
+              uses: actions/upload-artifact@v2
+              with:
+                name: app
+                path: app/build/outputs/apk/debug/app-debug.apk
