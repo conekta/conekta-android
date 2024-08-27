@@ -21,6 +21,12 @@ jobs:
               with:
                 java-version: '1.8'
                 distribution: 'temurin'
+            - name: Run Mockoon CLI
+              uses: mockoon/cli-action@v2
+              with:
+                version: 'latest'
+                data-file: 'https://raw.githubusercontent.com/conekta/openapi/main/mocks/conekta_api.json'
+                port: 3000
             - name: Build and test
               run: |
                 ./gradlew clean build
