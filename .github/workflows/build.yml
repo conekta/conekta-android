@@ -24,10 +24,12 @@ jobs:
         version: 'latest'
         data-file: 'https://raw.githubusercontent.com/conekta/openapi/main/mocks/conekta_api.json'
         port: 3000
-    - name: Build and test
+    - name: Build
       run: |
-        ./gradlew clean build test
-
+        ./gradlew clean build 
+    - name: test
+      run: |
+        ./gradlew  test
     - name: Archive artifacts
       uses: actions/upload-artifact@v2
       with:
