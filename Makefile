@@ -9,4 +9,4 @@ android:
 	 -g kotlin \
 	 -o /local \
 	 -c /local/config.json  \
-	 --global-property apiDocs=true  --global-property apiTests=true 
+	 --global-property apiDocs=true,apiTests=true,modelTests=false
