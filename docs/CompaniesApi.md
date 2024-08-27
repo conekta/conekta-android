@@ -8,9 +8,6 @@ Method | HTTP request | Description
 [**getCompany**](CompaniesApi.md#getCompany) | **GET** /companies/{id} | Get Company
 
 
-<a id="getCompanies"></a>
-# **getCompanies**
-> GetCompaniesResponse getCompanies(acceptLanguage, limit, search, next, previous)
 
 Get List of Companies
 
@@ -19,25 +16,20 @@ Consume the list of child companies.  This is used for holding companies with se
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = CompaniesApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(CompaniesApi::class.java)
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val limit : kotlin.Int = 56 // kotlin.Int | The numbers of items to return, the maximum value is 250
 val search : kotlin.String = search_example // kotlin.String | General order search, e.g. by mail, reference etc.
 val next : kotlin.String = next_example // kotlin.String | next page
 val previous : kotlin.String = previous_example // kotlin.String | previous page
-try {
-    val result : GetCompaniesResponse = apiInstance.getCompanies(acceptLanguage, limit, search, next, previous)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling CompaniesApi#getCompanies")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling CompaniesApi#getCompanies")
-    e.printStackTrace()
-}
+
+val result : GetCompaniesResponse = webService.getCompanies(acceptLanguage, limit, search, next, previous)
 ```
 
 ### Parameters
@@ -58,38 +50,30 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="getCompany"></a>
-# **getCompany**
-> CompanyResponse getCompany(id, acceptLanguage)
 
 Get Company
 
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = CompaniesApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(CompaniesApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-try {
-    val result : CompanyResponse = apiInstance.getCompany(id, acceptLanguage)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling CompaniesApi#getCompany")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling CompaniesApi#getCompany")
-    e.printStackTrace()
-}
+
+val result : CompanyResponse = webService.getCompany(id, acceptLanguage)
 ```
 
 ### Parameters
@@ -107,7 +91,7 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 

@@ -9,9 +9,6 @@ Method | HTTP request | Description
 [**getPayoutOrders**](PayoutOrdersApi.md#getPayoutOrders) | **GET** /payout_orders | Get a list of Payout Orders
 
 
-<a id="createPayoutOrder"></a>
-# **createPayoutOrder**
-> PayoutOrderResponse createPayoutOrder(payoutOrder, acceptLanguage)
 
 Create payout order
 
@@ -20,22 +17,17 @@ Create a new payout order.
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = PayoutOrdersApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(PayoutOrdersApi::class.java)
 val payoutOrder : PayoutOrder =  // PayoutOrder | requested field for payout order
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-try {
-    val result : PayoutOrderResponse = apiInstance.createPayoutOrder(payoutOrder, acceptLanguage)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling PayoutOrdersApi#createPayoutOrder")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling PayoutOrdersApi#createPayoutOrder")
-    e.printStackTrace()
-}
+
+val result : PayoutOrderResponse = webService.createPayoutOrder(payoutOrder, acceptLanguage)
 ```
 
 ### Parameters
@@ -53,16 +45,13 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="getPayoutOrderById"></a>
-# **getPayoutOrderById**
-> PayoutOrderResponse getPayoutOrderById(id, acceptLanguage)
 
 Get Payout Order
 
@@ -71,22 +60,17 @@ Gets a payout Order resource that corresponds to a payout order ID.
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = PayoutOrdersApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(PayoutOrdersApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-try {
-    val result : PayoutOrderResponse = apiInstance.getPayoutOrderById(id, acceptLanguage)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling PayoutOrdersApi#getPayoutOrderById")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling PayoutOrdersApi#getPayoutOrderById")
-    e.printStackTrace()
-}
+
+val result : PayoutOrderResponse = webService.getPayoutOrderById(id, acceptLanguage)
 ```
 
 ### Parameters
@@ -104,16 +88,13 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="getPayoutOrders"></a>
-# **getPayoutOrders**
-> PayoutOrdersResponse getPayoutOrders(acceptLanguage, limit, search, next, previous)
 
 Get a list of Payout Orders
 
@@ -122,25 +103,20 @@ Get Payout order details in the form of a list
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = PayoutOrdersApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(PayoutOrdersApi::class.java)
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val limit : kotlin.Int = 56 // kotlin.Int | The numbers of items to return, the maximum value is 250
 val search : kotlin.String = search_example // kotlin.String | General order search, e.g. by mail, reference etc.
 val next : kotlin.String = next_example // kotlin.String | next page
 val previous : kotlin.String = previous_example // kotlin.String | previous page
-try {
-    val result : PayoutOrdersResponse = apiInstance.getPayoutOrders(acceptLanguage, limit, search, next, previous)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling PayoutOrdersApi#getPayoutOrders")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling PayoutOrdersApi#getPayoutOrders")
-    e.printStackTrace()
-}
+
+val result : PayoutOrdersResponse = webService.getPayoutOrders(acceptLanguage, limit, search, next, previous)
 ```
 
 ### Parameters
@@ -161,7 +137,7 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 

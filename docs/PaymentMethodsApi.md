@@ -10,9 +10,6 @@ Method | HTTP request | Description
 [**updateCustomerPaymentMethods**](PaymentMethodsApi.md#updateCustomerPaymentMethods) | **PUT** /customers/{id}/payment_sources/{payment_method_id} | Update Payment Method
 
 
-<a id="createCustomerPaymentMethods"></a>
-# **createCustomerPaymentMethods**
-> CreateCustomerPaymentMethodsResponse createCustomerPaymentMethods(id, createCustomerPaymentMethodsRequest, acceptLanguage, xChildCompanyId)
 
 Create Payment Method
 
@@ -21,24 +18,19 @@ Create a payment method for a customer.
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = PaymentMethodsApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(PaymentMethodsApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val createCustomerPaymentMethodsRequest : CreateCustomerPaymentMethodsRequest = {"type":"card","token_id":"tok_test_visa_4242"} // CreateCustomerPaymentMethodsRequest | requested field for customer payment methods
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-try {
-    val result : CreateCustomerPaymentMethodsResponse = apiInstance.createCustomerPaymentMethods(id, createCustomerPaymentMethodsRequest, acceptLanguage, xChildCompanyId)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling PaymentMethodsApi#createCustomerPaymentMethods")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling PaymentMethodsApi#createCustomerPaymentMethods")
-    e.printStackTrace()
-}
+
+val result : CreateCustomerPaymentMethodsResponse = webService.createCustomerPaymentMethods(id, createCustomerPaymentMethodsRequest, acceptLanguage, xChildCompanyId)
 ```
 
 ### Parameters
@@ -58,16 +50,13 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="deleteCustomerPaymentMethods"></a>
-# **deleteCustomerPaymentMethods**
-> UpdateCustomerPaymentMethodsResponse deleteCustomerPaymentMethods(id, paymentMethodId, acceptLanguage, xChildCompanyId)
 
 Delete Payment Method
 
@@ -76,24 +65,19 @@ Delete an existing payment method
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = PaymentMethodsApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(PaymentMethodsApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val paymentMethodId : kotlin.String = src_2tQ974hSHcsdeSZHG // kotlin.String | Identifier of the payment method
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-try {
-    val result : UpdateCustomerPaymentMethodsResponse = apiInstance.deleteCustomerPaymentMethods(id, paymentMethodId, acceptLanguage, xChildCompanyId)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling PaymentMethodsApi#deleteCustomerPaymentMethods")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling PaymentMethodsApi#deleteCustomerPaymentMethods")
-    e.printStackTrace()
-}
+
+val result : UpdateCustomerPaymentMethodsResponse = webService.deleteCustomerPaymentMethods(id, paymentMethodId, acceptLanguage, xChildCompanyId)
 ```
 
 ### Parameters
@@ -113,16 +97,13 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="getCustomerPaymentMethods"></a>
-# **getCustomerPaymentMethods**
-> GetPaymentMethodResponse getCustomerPaymentMethods(id, acceptLanguage, xChildCompanyId, limit, next, previous, search)
 
 Get Payment Methods
 
@@ -131,10 +112,13 @@ Get a list of Payment Methods
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = PaymentMethodsApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(PaymentMethodsApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
@@ -142,16 +126,8 @@ val limit : kotlin.Int = 56 // kotlin.Int | The numbers of items to return, the 
 val next : kotlin.String = next_example // kotlin.String | next page
 val previous : kotlin.String = previous_example // kotlin.String | previous page
 val search : kotlin.String = search_example // kotlin.String | General order search, e.g. by mail, reference etc.
-try {
-    val result : GetPaymentMethodResponse = apiInstance.getCustomerPaymentMethods(id, acceptLanguage, xChildCompanyId, limit, next, previous, search)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling PaymentMethodsApi#getCustomerPaymentMethods")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling PaymentMethodsApi#getCustomerPaymentMethods")
-    e.printStackTrace()
-}
+
+val result : GetPaymentMethodResponse = webService.getCustomerPaymentMethods(id, acceptLanguage, xChildCompanyId, limit, next, previous, search)
 ```
 
 ### Parameters
@@ -174,16 +150,13 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="updateCustomerPaymentMethods"></a>
-# **updateCustomerPaymentMethods**
-> UpdateCustomerPaymentMethodsResponse updateCustomerPaymentMethods(id, paymentMethodId, updatePaymentMethods, acceptLanguage, xChildCompanyId)
 
 Update Payment Method
 
@@ -192,25 +165,20 @@ Gets a payment Method that corresponds to a customer ID.
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = PaymentMethodsApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(PaymentMethodsApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val paymentMethodId : kotlin.String = src_2tQ974hSHcsdeSZHG // kotlin.String | Identifier of the payment method
 val updatePaymentMethods : UpdatePaymentMethods =  // UpdatePaymentMethods | requested field for customer payment methods
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-try {
-    val result : UpdateCustomerPaymentMethodsResponse = apiInstance.updateCustomerPaymentMethods(id, paymentMethodId, updatePaymentMethods, acceptLanguage, xChildCompanyId)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling PaymentMethodsApi#updateCustomerPaymentMethods")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling PaymentMethodsApi#updateCustomerPaymentMethods")
-    e.printStackTrace()
-}
+
+val result : UpdateCustomerPaymentMethodsResponse = webService.updateCustomerPaymentMethods(id, paymentMethodId, updatePaymentMethods, acceptLanguage, xChildCompanyId)
 ```
 
 ### Parameters
@@ -231,7 +199,7 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 

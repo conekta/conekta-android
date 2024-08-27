@@ -9,35 +9,27 @@ Method | HTTP request | Description
 [**updateCharge**](ChargesApi.md#updateCharge) | **PUT** /charges/{id} | Update a charge
 
 
-<a id="getCharges"></a>
-# **getCharges**
-> GetChargesResponse getCharges(acceptLanguage, xChildCompanyId, limit, search, next, previous)
 
 Get A List of Charges
 
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = ChargesApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(ChargesApi::class.java)
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
 val limit : kotlin.Int = 56 // kotlin.Int | The numbers of items to return, the maximum value is 250
 val search : kotlin.String = search_example // kotlin.String | General order search, e.g. by mail, reference etc.
 val next : kotlin.String = next_example // kotlin.String | next page
 val previous : kotlin.String = previous_example // kotlin.String | previous page
-try {
-    val result : GetChargesResponse = apiInstance.getCharges(acceptLanguage, xChildCompanyId, limit, search, next, previous)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ChargesApi#getCharges")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ChargesApi#getCharges")
-    e.printStackTrace()
-}
+
+val result : GetChargesResponse = webService.getCharges(acceptLanguage, xChildCompanyId, limit, search, next, previous)
 ```
 
 ### Parameters
@@ -59,16 +51,13 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="ordersCreateCharge"></a>
-# **ordersCreateCharge**
-> ChargeOrderResponse ordersCreateCharge(id, chargeRequest, acceptLanguage, xChildCompanyId)
 
 Create charge
 
@@ -77,24 +66,19 @@ Create charge for an existing orden
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = ChargesApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(ChargesApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val chargeRequest : ChargeRequest =  // ChargeRequest | requested field for a charge
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-try {
-    val result : ChargeOrderResponse = apiInstance.ordersCreateCharge(id, chargeRequest, acceptLanguage, xChildCompanyId)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ChargesApi#ordersCreateCharge")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ChargesApi#ordersCreateCharge")
-    e.printStackTrace()
-}
+
+val result : ChargeOrderResponse = webService.ordersCreateCharge(id, chargeRequest, acceptLanguage, xChildCompanyId)
 ```
 
 ### Parameters
@@ -114,40 +98,32 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="updateCharge"></a>
-# **updateCharge**
-> ChargeResponse updateCharge(id, chargeUpdateRequest, acceptLanguage, xChildCompanyId)
 
 Update a charge
 
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = ChargesApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(ChargesApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val chargeUpdateRequest : ChargeUpdateRequest =  // ChargeUpdateRequest | requested field for update a charge
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-try {
-    val result : ChargeResponse = apiInstance.updateCharge(id, chargeUpdateRequest, acceptLanguage, xChildCompanyId)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ChargesApi#updateCharge")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ChargesApi#updateCharge")
-    e.printStackTrace()
-}
+
+val result : ChargeResponse = webService.updateCharge(id, chargeUpdateRequest, acceptLanguage, xChildCompanyId)
 ```
 
 ### Parameters
@@ -167,7 +143,7 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 

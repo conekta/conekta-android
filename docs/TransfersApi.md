@@ -8,9 +8,6 @@ Method | HTTP request | Description
 [**getTransfers**](TransfersApi.md#getTransfers) | **GET** /transfers | Get a list of transfers
 
 
-<a id="getTransfer"></a>
-# **getTransfer**
-> TransferResponse getTransfer(id, acceptLanguage, xChildCompanyId)
 
 Get Transfer
 
@@ -19,23 +16,18 @@ Get the details of a Transfer
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = TransfersApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(TransfersApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-try {
-    val result : TransferResponse = apiInstance.getTransfer(id, acceptLanguage, xChildCompanyId)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling TransfersApi#getTransfer")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling TransfersApi#getTransfer")
-    e.printStackTrace()
-}
+
+val result : TransferResponse = webService.getTransfer(id, acceptLanguage, xChildCompanyId)
 ```
 
 ### Parameters
@@ -54,16 +46,13 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="getTransfers"></a>
-# **getTransfers**
-> GetTransfersResponse getTransfers(acceptLanguage, xChildCompanyId, limit, search, next, previous)
 
 Get a list of transfers
 
@@ -72,26 +61,21 @@ Get transfers details in the form of a list
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = TransfersApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(TransfersApi::class.java)
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
 val limit : kotlin.Int = 56 // kotlin.Int | The numbers of items to return, the maximum value is 250
 val search : kotlin.String = search_example // kotlin.String | General order search, e.g. by mail, reference etc.
 val next : kotlin.String = next_example // kotlin.String | next page
 val previous : kotlin.String = previous_example // kotlin.String | previous page
-try {
-    val result : GetTransfersResponse = apiInstance.getTransfers(acceptLanguage, xChildCompanyId, limit, search, next, previous)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling TransfersApi#getTransfers")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling TransfersApi#getTransfers")
-    e.printStackTrace()
-}
+
+val result : GetTransfersResponse = webService.getTransfers(acceptLanguage, xChildCompanyId, limit, search, next, previous)
 ```
 
 ### Parameters
@@ -113,7 +97,7 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 

@@ -17,31 +17,25 @@ package io.conekta
 
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
-
+import io.mockk.mockk
+import android.content.Context
 import io.conekta.TokensApi
 import io.conekta.model.Error
 import io.conekta.model.Token
 import io.conekta.model.TokenCard
 import io.conekta.model.TokenResponse
-import io.kotlintest.matchers.types.shouldNotBeNull
-import io.kotlintest.shouldNot
-import org.openapitools.client.infrastructure.ApiClient
-
 class TokensApiTest : ShouldSpec() {
     init {
-        ApiClient.accessToken = "key_xxxxx"
-        val apiInstance = TokensApi(basePath = BaseTest.host)
+        val mockContext = mockk<Context>(relaxed = true)
+
+        val apiInstance = TokensApi(mockContext, basePath = BaseTest.host)
 
         should("test createToken") {
-            val token : Token =  Token(
-                card = TokenCard(
-                   "123", "11" , "29", "fran carrero", "5475040095304607"
-                )
-            )
-            val result : TokenResponse = apiInstance.createToken(token)
+            val token : Token =  Token(card = TokenCard("123","11", "29", "fran carrero", "5475040095304607"))
 
-            result.shouldNotBeNull()
-            result.id shouldBe ("tok_2toPJUcZ27AH5LsZk")
+            val result : TokenResponse? = apiInstance.createToken(token)
+
+            result?.id shouldBe ("54750400953046072")
         }
 
     }

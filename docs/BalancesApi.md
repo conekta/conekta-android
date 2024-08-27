@@ -7,9 +7,6 @@ Method | HTTP request | Description
 [**getBalance**](BalancesApi.md#getBalance) | **GET** /balance | Get a company&#39;s balance
 
 
-<a id="getBalance"></a>
-# **getBalance**
-> BalanceResponse getBalance(acceptLanguage)
 
 Get a company&#39;s balance
 
@@ -18,21 +15,16 @@ Get a company&#39;s balance
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = BalancesApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(BalancesApi::class.java)
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-try {
-    val result : BalanceResponse = apiInstance.getBalance(acceptLanguage)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling BalancesApi#getBalance")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling BalancesApi#getBalance")
-    e.printStackTrace()
-}
+
+val result : BalanceResponse = webService.getBalance(acceptLanguage)
 ```
 
 ### Parameters
@@ -49,7 +41,7 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 

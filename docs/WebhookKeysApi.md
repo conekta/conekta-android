@@ -11,9 +11,6 @@ Method | HTTP request | Description
 [**updateWebhookKey**](WebhookKeysApi.md#updateWebhookKey) | **PUT** /webhook_keys/{id} | Update Webhook Key
 
 
-<a id="createWebhookKey"></a>
-# **createWebhookKey**
-> WebhookKeyCreateResponse createWebhookKey(acceptLanguage, webhookKeyRequest)
 
 Create Webhook Key
 
@@ -22,22 +19,17 @@ Create a webhook key
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = WebhookKeysApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(WebhookKeysApi::class.java)
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val webhookKeyRequest : WebhookKeyRequest =  // WebhookKeyRequest | 
-try {
-    val result : WebhookKeyCreateResponse = apiInstance.createWebhookKey(acceptLanguage, webhookKeyRequest)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling WebhookKeysApi#createWebhookKey")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling WebhookKeysApi#createWebhookKey")
-    e.printStackTrace()
-}
+
+val result : WebhookKeyCreateResponse = webService.createWebhookKey(acceptLanguage, webhookKeyRequest)
 ```
 
 ### Parameters
@@ -55,38 +47,30 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="deleteWebhookKey"></a>
-# **deleteWebhookKey**
-> WebhookKeyDeleteResponse deleteWebhookKey(id, acceptLanguage)
 
 Delete Webhook key
 
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = WebhookKeysApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(WebhookKeysApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-try {
-    val result : WebhookKeyDeleteResponse = apiInstance.deleteWebhookKey(id, acceptLanguage)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling WebhookKeysApi#deleteWebhookKey")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling WebhookKeysApi#deleteWebhookKey")
-    e.printStackTrace()
-}
+
+val result : WebhookKeyDeleteResponse = webService.deleteWebhookKey(id, acceptLanguage)
 ```
 
 ### Parameters
@@ -104,39 +88,31 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="getWebhookKey"></a>
-# **getWebhookKey**
-> WebhookKeyResponse getWebhookKey(id, acceptLanguage, xChildCompanyId)
 
 Get Webhook Key
 
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = WebhookKeysApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(WebhookKeysApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-try {
-    val result : WebhookKeyResponse = apiInstance.getWebhookKey(id, acceptLanguage, xChildCompanyId)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling WebhookKeysApi#getWebhookKey")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling WebhookKeysApi#getWebhookKey")
-    e.printStackTrace()
-}
+
+val result : WebhookKeyResponse = webService.getWebhookKey(id, acceptLanguage, xChildCompanyId)
 ```
 
 ### Parameters
@@ -155,16 +131,13 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="getWebhookKeys"></a>
-# **getWebhookKeys**
-> GetWebhookKeysResponse getWebhookKeys(acceptLanguage, xChildCompanyId, limit, search, next, previous)
 
 Get List of Webhook Keys
 
@@ -173,26 +146,21 @@ Consume the list of webhook keys you have
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = WebhookKeysApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(WebhookKeysApi::class.java)
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
 val limit : kotlin.Int = 56 // kotlin.Int | The numbers of items to return, the maximum value is 250
 val search : kotlin.String = search_example // kotlin.String | General order search, e.g. by mail, reference etc.
 val next : kotlin.String = next_example // kotlin.String | next page
 val previous : kotlin.String = previous_example // kotlin.String | previous page
-try {
-    val result : GetWebhookKeysResponse = apiInstance.getWebhookKeys(acceptLanguage, xChildCompanyId, limit, search, next, previous)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling WebhookKeysApi#getWebhookKeys")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling WebhookKeysApi#getWebhookKeys")
-    e.printStackTrace()
-}
+
+val result : GetWebhookKeysResponse = webService.getWebhookKeys(acceptLanguage, xChildCompanyId, limit, search, next, previous)
 ```
 
 ### Parameters
@@ -214,16 +182,13 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="updateWebhookKey"></a>
-# **updateWebhookKey**
-> WebhookKeyResponse updateWebhookKey(id, acceptLanguage, webhookKeyUpdateRequest)
 
 Update Webhook Key
 
@@ -232,23 +197,18 @@ updates an existing webhook key
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = WebhookKeysApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(WebhookKeysApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val webhookKeyUpdateRequest : WebhookKeyUpdateRequest =  // WebhookKeyUpdateRequest | 
-try {
-    val result : WebhookKeyResponse = apiInstance.updateWebhookKey(id, acceptLanguage, webhookKeyUpdateRequest)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling WebhookKeysApi#updateWebhookKey")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling WebhookKeysApi#updateWebhookKey")
-    e.printStackTrace()
-}
+
+val result : WebhookKeyResponse = webService.updateWebhookKey(id, acceptLanguage, webhookKeyUpdateRequest)
 ```
 
 ### Parameters
@@ -267,7 +227,7 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 

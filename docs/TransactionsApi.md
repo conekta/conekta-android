@@ -8,9 +8,6 @@ Method | HTTP request | Description
 [**getTransactions**](TransactionsApi.md#getTransactions) | **GET** /transactions | Get List transactions
 
 
-<a id="getTransaction"></a>
-# **getTransaction**
-> TransactionResponse getTransaction(id, acceptLanguage, xChildCompanyId)
 
 Get transaction
 
@@ -19,23 +16,18 @@ Get the details of a transaction
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = TransactionsApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(TransactionsApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-try {
-    val result : TransactionResponse = apiInstance.getTransaction(id, acceptLanguage, xChildCompanyId)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling TransactionsApi#getTransaction")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling TransactionsApi#getTransaction")
-    e.printStackTrace()
-}
+
+val result : TransactionResponse = webService.getTransaction(id, acceptLanguage, xChildCompanyId)
 ```
 
 ### Parameters
@@ -54,16 +46,13 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="getTransactions"></a>
-# **getTransactions**
-> GetTransactionsResponse getTransactions(acceptLanguage, xChildCompanyId, limit, next, previous, id, chargeId, type, currency)
 
 Get List transactions
 
@@ -72,10 +61,13 @@ Get transaction details in the form of a list
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = TransactionsApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(TransactionsApi::class.java)
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
 val limit : kotlin.Int = 56 // kotlin.Int | The numbers of items to return, the maximum value is 250
@@ -85,16 +77,8 @@ val id : kotlin.String = 65412a893cd69a0001c25892 // kotlin.String | id of the o
 val chargeId : kotlin.String = 65412a893cd69a0001c25892 // kotlin.String | id of the charge used for filtering
 val type : kotlin.String = capture // kotlin.String | type of the object to be retrieved
 val currency : kotlin.String = MXN // kotlin.String | currency of the object to be retrieved
-try {
-    val result : GetTransactionsResponse = apiInstance.getTransactions(acceptLanguage, xChildCompanyId, limit, next, previous, id, chargeId, type, currency)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling TransactionsApi#getTransactions")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling TransactionsApi#getTransactions")
-    e.printStackTrace()
-}
+
+val result : GetTransactionsResponse = webService.getTransactions(acceptLanguage, xChildCompanyId, limit, next, previous, id, chargeId, type, currency)
 ```
 
 ### Parameters
@@ -119,7 +103,7 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 

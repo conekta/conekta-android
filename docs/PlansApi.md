@@ -11,9 +11,6 @@ Method | HTTP request | Description
 [**updatePlan**](PlansApi.md#updatePlan) | **PUT** /plans/{id} | Update Plan
 
 
-<a id="createPlan"></a>
-# **createPlan**
-> PlanResponse createPlan(planRequest, acceptLanguage, xChildCompanyId)
 
 Create Plan
 
@@ -22,23 +19,18 @@ Create a new plan for an existing order
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = PlansApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(PlansApi::class.java)
 val planRequest : PlanRequest =  // PlanRequest | requested field for plan
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-try {
-    val result : PlanResponse = apiInstance.createPlan(planRequest, acceptLanguage, xChildCompanyId)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling PlansApi#createPlan")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling PlansApi#createPlan")
-    e.printStackTrace()
-}
+
+val result : PlanResponse = webService.createPlan(planRequest, acceptLanguage, xChildCompanyId)
 ```
 
 ### Parameters
@@ -57,38 +49,30 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="deletePlan"></a>
-# **deletePlan**
-> PlanResponse deletePlan(id, acceptLanguage)
 
 Delete Plan
 
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = PlansApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(PlansApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-try {
-    val result : PlanResponse = apiInstance.deletePlan(id, acceptLanguage)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling PlansApi#deletePlan")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling PlansApi#deletePlan")
-    e.printStackTrace()
-}
+
+val result : PlanResponse = webService.deletePlan(id, acceptLanguage)
 ```
 
 ### Parameters
@@ -106,39 +90,31 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="getPlan"></a>
-# **getPlan**
-> PlanResponse getPlan(id, acceptLanguage, xChildCompanyId)
 
 Get Plan
 
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = PlansApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(PlansApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-try {
-    val result : PlanResponse = apiInstance.getPlan(id, acceptLanguage, xChildCompanyId)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling PlansApi#getPlan")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling PlansApi#getPlan")
-    e.printStackTrace()
-}
+
+val result : PlanResponse = webService.getPlan(id, acceptLanguage, xChildCompanyId)
 ```
 
 ### Parameters
@@ -157,42 +133,34 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="getPlans"></a>
-# **getPlans**
-> GetPlansResponse getPlans(acceptLanguage, xChildCompanyId, limit, search, next, previous)
 
 Get A List of Plans
 
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = PlansApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(PlansApi::class.java)
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
 val limit : kotlin.Int = 56 // kotlin.Int | The numbers of items to return, the maximum value is 250
 val search : kotlin.String = search_example // kotlin.String | General order search, e.g. by mail, reference etc.
 val next : kotlin.String = next_example // kotlin.String | next page
 val previous : kotlin.String = previous_example // kotlin.String | previous page
-try {
-    val result : GetPlansResponse = apiInstance.getPlans(acceptLanguage, xChildCompanyId, limit, search, next, previous)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling PlansApi#getPlans")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling PlansApi#getPlans")
-    e.printStackTrace()
-}
+
+val result : GetPlansResponse = webService.getPlans(acceptLanguage, xChildCompanyId, limit, search, next, previous)
 ```
 
 ### Parameters
@@ -214,40 +182,32 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="updatePlan"></a>
-# **updatePlan**
-> PlanResponse updatePlan(id, planUpdateRequest, acceptLanguage, xChildCompanyId)
 
 Update Plan
 
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = PlansApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(PlansApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val planUpdateRequest : PlanUpdateRequest =  // PlanUpdateRequest | requested field for plan
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-try {
-    val result : PlanResponse = apiInstance.updatePlan(id, planUpdateRequest, acceptLanguage, xChildCompanyId)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling PlansApi#updatePlan")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling PlansApi#updatePlan")
-    e.printStackTrace()
-}
+
+val result : PlanResponse = webService.updatePlan(id, planUpdateRequest, acceptLanguage, xChildCompanyId)
 ```
 
 ### Parameters
@@ -267,7 +227,7 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 

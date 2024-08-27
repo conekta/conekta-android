@@ -26,7 +26,7 @@ jobs:
         port: 3000
     - name: Build and test
       run: |
-        ./gradlew clean build
+        ./gradlew clean build test
 
     - name: Archive artifacts
       uses: actions/upload-artifact@v2

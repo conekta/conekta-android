@@ -12,32 +12,24 @@ Method | HTTP request | Description
 [**smsCheckout**](PaymentLinkApi.md#smsCheckout) | **POST** /checkouts/{id}/sms | Send an sms
 
 
-<a id="cancelCheckout"></a>
-# **cancelCheckout**
-> CheckoutResponse cancelCheckout(id, acceptLanguage, xChildCompanyId)
 
 Cancel Payment Link
 
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = PaymentLinkApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(PaymentLinkApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-try {
-    val result : CheckoutResponse = apiInstance.cancelCheckout(id, acceptLanguage, xChildCompanyId)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling PaymentLinkApi#cancelCheckout")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling PaymentLinkApi#cancelCheckout")
-    e.printStackTrace()
-}
+
+val result : CheckoutResponse = webService.cancelCheckout(id, acceptLanguage, xChildCompanyId)
 ```
 
 ### Parameters
@@ -56,39 +48,31 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="createCheckout"></a>
-# **createCheckout**
-> CheckoutResponse createCheckout(checkout, acceptLanguage, xChildCompanyId)
 
 Create Unique Payment Link
 
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = PaymentLinkApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(PaymentLinkApi::class.java)
 val checkout : Checkout =  // Checkout | requested field for checkout
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-try {
-    val result : CheckoutResponse = apiInstance.createCheckout(checkout, acceptLanguage, xChildCompanyId)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling PaymentLinkApi#createCheckout")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling PaymentLinkApi#createCheckout")
-    e.printStackTrace()
-}
+
+val result : CheckoutResponse = webService.createCheckout(checkout, acceptLanguage, xChildCompanyId)
 ```
 
 ### Parameters
@@ -107,40 +91,32 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="emailCheckout"></a>
-# **emailCheckout**
-> CheckoutResponse emailCheckout(id, emailCheckoutRequest, acceptLanguage, xChildCompanyId)
 
 Send an email
 
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = PaymentLinkApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(PaymentLinkApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val emailCheckoutRequest : EmailCheckoutRequest =  // EmailCheckoutRequest | requested field for sms checkout
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-try {
-    val result : CheckoutResponse = apiInstance.emailCheckout(id, emailCheckoutRequest, acceptLanguage, xChildCompanyId)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling PaymentLinkApi#emailCheckout")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling PaymentLinkApi#emailCheckout")
-    e.printStackTrace()
-}
+
+val result : CheckoutResponse = webService.emailCheckout(id, emailCheckoutRequest, acceptLanguage, xChildCompanyId)
 ```
 
 ### Parameters
@@ -160,39 +136,31 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="getCheckout"></a>
-# **getCheckout**
-> CheckoutResponse getCheckout(id, acceptLanguage, xChildCompanyId)
 
 Get a payment link by ID
 
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = PaymentLinkApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(PaymentLinkApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-try {
-    val result : CheckoutResponse = apiInstance.getCheckout(id, acceptLanguage, xChildCompanyId)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling PaymentLinkApi#getCheckout")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling PaymentLinkApi#getCheckout")
-    e.printStackTrace()
-}
+
+val result : CheckoutResponse = webService.getCheckout(id, acceptLanguage, xChildCompanyId)
 ```
 
 ### Parameters
@@ -211,16 +179,13 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="getCheckouts"></a>
-# **getCheckouts**
-> CheckoutsResponse getCheckouts(acceptLanguage, xChildCompanyId, limit, search, next, previous)
 
 Get a list of payment links
 
@@ -229,26 +194,21 @@ Returns a list of links generated by the merchant
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = PaymentLinkApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(PaymentLinkApi::class.java)
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
 val limit : kotlin.Int = 56 // kotlin.Int | The numbers of items to return, the maximum value is 250
 val search : kotlin.String = search_example // kotlin.String | General order search, e.g. by mail, reference etc.
 val next : kotlin.String = next_example // kotlin.String | next page
 val previous : kotlin.String = previous_example // kotlin.String | previous page
-try {
-    val result : CheckoutsResponse = apiInstance.getCheckouts(acceptLanguage, xChildCompanyId, limit, search, next, previous)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling PaymentLinkApi#getCheckouts")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling PaymentLinkApi#getCheckouts")
-    e.printStackTrace()
-}
+
+val result : CheckoutsResponse = webService.getCheckouts(acceptLanguage, xChildCompanyId, limit, search, next, previous)
 ```
 
 ### Parameters
@@ -270,40 +230,32 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/vnd.conekta-v2.1.0+json
 
-<a id="smsCheckout"></a>
-# **smsCheckout**
-> CheckoutResponse smsCheckout(id, smsCheckoutRequest, acceptLanguage, xChildCompanyId)
 
 Send an sms
 
 ### Example
 ```kotlin
 // Import classes:
+//import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import io.conekta.model.*
 
-val apiInstance = PaymentLinkApi()
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(PaymentLinkApi::class.java)
 val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
 val smsCheckoutRequest : SmsCheckoutRequest =  // SmsCheckoutRequest | requested field for sms checkout
 val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
 val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-try {
-    val result : CheckoutResponse = apiInstance.smsCheckout(id, smsCheckoutRequest, acceptLanguage, xChildCompanyId)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling PaymentLinkApi#smsCheckout")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling PaymentLinkApi#smsCheckout")
-    e.printStackTrace()
-}
+
+val result : CheckoutResponse = webService.smsCheckout(id, smsCheckoutRequest, acceptLanguage, xChildCompanyId)
 ```
 
 ### Parameters
@@ -323,7 +275,7 @@ Name | Type | Description  | Notes
 
 
 Configure bearerAuth:
-    ApiClient.accessToken = ""
+    ApiClient().setBearerToken("TOKEN")
 
 ### HTTP request headers
 
