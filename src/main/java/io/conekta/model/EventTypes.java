@@ -11,6 +11,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "It is a parameter that allows to identify in the response, the type of event that is being generated.")
 public class EventTypes  {
   
+  private static final String MXN = "MXN";
+  
+  
 
 
   @Override

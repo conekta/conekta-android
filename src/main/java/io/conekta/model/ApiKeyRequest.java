@@ -8,6 +8,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class ApiKeyRequest  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("description")
   private String description = null;
   @SerializedName("role")

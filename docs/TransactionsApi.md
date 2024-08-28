@@ -82,7 +82,7 @@ String previous = null; // String | previous page
 String id = 65412a893cd69a0001c25892; // String | id of the object to be retrieved
 String chargeId = 65412a893cd69a0001c25892; // String | id of the charge used for filtering
 String type = capture; // String | type of the object to be retrieved
-String currency = "MXN"; // String | currency of the object to be retrieved
+String currency = MXN; // String | currency of the object to be retrieved
 try {
     GetTransactionsResponse result = apiInstance.getTransactions(acceptLanguage, xChildCompanyId, limit, next, previous, id, chargeId, type, currency);
     System.out.println(result);

@@ -8,6 +8,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class WebhookKeyUpdateRequest  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("active")
   private Boolean active = false;
 

@@ -11,6 +11,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "Method used to make the transfer.")
 public class TransferMethodResponse  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("account_holder")
   private String accountHolder = null;
   @SerializedName("account_number")

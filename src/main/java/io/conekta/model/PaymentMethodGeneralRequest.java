@@ -11,6 +11,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details ")
 public class PaymentMethodGeneralRequest  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("expires_at")
   private Long expiresAt = null;
   @SerializedName("monthly_installments")

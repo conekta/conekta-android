@@ -10,6 +10,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class CustomerUpdateFiscalEntitiesRequest  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("address")
   private CustomerAddress address = null;
   @SerializedName("tax_id")

@@ -11,6 +11,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "api keys model")
 public class ApiKeyResponseOnDelete  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("active")
   private Boolean active = null;
   @SerializedName("created_at")

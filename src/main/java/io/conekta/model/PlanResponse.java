@@ -11,6 +11,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "plans model")
 public class PlanResponse  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("amount")
   private Integer amount = null;
   @SerializedName("created_at")

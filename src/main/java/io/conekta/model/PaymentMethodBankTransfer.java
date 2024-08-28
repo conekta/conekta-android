@@ -1,5 +1,6 @@
 package io.conekta.model;
 
+import io.conekta.model.OasAnyTypeNotMapped;
 import java.util.*;
 
 import io.swagger.annotations.*;
@@ -8,6 +9,9 @@ import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
 public class PaymentMethodBankTransfer  {
+  
+  private static final String MXN = "MXN";
+  
   
   @SerializedName("type")
   private String type = null;
@@ -32,7 +36,7 @@ public class PaymentMethodBankTransfer  {
   @SerializedName("issuing_account_tax_id")
   private String issuingAccountTaxId = null;
   @SerializedName("payment_attempts")
-  private List<Map<String, Object>> paymentAttempts = null;
+  private List<OasAnyTypeNotMapped> paymentAttempts = null;
   @SerializedName("receiving_account_holder_name")
   private String receivingAccountHolderName = null;
   @SerializedName("receiving_account_number")
@@ -159,10 +163,10 @@ public class PaymentMethodBankTransfer  {
   /**
    **/
   @ApiModelProperty(value = "")
-  public List<Map<String, Object>> getPaymentAttempts() {
+  public List<OasAnyTypeNotMapped> getPaymentAttempts() {
     return paymentAttempts;
   }
-  public void setPaymentAttempts(List<Map<String, Object>> paymentAttempts) {
+  public void setPaymentAttempts(List<OasAnyTypeNotMapped> paymentAttempts) {
     this.paymentAttempts = paymentAttempts;
   }
 

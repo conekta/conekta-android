@@ -1,4 +1,3 @@
-.gitignore
 README.md
 build.gradle
 docs/AntifraudApi.md
@@ -411,3 +410,4 @@ src/main/java/io/conekta/model/WebhookRequest.java
 src/main/java/io/conekta/model/WebhookResponse.java
 src/main/java/io/conekta/model/WebhookUpdateRequest.java
 src/main/java/io/conekta/model/WhitelistlistRuleResponse.java
+src/mainjava/io/conekta/model/OasAnyTypeNotMapped.java

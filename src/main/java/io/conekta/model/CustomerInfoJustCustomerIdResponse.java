@@ -8,6 +8,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class CustomerInfoJustCustomerIdResponse  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("customer_id")
   private String customerId = null;
 

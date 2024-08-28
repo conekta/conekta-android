@@ -11,6 +11,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "You can modify the subscription to change the plan used by your customers.")
 public class SubscriptionUpdateRequest  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("plan_id")
   private String planId = null;
   @SerializedName("card_id")

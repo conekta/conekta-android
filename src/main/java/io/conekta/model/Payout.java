@@ -12,6 +12,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "The payout information of the payout order.")
 public class Payout  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("payout_method")
   private PayoutMethod payoutMethod = null;
 

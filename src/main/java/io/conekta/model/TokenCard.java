@@ -8,6 +8,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class TokenCard  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("cvc")
   private String cvc = null;
   @SerializedName("device_fingerprint")

@@ -27,5 +27,13 @@
   "serializationLibrary": "gson",
   "httpUserAgent": "Conekta/v2 Android/6.0.0-beta",
   "openApiNullable" : false,
-  "apiVersion" :"application/vnd.conekta-v2.1.0+json"
+  "apiVersion" :"application/vnd.conekta-v2.1.0+json",
+  "templateDir": "local/templates",
+  "files": {
+        "OasAnyTypeNotMapped.mustache" : {
+          "templateType": "SupportingFiles",
+          "destinationFilename": "OasAnyTypeNotMapped.java",
+          "folder": "src/mainjava/io/conekta/model"
+        }
+    }
 }

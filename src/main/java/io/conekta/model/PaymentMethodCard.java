@@ -1,5 +1,6 @@
 package io.conekta.model;
 
+import io.conekta.model.OasAnyTypeNotMapped;
 import java.util.*;
 
 import io.swagger.annotations.*;
@@ -8,6 +9,9 @@ import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
 public class PaymentMethodCard  {
+  
+  private static final String MXN = "MXN";
+  
   
   @SerializedName("type")
   private String type = null;
@@ -28,7 +32,7 @@ public class PaymentMethodCard  {
   @SerializedName("exp_year")
   private String expYear = null;
   @SerializedName("fraud_indicators")
-  private List<Object> fraudIndicators = null;
+  private List<OasAnyTypeNotMapped> fraudIndicators = null;
   @SerializedName("issuer")
   private String issuer = null;
   @SerializedName("last4")
@@ -135,10 +139,10 @@ public class PaymentMethodCard  {
   /**
    **/
   @ApiModelProperty(value = "")
-  public List<Object> getFraudIndicators() {
+  public List<OasAnyTypeNotMapped> getFraudIndicators() {
     return fraudIndicators;
   }
-  public void setFraudIndicators(List<Object> fraudIndicators) {
+  public void setFraudIndicators(List<OasAnyTypeNotMapped> fraudIndicators) {
     this.fraudIndicators = fraudIndicators;
   }
 

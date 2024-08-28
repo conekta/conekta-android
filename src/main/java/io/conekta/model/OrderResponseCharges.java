@@ -13,6 +13,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "The charges associated with the order")
 public class OrderResponseCharges  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("has_more")
   private Boolean hasMore = null;
   @SerializedName("object")

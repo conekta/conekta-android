@@ -1,6 +1,7 @@
 package io.conekta.model;
 
 import io.conekta.model.CheckoutOrderTemplateCustomerInfo;
+import io.conekta.model.OasAnyTypeNotMapped;
 import io.conekta.model.Product;
 import java.util.*;
 import java.util.Map;
@@ -15,6 +16,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "It maintains the attributes with which the order will be created when receiving a new payment.")
 public class CheckoutOrderTemplate  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("currency")
   private String currency = null;
   @SerializedName("customer_info")
@@ -22,7 +26,7 @@ public class CheckoutOrderTemplate  {
   @SerializedName("line_items")
   private List<Product> lineItems = null;
   @SerializedName("metadata")
-  private Map<String, Object> metadata = null;
+  private Map<String, OasAnyTypeNotMapped> metadata = null;
 
   /**
    * It is the currency in which the order will be created. It must be a valid ISO 4217 currency code.
@@ -60,10 +64,10 @@ public class CheckoutOrderTemplate  {
    * It is a set of key-value pairs that you can attach to the order. It can be used to store additional information about the order in a structured format.
    **/
   @ApiModelProperty(value = "It is a set of key-value pairs that you can attach to the order. It can be used to store additional information about the order in a structured format.")
-  public Map<String, Object> getMetadata() {
+  public Map<String, OasAnyTypeNotMapped> getMetadata() {
     return metadata;
   }
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(Map<String, OasAnyTypeNotMapped> metadata) {
     this.metadata = metadata;
   }
 

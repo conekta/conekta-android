@@ -22,6 +22,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "a order")
 public class OrderUpdateRequest  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("charges")
   private List<ChargeRequest> charges = null;
   @SerializedName("checkout")

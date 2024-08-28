@@ -3,6 +3,7 @@ package io.conekta.model;
 import io.conekta.model.ChargeRequest;
 import io.conekta.model.CheckoutRequest;
 import io.conekta.model.CustomerShippingContacts;
+import io.conekta.model.OasAnyTypeNotMapped;
 import io.conekta.model.OrderDiscountLinesRequest;
 import io.conekta.model.OrderFiscalEntityRequest;
 import io.conekta.model.OrderRequestCustomerInfo;
@@ -23,6 +24,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "a order")
 public class OrderRequest  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("charges")
   private List<ChargeRequest> charges = null;
   @SerializedName("checkout")
@@ -38,7 +42,7 @@ public class OrderRequest  {
   @SerializedName("line_items")
   private List<Product> lineItems = null;
   @SerializedName("metadata")
-  private Map<String, Object> metadata = null;
+  private Map<String, OasAnyTypeNotMapped> metadata = null;
   @SerializedName("needs_shipping_contact")
   private Boolean needsShippingContact = null;
   @SerializedName("pre_authorize")
@@ -134,10 +138,10 @@ public class OrderRequest  {
    * Metadata associated with the order
    **/
   @ApiModelProperty(value = "Metadata associated with the order")
-  public Map<String, Object> getMetadata() {
+  public Map<String, OasAnyTypeNotMapped> getMetadata() {
     return metadata;
   }
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(Map<String, OasAnyTypeNotMapped> metadata) {
     this.metadata = metadata;
   }
 

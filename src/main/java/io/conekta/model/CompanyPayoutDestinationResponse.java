@@ -11,6 +11,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "Company payout destination model")
 public class CompanyPayoutDestinationResponse  {
   
+  private static final String MXN = "MXN";
+  
+  
   public enum _objectEnum {
      payout_destination, 
   };

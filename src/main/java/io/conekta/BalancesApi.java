@@ -31,6 +31,7 @@ import java.io.File;
 
 public class BalancesApi {
   String basePath = "https://api.conekta.io";
+  String apiKey;
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public void addHeader(String key, String value) {
@@ -47,6 +48,14 @@ public class BalancesApi {
 
   public String getBasePath() {
     return basePath;
+  }
+  
+  public void setApiKey(String apiKey){
+      this.apiKey = apiKey;
+  }
+  
+  public String GetApiKey(){
+      return this.apiKey;
   }
 
   /**
@@ -68,9 +77,10 @@ public class BalancesApi {
     // form params
     Map<String, String> localVarFormParams = new HashMap<String, String>();
 
-
     localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
-
+    
+    localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    
     String[] localVarContentTypes = {
       
     };

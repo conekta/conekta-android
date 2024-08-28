@@ -13,6 +13,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "a token")
 public class Token  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("card")
   private TokenCard card = null;
   @SerializedName("checkout")

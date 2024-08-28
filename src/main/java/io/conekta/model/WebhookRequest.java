@@ -11,6 +11,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "a webhook")
 public class WebhookRequest  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("url")
   private String url = null;
   @SerializedName("synchronous")

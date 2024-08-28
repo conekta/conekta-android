@@ -1,5 +1,6 @@
 package io.conekta.model;
 
+import io.conekta.model.OasAnyTypeNotMapped;
 import java.util.Map;
 
 import io.swagger.annotations.*;
@@ -8,6 +9,9 @@ import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
 public class ShippingRequest  {
+  
+  private static final String MXN = "MXN";
+  
   
   @SerializedName("amount")
   private Long amount = null;
@@ -18,7 +22,7 @@ public class ShippingRequest  {
   @SerializedName("method")
   private String method = null;
   @SerializedName("metadata")
-  private Map<String, Object> metadata = null;
+  private Map<String, OasAnyTypeNotMapped> metadata = null;
 
   /**
    * Shipping amount in cents
@@ -69,10 +73,10 @@ public class ShippingRequest  {
    * Hash where the user can send additional information for each 'shipping'.
    **/
   @ApiModelProperty(value = "Hash where the user can send additional information for each 'shipping'.")
-  public Map<String, Object> getMetadata() {
+  public Map<String, OasAnyTypeNotMapped> getMetadata() {
     return metadata;
   }
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(Map<String, OasAnyTypeNotMapped> metadata) {
     this.metadata = metadata;
   }
 

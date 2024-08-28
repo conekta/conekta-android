@@ -1,6 +1,7 @@
 package io.conekta.model;
 
 import io.conekta.model.CustomerShippingContactsAddress;
+import io.conekta.model.OasAnyTypeNotMapped;
 import java.util.Map;
 
 import io.swagger.annotations.*;
@@ -9,6 +10,9 @@ import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
 public class CustomerShippingContactsDataResponse  {
+  
+  private static final String MXN = "MXN";
+  
   
   @SerializedName("phone")
   private String phone = null;
@@ -25,7 +29,7 @@ public class CustomerShippingContactsDataResponse  {
   @SerializedName("deleted")
   private Boolean deleted = null;
   @SerializedName("metadata")
-  private Map<String, Object> metadata = null;
+  private Map<String, OasAnyTypeNotMapped> metadata = null;
   @SerializedName("id")
   private String id = null;
   @SerializedName("object")
@@ -110,10 +114,10 @@ public class CustomerShippingContactsDataResponse  {
    * Metadata associated with the shipping contact
    **/
   @ApiModelProperty(value = "Metadata associated with the shipping contact")
-  public Map<String, Object> getMetadata() {
+  public Map<String, OasAnyTypeNotMapped> getMetadata() {
     return metadata;
   }
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(Map<String, OasAnyTypeNotMapped> metadata) {
     this.metadata = metadata;
   }
 

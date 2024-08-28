@@ -32,6 +32,7 @@ import java.io.File;
 
 public class TransactionsApi {
   String basePath = "https://api.conekta.io";
+  String apiKey;
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public void addHeader(String key, String value) {
@@ -48,6 +49,14 @@ public class TransactionsApi {
 
   public String getBasePath() {
     return basePath;
+  }
+  
+  public void setApiKey(String apiKey){
+      this.apiKey = apiKey;
+  }
+  
+  public String GetApiKey(){
+      return this.apiKey;
   }
 
   /**
@@ -75,10 +84,11 @@ public class TransactionsApi {
     // form params
     Map<String, String> localVarFormParams = new HashMap<String, String>();
 
-
     localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
     localVarHeaderParams.put("X-Child-Company-Id", ApiInvoker.parameterToString(xChildCompanyId));
-
+    
+    localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    
     String[] localVarContentTypes = {
       
     };
@@ -140,10 +150,11 @@ public class TransactionsApi {
     localVarQueryParams.addAll(ApiInvoker.parameterToPairs("", "charge_id", chargeId));
     localVarQueryParams.addAll(ApiInvoker.parameterToPairs("", "type", type));
     localVarQueryParams.addAll(ApiInvoker.parameterToPairs("", "currency", currency));
-
     localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
     localVarHeaderParams.put("X-Child-Company-Id", ApiInvoker.parameterToString(xChildCompanyId));
-
+    
+    localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    
     String[] localVarContentTypes = {
       
     };

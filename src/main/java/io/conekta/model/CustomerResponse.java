@@ -4,6 +4,7 @@ import io.conekta.model.CustomerAntifraudInfoResponse;
 import io.conekta.model.CustomerFiscalEntitiesResponse;
 import io.conekta.model.CustomerPaymentMethodsResponse;
 import io.conekta.model.CustomerResponseShippingContacts;
+import io.conekta.model.OasAnyTypeNotMapped;
 import io.conekta.model.SubscriptionResponse;
 import java.util.Map;
 
@@ -16,6 +17,9 @@ import com.google.gson.annotations.SerializedName;
  **/
 @ApiModel(description = "customer response")
 public class CustomerResponse  {
+  
+  private static final String MXN = "MXN";
+  
   
   @SerializedName("antifraud_info")
   private CustomerAntifraudInfoResponse antifraudInfo = null;
@@ -42,7 +46,7 @@ public class CustomerResponse  {
   @SerializedName("name")
   private String name = null;
   @SerializedName("metadata")
-  private Map<String, Object> metadata = null;
+  private Map<String, OasAnyTypeNotMapped> metadata = null;
   @SerializedName("object")
   private String _object = null;
   @SerializedName("payment_sources")
@@ -183,10 +187,10 @@ public class CustomerResponse  {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Map<String, Object> getMetadata() {
+  public Map<String, OasAnyTypeNotMapped> getMetadata() {
     return metadata;
   }
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(Map<String, OasAnyTypeNotMapped> metadata) {
     this.metadata = metadata;
   }
 

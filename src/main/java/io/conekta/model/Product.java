@@ -1,5 +1,6 @@
 package io.conekta.model;
 
+import io.conekta.model.OasAnyTypeNotMapped;
 import java.util.*;
 import java.util.Map;
 
@@ -10,14 +11,17 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class Product  {
   
+  private static final String MXN = "MXN";
+
+
   @SerializedName("antifraud_info")
-  private Map<String, Object> antifraudInfo = null;
+  private Map<String, OasAnyTypeNotMapped> antifraudInfo = null;
   @SerializedName("brand")
   private String brand = null;
   @SerializedName("description")
   private String description = null;
   @SerializedName("metadata")
-  private Map<String, Object> metadata = new HashMap<>();
+  private Map<String, OasAnyTypeNotMapped> metadata = new HashMap<>();
   @SerializedName("name")
   private String name = null;
   @SerializedName("quantity")
@@ -32,10 +36,10 @@ public class Product  {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Map<String, Object> getAntifraudInfo() {
+  public Map<String, OasAnyTypeNotMapped> getAntifraudInfo() {
     return antifraudInfo;
   }
-  public void setAntifraudInfo(Map<String, Object> antifraudInfo) {
+  public void setAntifraudInfo(Map<String, OasAnyTypeNotMapped> antifraudInfo) {
     this.antifraudInfo = antifraudInfo;
   }
 
@@ -65,10 +69,10 @@ public class Product  {
    * It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.
    **/
   @ApiModelProperty(value = "It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.")
-  public Map<String, Object> getMetadata() {
+  public Map<String, OasAnyTypeNotMapped> getMetadata() {
     return metadata;
   }
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(Map<String, OasAnyTypeNotMapped> metadata) {
     this.metadata = metadata;
   }
 

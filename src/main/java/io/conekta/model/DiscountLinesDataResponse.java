@@ -8,6 +8,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class DiscountLinesDataResponse  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("amount")
   private Long amount = null;
   @SerializedName("code")

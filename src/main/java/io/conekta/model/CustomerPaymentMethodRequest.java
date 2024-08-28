@@ -11,6 +11,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "Contains details of the payment methods that the customer has active or has used in Conekta")
 public class CustomerPaymentMethodRequest  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("type")
   private String type = null;
 

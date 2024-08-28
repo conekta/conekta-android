@@ -13,6 +13,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "balance model")
 public class BalanceResponse  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("available")
   private List<BalanceCommonField> available = null;
   @SerializedName("cashout_retention_amount")

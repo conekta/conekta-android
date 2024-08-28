@@ -12,6 +12,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "A transfer represents the action of sending an amount to a business bank account including the status, amount and method used to make the transfer.")
 public class TransfersResponse  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("amount")
   private Long amount = null;
   @SerializedName("created_at")

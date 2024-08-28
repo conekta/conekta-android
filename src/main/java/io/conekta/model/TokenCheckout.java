@@ -8,6 +8,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class TokenCheckout  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("returns_control_on")
   private String returnsControlOn = null;
 

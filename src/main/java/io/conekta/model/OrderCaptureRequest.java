@@ -8,6 +8,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class OrderCaptureRequest  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("amount")
   private Long amount = null;
 

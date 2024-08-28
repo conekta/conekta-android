@@ -1,5 +1,6 @@
 package io.conekta.model;
 
+import io.conekta.model.OasAnyTypeNotMapped;
 import java.net.URI;
 import java.util.Map;
 
@@ -13,6 +14,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "event model")
 public class EventsResendResponse  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("failed_attempts")
   private Integer failedAttempts = null;
   @SerializedName("id")
@@ -22,7 +26,7 @@ public class EventsResendResponse  {
   @SerializedName("last_http_response_status")
   private Integer lastHttpResponseStatus = null;
   @SerializedName("response_data")
-  private Map<String, Object> responseData = null;
+  private Map<String, OasAnyTypeNotMapped> responseData = null;
   @SerializedName("url")
   private URI url = null;
 
@@ -69,10 +73,10 @@ public class EventsResendResponse  {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Map<String, Object> getResponseData() {
+  public Map<String, OasAnyTypeNotMapped> getResponseData() {
     return responseData;
   }
-  public void setResponseData(Map<String, Object> responseData) {
+  public void setResponseData(Map<String, OasAnyTypeNotMapped> responseData) {
     this.responseData = responseData;
   }
 

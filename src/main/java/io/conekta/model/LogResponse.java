@@ -1,5 +1,6 @@
 package io.conekta.model;
 
+import io.conekta.model.OasAnyTypeNotMapped;
 import java.util.*;
 import java.util.Map;
 
@@ -12,6 +13,9 @@ import com.google.gson.annotations.SerializedName;
  **/
 @ApiModel(description = "log model")
 public class LogResponse  {
+  
+  private static final String MXN = "MXN";
+  
   
   @SerializedName("created_at")
   private Long createdAt = null;
@@ -30,7 +34,7 @@ public class LogResponse  {
   @SerializedName("oauth_token_id")
   private String oauthTokenId = null;
   @SerializedName("query_string")
-  private Map<String, Object> queryString = null;
+  private Map<String, OasAnyTypeNotMapped> queryString = null;
   @SerializedName("related")
   private String related = null;
   @SerializedName("request_body")
@@ -137,10 +141,10 @@ public class LogResponse  {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Map<String, Object> getQueryString() {
+  public Map<String, OasAnyTypeNotMapped> getQueryString() {
     return queryString;
   }
-  public void setQueryString(Map<String, Object> queryString) {
+  public void setQueryString(Map<String, OasAnyTypeNotMapped> queryString) {
     this.queryString = queryString;
   }
 

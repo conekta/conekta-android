@@ -11,6 +11,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "List of discounts that apply to the order.")
 public class UpdateOrderDiscountLinesRequest  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("amount")
   private Long amount = null;
   @SerializedName("code")

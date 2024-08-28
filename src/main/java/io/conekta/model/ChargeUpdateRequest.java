@@ -11,6 +11,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "requested field for update a charge")
 public class ChargeUpdateRequest  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("reference_id")
   private String referenceId = null;
 

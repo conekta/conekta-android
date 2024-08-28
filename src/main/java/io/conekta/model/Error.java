@@ -13,6 +13,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "err model")
 public class Error  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("details")
   private List<DetailsError> details = null;
   @SerializedName("log_id")

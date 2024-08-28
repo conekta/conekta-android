@@ -12,6 +12,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "[Checkout](https://developers.conekta.com/v2.1.0/reference/payment-link) details ")
 public class CheckoutRequest  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("allowed_payment_methods")
   private List<String> allowedPaymentMethods = null;
   @SerializedName("expires_at")

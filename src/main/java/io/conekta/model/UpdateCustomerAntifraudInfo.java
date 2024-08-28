@@ -8,6 +8,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class UpdateCustomerAntifraudInfo  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("account_created_at")
   private Long accountCreatedAt = null;
   @SerializedName("first_paid_at")

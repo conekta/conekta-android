@@ -1,6 +1,7 @@
 package io.conekta.model;
 
 import io.conekta.model.FiscalEntityAddress;
+import io.conekta.model.OasAnyTypeNotMapped;
 import java.util.Map;
 
 import io.swagger.annotations.*;
@@ -13,12 +14,15 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "Fiscal entity of the order, Currently it is a purely informative field")
 public class OrderFiscalEntityRequest  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("address")
   private FiscalEntityAddress address = null;
   @SerializedName("email")
   private String email = null;
   @SerializedName("metadata")
-  private Map<String, Object> metadata = null;
+  private Map<String, OasAnyTypeNotMapped> metadata = null;
   @SerializedName("name")
   private String name = null;
   @SerializedName("phone")
@@ -51,10 +55,10 @@ public class OrderFiscalEntityRequest  {
    * Metadata associated with the fiscal entity
    **/
   @ApiModelProperty(value = "Metadata associated with the fiscal entity")
-  public Map<String, Object> getMetadata() {
+  public Map<String, OasAnyTypeNotMapped> getMetadata() {
     return metadata;
   }
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(Map<String, OasAnyTypeNotMapped> metadata) {
     this.metadata = metadata;
   }
 

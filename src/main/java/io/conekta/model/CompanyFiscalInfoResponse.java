@@ -12,6 +12,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "Company fiscal info model")
 public class CompanyFiscalInfoResponse  {
   
+  private static final String MXN = "MXN";
+  
+  
   public enum _objectEnum {
      fiscal_info, 
   };

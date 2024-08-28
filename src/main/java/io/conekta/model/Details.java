@@ -10,6 +10,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class Details  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("details")
   private List<DetailsError> details = null;
 

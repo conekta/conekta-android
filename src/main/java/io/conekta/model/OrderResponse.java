@@ -1,6 +1,7 @@
 package io.conekta.model;
 
 import io.conekta.model.ChargeResponseChannel;
+import io.conekta.model.OasAnyTypeNotMapped;
 import io.conekta.model.OrderFiscalEntityResponse;
 import io.conekta.model.OrderNextActionResponse;
 import io.conekta.model.OrderResponseCharges;
@@ -20,6 +21,9 @@ import com.google.gson.annotations.SerializedName;
  **/
 @ApiModel(description = "order response")
 public class OrderResponse  {
+  
+  private static final String MXN = "MXN";
+  
   
   @SerializedName("amount")
   private Integer amount = null;
@@ -50,7 +54,7 @@ public class OrderResponse  {
   @SerializedName("livemode")
   private Boolean livemode = null;
   @SerializedName("metadata")
-  private Map<String, Object> metadata = null;
+  private Map<String, OasAnyTypeNotMapped> metadata = null;
   @SerializedName("next_action")
   private OrderNextActionResponse nextAction = null;
   @SerializedName("object")
@@ -213,10 +217,10 @@ public class OrderResponse  {
    * Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
    **/
   @ApiModelProperty(value = "Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format.")
-  public Map<String, Object> getMetadata() {
+  public Map<String, OasAnyTypeNotMapped> getMetadata() {
     return metadata;
   }
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(Map<String, OasAnyTypeNotMapped> metadata) {
     this.metadata = metadata;
   }
 

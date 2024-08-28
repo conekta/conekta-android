@@ -1,5 +1,6 @@
 package io.conekta.model;
 
+import io.conekta.model.OasAnyTypeNotMapped;
 import java.net.URI;
 import java.util.Map;
 
@@ -9,6 +10,9 @@ import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
 public class WebhookLog  {
+  
+  private static final String MXN = "MXN";
+  
   
   @SerializedName("failed_attempts")
   private Integer failedAttempts = null;
@@ -21,7 +25,7 @@ public class WebhookLog  {
   @SerializedName("object")
   private String _object = null;
   @SerializedName("response_data")
-  private Map<String, Object> responseData = null;
+  private Map<String, OasAnyTypeNotMapped> responseData = null;
   @SerializedName("url")
   private URI url = null;
 
@@ -78,10 +82,10 @@ public class WebhookLog  {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Map<String, Object> getResponseData() {
+  public Map<String, OasAnyTypeNotMapped> getResponseData() {
     return responseData;
   }
-  public void setResponseData(Map<String, Object> responseData) {
+  public void setResponseData(Map<String, OasAnyTypeNotMapped> responseData) {
     this.responseData = responseData;
   }
 

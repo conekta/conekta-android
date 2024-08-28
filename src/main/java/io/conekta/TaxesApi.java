@@ -33,6 +33,7 @@ import java.io.File;
 
 public class TaxesApi {
   String basePath = "https://api.conekta.io";
+  String apiKey;
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public void addHeader(String key, String value) {
@@ -49,6 +50,14 @@ public class TaxesApi {
 
   public String getBasePath() {
     return basePath;
+  }
+  
+  public void setApiKey(String apiKey){
+      this.apiKey = apiKey;
+  }
+  
+  public String GetApiKey(){
+      return this.apiKey;
   }
 
   /**
@@ -81,10 +90,11 @@ public class TaxesApi {
     // form params
     Map<String, String> localVarFormParams = new HashMap<String, String>();
 
-
     localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
     localVarHeaderParams.put("X-Child-Company-Id", ApiInvoker.parameterToString(xChildCompanyId));
-
+    
+    localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    
     String[] localVarContentTypes = {
       "application/json"
     };
@@ -142,10 +152,11 @@ public class TaxesApi {
     // form params
     Map<String, String> localVarFormParams = new HashMap<String, String>();
 
-
     localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
     localVarHeaderParams.put("X-Child-Company-Id", ApiInvoker.parameterToString(xChildCompanyId));
-
+    
+    localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    
     String[] localVarContentTypes = {
       
     };
@@ -208,10 +219,11 @@ public class TaxesApi {
     // form params
     Map<String, String> localVarFormParams = new HashMap<String, String>();
 
-
     localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
     localVarHeaderParams.put("X-Child-Company-Id", ApiInvoker.parameterToString(xChildCompanyId));
-
+    
+    localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    
     String[] localVarContentTypes = {
       "application/json"
     };

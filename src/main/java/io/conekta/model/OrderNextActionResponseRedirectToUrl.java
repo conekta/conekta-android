@@ -12,6 +12,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "contains the following attributes that will guide to continue the flow")
 public class OrderNextActionResponseRedirectToUrl  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("url")
   private URI url = null;
   @SerializedName("return_url")

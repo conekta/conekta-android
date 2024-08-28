@@ -11,6 +11,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "Address of the person who will receive the order")
 public class CustomerShippingContactsAddress  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("street1")
   private String street1 = null;
   @SerializedName("street2")

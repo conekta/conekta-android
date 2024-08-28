@@ -1,6 +1,7 @@
 package io.conekta.model;
 
 import io.conekta.model.CustomerInfoJustCustomerId;
+import io.conekta.model.OasAnyTypeNotMapped;
 import io.conekta.model.Payout;
 import java.util.*;
 import java.util.Map;
@@ -15,16 +16,19 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "a payout order")
 public class PayoutOrder  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("allowed_payout_methods")
   private List<String> allowedPayoutMethods = null;
   @SerializedName("amount")
   private Integer amount = null;
   @SerializedName("currency")
-  private String currency = "MXN";
+  private String currency = MXN;
   @SerializedName("customer_info")
   private CustomerInfoJustCustomerId customerInfo = null;
   @SerializedName("metadata")
-  private Map<String, Object> metadata = null;
+  private Map<String, OasAnyTypeNotMapped> metadata = null;
   @SerializedName("payout")
   private Payout payout = null;
   @SerializedName("reason")
@@ -77,10 +81,10 @@ public class PayoutOrder  {
    * The metadata of the payout order.
    **/
   @ApiModelProperty(value = "The metadata of the payout order.")
-  public Map<String, Object> getMetadata() {
+  public Map<String, OasAnyTypeNotMapped> getMetadata() {
     return metadata;
   }
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(Map<String, OasAnyTypeNotMapped> metadata) {
     this.metadata = metadata;
   }
 

@@ -12,6 +12,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "token response")
 public class TokenResponse  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("checkout")
   private TokenResponseCheckout checkout = null;
   @SerializedName("id")

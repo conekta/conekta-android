@@ -30,4 +30,19 @@ public class TokensApiTest {
         
         assertEquals("tok_2toPJUcZ27AH5LsZk", response.getId());
     }
+
+    @Test(expected = ApiException.class)
+    public void CreateTokenFails() throws ApiException {
+        Token token = new Token();
+        TokenCard card = new TokenCard();
+        card.setCvc("123");
+        card.setExpYear("29");
+        card.setName("fran carrero");
+        card.setNumber("4242424242424242");
+        token.setCard(card);
+
+        TokenResponse response = instance.createToken(token, "es");
+
+        assertEquals("tok_2toPJUcZ27AH5LsZk", response.getId());
+    }
 }

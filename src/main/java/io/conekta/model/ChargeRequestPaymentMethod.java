@@ -10,6 +10,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class ChargeRequestPaymentMethod  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("type")
   private String type = null;
   @SerializedName("cvc")

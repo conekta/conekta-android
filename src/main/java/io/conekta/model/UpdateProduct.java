@@ -10,6 +10,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class UpdateProduct  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("antifraud_info")
   private Map<String, Object> antifraudInfo = null;
   @SerializedName("description")

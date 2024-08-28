@@ -1,5 +1,6 @@
 package io.conekta.model;
 
+import io.conekta.model.OasAnyTypeNotMapped;
 import io.conekta.model.WebhookLog;
 import java.util.*;
 import java.util.Map;
@@ -14,10 +15,13 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "event model")
 public class EventResponse  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("created_at")
   private Long createdAt = null;
   @SerializedName("data")
-  private Map<String, Object> data = null;
+  private Map<String, OasAnyTypeNotMapped> data = null;
   @SerializedName("id")
   private String id = null;
   @SerializedName("livemode")
@@ -44,10 +48,10 @@ public class EventResponse  {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Map<String, Object> getData() {
+  public Map<String, OasAnyTypeNotMapped> getData() {
     return data;
   }
-  public void setData(Map<String, Object> data) {
+  public void setData(Map<String, OasAnyTypeNotMapped> data) {
     this.data = data;
   }
 

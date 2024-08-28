@@ -11,6 +11,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "It is a parameter that allows to identify in the response, the detailed content of the plans to which the client has subscribed")
 public class SubscriptionRequest  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("plan_id")
   private String planId = null;
   @SerializedName("card_id")

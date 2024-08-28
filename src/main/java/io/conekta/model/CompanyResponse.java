@@ -13,6 +13,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "Company model")
 public class CompanyResponse  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("id")
   private String id = null;
   @SerializedName("created_at")

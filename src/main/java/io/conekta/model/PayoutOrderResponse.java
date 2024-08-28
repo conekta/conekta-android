@@ -1,5 +1,6 @@
 package io.conekta.model;
 
+import io.conekta.model.OasAnyTypeNotMapped;
 import io.conekta.model.PayoutOrderPayoutsItem;
 import io.conekta.model.PayoutOrderResponseCustomerInfo;
 import java.util.*;
@@ -15,6 +16,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "payout order model response")
 public class PayoutOrderResponse  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("allowed_payout_methods")
   private List<String> allowedPayoutMethods = null;
   @SerializedName("amount")
@@ -22,7 +26,7 @@ public class PayoutOrderResponse  {
   @SerializedName("created_at")
   private Long createdAt = null;
   @SerializedName("currency")
-  private String currency = "MXN";
+  private String currency = MXN;
   @SerializedName("customer_info")
   private PayoutOrderResponseCustomerInfo customerInfo = null;
   @SerializedName("expires_at")
@@ -34,7 +38,7 @@ public class PayoutOrderResponse  {
   @SerializedName("object")
   private String _object = null;
   @SerializedName("metadata")
-  private Map<String, Object> metadata = null;
+  private Map<String, OasAnyTypeNotMapped> metadata = null;
   @SerializedName("payouts")
   private List<PayoutOrderPayoutsItem> payouts = null;
   @SerializedName("reason")
@@ -146,10 +150,10 @@ public class PayoutOrderResponse  {
    * The metadata of the payout order.
    **/
   @ApiModelProperty(value = "The metadata of the payout order.")
-  public Map<String, Object> getMetadata() {
+  public Map<String, OasAnyTypeNotMapped> getMetadata() {
     return metadata;
   }
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(Map<String, OasAnyTypeNotMapped> metadata) {
     this.metadata = metadata;
   }
 

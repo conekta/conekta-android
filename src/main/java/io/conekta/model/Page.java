@@ -11,6 +11,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "page metadata")
 public class Page  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("next_page_url")
   private String nextPageUrl = null;
   @SerializedName("previous_page_url")

@@ -1,5 +1,5 @@
 test:
-	mvn -B package --no-transfer-progress --file pom.xml
+	./gradlew  test
 android:
 	rm -rf src/main/kotlin && \
 	rm -rf docs && \

@@ -11,6 +11,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "The customer information of the payout order.")
 public class PayoutOrderResponseCustomerInfo  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("customer_custom_reference")
   private String customerCustomReference = null;
   @SerializedName("name")

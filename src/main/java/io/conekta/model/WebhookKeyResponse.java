@@ -11,6 +11,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "webhook keys model")
 public class WebhookKeyResponse  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("id")
   private String id = null;
   @SerializedName("active")

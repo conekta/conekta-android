@@ -13,6 +13,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "It is a sub-resource of the Order model that can be stipulated in order to configure its corresponding checkout")
 public class Checkout  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("allowed_payment_methods")
   private List<String> allowedPaymentMethods = null;
   @SerializedName("expires_at")

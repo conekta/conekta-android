@@ -8,6 +8,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class EmailCheckoutRequest  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("email")
   private String email = null;
 

@@ -8,6 +8,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class DeletedBlacklistRuleResponse  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("id")
   private String id = null;
   @SerializedName("field")

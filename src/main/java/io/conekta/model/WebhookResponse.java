@@ -12,6 +12,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "webhooks model")
 public class WebhookResponse  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("deleted")
   private Boolean deleted = null;
   @SerializedName("development_enabled")

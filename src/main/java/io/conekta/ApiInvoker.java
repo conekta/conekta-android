@@ -318,7 +318,7 @@ public class ApiInvoker {
     try {
       if ("GET".equals(method)) {
         HttpGet get = new HttpGet(url);
-        get.addHeader("Accept", "Accept: application/vnd.conekta-v2.1.0+json");
+        get.addHeader("Accept", "application/json");
         for(String key : headers.keySet()) {
           get.setHeader(key, headers.get(key));
         }

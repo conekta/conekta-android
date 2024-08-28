@@ -1,5 +1,6 @@
 package io.conekta.model;
 
+import io.conekta.model.OasAnyTypeNotMapped;
 import java.util.*;
 import java.util.Map;
 
@@ -9,6 +10,9 @@ import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
 public class OrderResponseCheckout  {
+  
+  private static final String MXN = "MXN";
+  
   
   @SerializedName("allowed_payment_methods")
   private List<String> allowedPaymentMethods = null;
@@ -31,7 +35,7 @@ public class OrderResponseCheckout  {
   @SerializedName("livemode")
   private Boolean livemode = null;
   @SerializedName("metadata")
-  private Map<String, Object> metadata = null;
+  private Map<String, OasAnyTypeNotMapped> metadata = null;
   @SerializedName("monthly_installments_enabled")
   private Boolean monthlyInstallmentsEnabled = null;
   @SerializedName("monthly_installments_options")
@@ -168,10 +172,10 @@ public class OrderResponseCheckout  {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Map<String, Object> getMetadata() {
+  public Map<String, OasAnyTypeNotMapped> getMetadata() {
     return metadata;
   }
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(Map<String, OasAnyTypeNotMapped> metadata) {
     this.metadata = metadata;
   }
 

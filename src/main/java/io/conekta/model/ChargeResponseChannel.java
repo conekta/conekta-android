@@ -8,6 +8,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class ChargeResponseChannel  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("segment")
   private String segment = null;
   @SerializedName("checkout_request_id")

@@ -11,6 +11,9 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "subscription model")
 public class SubscriptionResponse  {
   
+  private static final String MXN = "MXN";
+  
+  
   @SerializedName("billing_cycle_start")
   private Long billingCycleStart = null;
   @SerializedName("billing_cycle_end")
