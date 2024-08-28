@@ -26,12 +26,12 @@ jobs:
         port: 3000
     - name: Build
       run: |
-        ./gradlew clean build 
+        make build
     - name: test
       run: |
-        ./gradlew  test
+        make test
     - name: Archive artifacts
       uses: actions/upload-artifact@v2
       with:
         name: app
-        path: app/build/outputs/apk/debug/app-debug.apk
+        path: app/build/outputs/aar/conektasdk-debug.aar

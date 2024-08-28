@@ -29,6 +29,7 @@
   "openApiNullable" : false,
   "apiVersion" :"application/vnd.conekta-v2.1.0+json",
   "templateDir": "local/templates",
+  "androidGradleVersion": "7.3.1",
   "files": {
         "OasAnyTypeNotMapped.mustache" : {
           "templateType": "SupportingFiles",

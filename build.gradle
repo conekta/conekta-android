@@ -21,9 +21,6 @@ android {
             withSourcesJar()
         }
     }
-     lintOptions {
-        baseline file("lint-baseline.xml")
-    }
 }
 
 ext {

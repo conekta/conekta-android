@@ -1,5 +1,7 @@
 test:
 	./gradlew  test
+build:
+	./gradlew clean build -x lintDebug
 android:
 	rm -rf src/main/kotlin && \
 	rm -rf docs && \
