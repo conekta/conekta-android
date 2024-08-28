@@ -25,7 +25,7 @@
   "disallowAdditionalPropertiesIfNotPresent": true,
   "useOneOfDiscriminatorLookup": true,
   "serializationLibrary": "gson",
-  "httpUserAgent": "Conekta/v2 JavaBindings/6.0.0-beta",
+  "httpUserAgent": "Conekta/v2 Android/6.0.0-beta",
   "openApiNullable" : false,
   "apiVersion" :"application/vnd.conekta-v2.1.0+json"
 }

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 build.gradle
 docs/AntifraudApi.md
@@ -206,7 +205,6 @@ gradle/wrapper/gradle-wrapper.jar
 gradle/wrapper/gradle-wrapper.properties
 gradlew
 gradlew.bat
-pom.xml
 settings.gradle
 src/main/AndroidManifest.xml
 src/main/java/io/conekta/AntifraudApi.java
