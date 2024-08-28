@@ -1,19 +1,22 @@
 
+
 # PaymentMethodCashResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **kotlin.String** |  | 
-**id** | **kotlin.String** |  | 
-**&#x60;object&#x60;** | **kotlin.String** |  | 
-**createdAt** | **kotlin.Long** |  | 
-**parentId** | **kotlin.String** |  |  [optional]
-**reference** | **kotlin.String** |  |  [optional]
-**barcode** | **kotlin.String** |  |  [optional]
-**barcodeUrl** | **kotlin.String** |  |  [optional]
-**expiresAt** | **kotlin.Long** |  |  [optional]
-**provider** | **kotlin.String** |  |  [optional]
+**type** | **String** |  | 
+**id** | **String** |  | 
+**_object** | **String** |  | 
+**createdAt** | **Long** |  | 
+**parentId** | **String** |  |  [optional]
+**reference** | **String** |  |  [optional]
+**barcode** | **String** |  |  [optional]
+**barcodeUrl** | **String** |  |  [optional]
+**expiresAt** | **Long** |  |  [optional]
+**provider** | **String** |  |  [optional]
+
 
 
 

@@ -10,38 +10,45 @@ Method | HTTP request | Description
 
 
 
+## getCharges
+
+> GetChargesResponse getCharges(acceptLanguage, xChildCompanyId, limit, search, next, previous)
+
 Get A List of Charges
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.ChargesApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(ChargesApi::class.java)
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-val limit : kotlin.Int = 56 // kotlin.Int | The numbers of items to return, the maximum value is 250
-val search : kotlin.String = search_example // kotlin.String | General order search, e.g. by mail, reference etc.
-val next : kotlin.String = next_example // kotlin.String | next page
-val previous : kotlin.String = previous_example // kotlin.String | previous page
-
-val result : GetChargesResponse = webService.getCharges(acceptLanguage, xChildCompanyId, limit, search, next, previous)
+ChargesApi apiInstance = new ChargesApi();
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+Integer limit = 20; // Integer | The numbers of items to return, the maximum value is 250
+String search = null; // String | General order search, e.g. by mail, reference etc.
+String next = null; // String | next page
+String previous = null; // String | previous page
+try {
+    GetChargesResponse result = apiInstance.getCharges(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChargesApi#getCharges");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
- **limit** | **kotlin.Int**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20]
- **search** | **kotlin.String**| General order search, e.g. by mail, reference etc. | [optional]
- **next** | **kotlin.String**| next page | [optional]
- **previous** | **kotlin.String**| previous page | [optional]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
+ **limit** | **Integer**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20]
+ **search** | **String**| General order search, e.g. by mail, reference etc. | [optional] [default to null]
+ **next** | **String**| next page | [optional] [default to null]
+ **previous** | **String**| previous page | [optional] [default to null]
 
 ### Return type
 
@@ -49,46 +56,51 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## ordersCreateCharge
+
+> ChargeOrderResponse ordersCreateCharge(id, chargeRequest, acceptLanguage, xChildCompanyId)
 
 Create charge
 
 Create charge for an existing orden
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.ChargesApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(ChargesApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val chargeRequest : ChargeRequest =  // ChargeRequest | requested field for a charge
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-
-val result : ChargeOrderResponse = webService.ordersCreateCharge(id, chargeRequest, acceptLanguage, xChildCompanyId)
+ChargesApi apiInstance = new ChargesApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+ChargeRequest chargeRequest = new ChargeRequest(); // ChargeRequest | requested field for a charge
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+try {
+    ChargeOrderResponse result = apiInstance.ordersCreateCharge(id, chargeRequest, acceptLanguage, xChildCompanyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChargesApi#ordersCreateCharge");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
+ **id** | **String**| Identifier of the resource | [default to null]
  **chargeRequest** | [**ChargeRequest**](ChargeRequest.md)| requested field for a charge |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
 
 ### Return type
 
@@ -96,44 +108,49 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: application/json
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## updateCharge
+
+> ChargeResponse updateCharge(id, chargeUpdateRequest, acceptLanguage, xChildCompanyId)
 
 Update a charge
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.ChargesApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(ChargesApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val chargeUpdateRequest : ChargeUpdateRequest =  // ChargeUpdateRequest | requested field for update a charge
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-
-val result : ChargeResponse = webService.updateCharge(id, chargeUpdateRequest, acceptLanguage, xChildCompanyId)
+ChargesApi apiInstance = new ChargesApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+ChargeUpdateRequest chargeUpdateRequest = new ChargeUpdateRequest(); // ChargeUpdateRequest | requested field for update a charge
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+try {
+    ChargeResponse result = apiInstance.updateCharge(id, chargeUpdateRequest, acceptLanguage, xChildCompanyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChargesApi#updateCharge");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
+ **id** | **String**| Identifier of the resource | [default to null]
  **chargeUpdateRequest** | [**ChargeUpdateRequest**](ChargeUpdateRequest.md)| requested field for update a charge |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
 
 ### Return type
 
@@ -141,12 +158,10 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: application/json
+- **Accept**: application/vnd.conekta-v2.1.0+json
 

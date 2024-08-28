@@ -13,32 +13,39 @@ Method | HTTP request | Description
 
 
 
+## createWebhook
+
+> WebhookResponse createWebhook(webhookRequest, acceptLanguage)
+
 Create Webhook
 
 What we do at Conekta translates into events. For example, an event of interest to us occurs at the time a payment is successfully processed. At that moment we will be interested in doing several things: Send an email to the buyer, generate an invoice, start the process of shipping the product, etc.
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.WebhooksApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(WebhooksApi::class.java)
-val webhookRequest : WebhookRequest =  // WebhookRequest | requested field for webhook
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-
-val result : WebhookResponse = webService.createWebhook(webhookRequest, acceptLanguage)
+WebhooksApi apiInstance = new WebhooksApi();
+WebhookRequest webhookRequest = new WebhookRequest(); // WebhookRequest | requested field for webhook
+String acceptLanguage = es; // String | Use for knowing which language to use
+try {
+    WebhookResponse result = apiInstance.createWebhook(webhookRequest, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WebhooksApi#createWebhook");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **webhookRequest** | [**WebhookRequest**](WebhookRequest.md)| requested field for webhook |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
 
 ### Return type
 
@@ -46,40 +53,45 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: application/json
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## deleteWebhook
+
+> WebhookResponse deleteWebhook(id, acceptLanguage)
 
 Delete Webhook
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.WebhooksApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(WebhooksApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-
-val result : WebhookResponse = webService.deleteWebhook(id, acceptLanguage)
+WebhooksApi apiInstance = new WebhooksApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+String acceptLanguage = es; // String | Use for knowing which language to use
+try {
+    WebhookResponse result = apiInstance.deleteWebhook(id, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WebhooksApi#deleteWebhook");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **id** | **String**| Identifier of the resource | [default to null]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
 
 ### Return type
 
@@ -87,42 +99,47 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## getWebhook
+
+> WebhookResponse getWebhook(id, acceptLanguage, xChildCompanyId)
 
 Get Webhook
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.WebhooksApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(WebhooksApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-
-val result : WebhookResponse = webService.getWebhook(id, acceptLanguage, xChildCompanyId)
+WebhooksApi apiInstance = new WebhooksApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+try {
+    WebhookResponse result = apiInstance.getWebhook(id, acceptLanguage, xChildCompanyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WebhooksApi#getWebhook");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **id** | **String**| Identifier of the resource | [default to null]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
 
 ### Return type
 
@@ -130,52 +147,57 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## getWebhooks
+
+> GetWebhooksResponse getWebhooks(acceptLanguage, xChildCompanyId, limit, search, url, next, previous)
 
 Get List of Webhooks
 
 Consume the list of webhooks you have, each environment supports 10 webhooks (For production and testing)
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.WebhooksApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(WebhooksApi::class.java)
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-val limit : kotlin.Int = 56 // kotlin.Int | The numbers of items to return, the maximum value is 250
-val search : kotlin.String = search_example // kotlin.String | General order search, e.g. by mail, reference etc.
-val url : kotlin.String = url_example // kotlin.String | url for webhook filter
-val next : kotlin.String = next_example // kotlin.String | next page
-val previous : kotlin.String = previous_example // kotlin.String | previous page
-
-val result : GetWebhooksResponse = webService.getWebhooks(acceptLanguage, xChildCompanyId, limit, search, url, next, previous)
+WebhooksApi apiInstance = new WebhooksApi();
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+Integer limit = 20; // Integer | The numbers of items to return, the maximum value is 250
+String search = null; // String | General order search, e.g. by mail, reference etc.
+String url = null; // String | url for webhook filter
+String next = null; // String | next page
+String previous = null; // String | previous page
+try {
+    GetWebhooksResponse result = apiInstance.getWebhooks(acceptLanguage, xChildCompanyId, limit, search, url, next, previous);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WebhooksApi#getWebhooks");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
- **limit** | **kotlin.Int**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20]
- **search** | **kotlin.String**| General order search, e.g. by mail, reference etc. | [optional]
- **url** | **kotlin.String**| url for webhook filter | [optional]
- **next** | **kotlin.String**| next page | [optional]
- **previous** | **kotlin.String**| previous page | [optional]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
+ **limit** | **Integer**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20]
+ **search** | **String**| General order search, e.g. by mail, reference etc. | [optional] [default to null]
+ **url** | **String**| url for webhook filter | [optional] [default to null]
+ **next** | **String**| next page | [optional] [default to null]
+ **previous** | **String**| previous page | [optional] [default to null]
 
 ### Return type
 
@@ -183,42 +205,47 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## testWebhook
+
+> WebhookResponse testWebhook(id, acceptLanguage)
 
 Test Webhook
 
 Send a webhook.ping event
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.WebhooksApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(WebhooksApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-
-val result : WebhookResponse = webService.testWebhook(id, acceptLanguage)
+WebhooksApi apiInstance = new WebhooksApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+String acceptLanguage = es; // String | Use for knowing which language to use
+try {
+    WebhookResponse result = apiInstance.testWebhook(id, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WebhooksApi#testWebhook");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **id** | **String**| Identifier of the resource | [default to null]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
 
 ### Return type
 
@@ -226,46 +253,51 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## updateWebhook
+
+> WebhookResponse updateWebhook(id, webhookUpdateRequest, acceptLanguage, xChildCompanyId)
 
 Update Webhook
 
 updates an existing webhook
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.WebhooksApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(WebhooksApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val webhookUpdateRequest : WebhookUpdateRequest =  // WebhookUpdateRequest | requested fields in order to update a webhook
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-
-val result : WebhookResponse = webService.updateWebhook(id, webhookUpdateRequest, acceptLanguage, xChildCompanyId)
+WebhooksApi apiInstance = new WebhooksApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+WebhookUpdateRequest webhookUpdateRequest = new WebhookUpdateRequest(); // WebhookUpdateRequest | requested fields in order to update a webhook
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+try {
+    WebhookResponse result = apiInstance.updateWebhook(id, webhookUpdateRequest, acceptLanguage, xChildCompanyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WebhooksApi#updateWebhook");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
+ **id** | **String**| Identifier of the resource | [default to null]
  **webhookUpdateRequest** | [**WebhookUpdateRequest**](WebhookUpdateRequest.md)| requested fields in order to update a webhook |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
 
 ### Return type
 
@@ -273,12 +305,10 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: application/json
+- **Accept**: application/vnd.conekta-v2.1.0+json
 

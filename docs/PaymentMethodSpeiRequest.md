@@ -1,11 +1,14 @@
 
+
 # PaymentMethodSpeiRequest
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **kotlin.String** | Type of payment method | 
-**expiresAt** | **kotlin.Long** |  |  [optional]
+**type** | **String** | Type of payment method | 
+**expiresAt** | **Long** |  |  [optional]
+
 
 
 

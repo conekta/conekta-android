@@ -1,10 +1,13 @@
 
+
 # CustomerInfoJustCustomerId
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**customerId** | **kotlin.String** |  | 
+**customerId** | **String** |  | 
+
 
 
 

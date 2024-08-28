@@ -15,34 +15,41 @@ Method | HTTP request | Description
 
 
 
+## cancelOrder
+
+> OrderResponse cancelOrder(id, acceptLanguage, xChildCompanyId)
+
 Cancel Order
 
 Cancel an order that has been previously created.
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.OrdersApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(OrdersApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-
-val result : OrderResponse = webService.cancelOrder(id, acceptLanguage, xChildCompanyId)
+OrdersApi apiInstance = new OrdersApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+try {
+    OrderResponse result = apiInstance.cancelOrder(id, acceptLanguage, xChildCompanyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrdersApi#cancelOrder");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **id** | **String**| Identifier of the resource | [default to null]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
 
 ### Return type
 
@@ -50,44 +57,49 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## createOrder
+
+> OrderResponse createOrder(orderRequest, acceptLanguage, xChildCompanyId)
 
 Create order
 
 Create a new order.
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.OrdersApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(OrdersApi::class.java)
-val orderRequest : OrderRequest =  // OrderRequest | requested field for order
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-
-val result : OrderResponse = webService.createOrder(orderRequest, acceptLanguage, xChildCompanyId)
+OrdersApi apiInstance = new OrdersApi();
+OrderRequest orderRequest = new OrderRequest(); // OrderRequest | requested field for order
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+try {
+    OrderResponse result = apiInstance.createOrder(orderRequest, acceptLanguage, xChildCompanyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrdersApi#createOrder");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **orderRequest** | [**OrderRequest**](OrderRequest.md)| requested field for order |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
 
 ### Return type
 
@@ -95,44 +107,49 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: application/json
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## getOrderById
+
+> OrderResponse getOrderById(id, acceptLanguage, xChildCompanyId)
 
 Get Order
 
 Info for a specific order
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.OrdersApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(OrdersApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-
-val result : OrderResponse = webService.getOrderById(id, acceptLanguage, xChildCompanyId)
+OrdersApi apiInstance = new OrdersApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+try {
+    OrderResponse result = apiInstance.getOrderById(id, acceptLanguage, xChildCompanyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrdersApi#getOrderById");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **id** | **String**| Identifier of the resource | [default to null]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
 
 ### Return type
 
@@ -140,64 +157,69 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## getOrders
+
+> GetOrdersResponse getOrders(acceptLanguage, xChildCompanyId, limit, search, next, previous, paymentStatus, lastPaymentInfoStatus, createdAt, createdAtGte, createdAtLte, updatedAtGte, updatedAtLte)
 
 Get a list of Orders
 
 Get order details in the form of a list
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.OrdersApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(OrdersApi::class.java)
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-val limit : kotlin.Int = 56 // kotlin.Int | The numbers of items to return, the maximum value is 250
-val search : kotlin.String = search_example // kotlin.String | General order search, e.g. by mail, reference etc.
-val next : kotlin.String = next_example // kotlin.String | next page
-val previous : kotlin.String = previous_example // kotlin.String | previous page
-val paymentStatus : kotlin.String = paid // kotlin.String | Filters by order status
-val lastPaymentInfoStatus : kotlin.String = pending_payment // kotlin.String | Filters by last payment info status
-val createdAt : kotlin.Long = 1612137600 // kotlin.Long | created equal to
-val createdAtGte : kotlin.Long = 1612137600 // kotlin.Long | created at greater than or equal to
-val createdAtLte : kotlin.Long = 1612137600 // kotlin.Long | created at less than or equal to
-val updatedAtGte : kotlin.Long = 1612137600 // kotlin.Long | updated at greater than or equal to
-val updatedAtLte : kotlin.Long = 1612137600 // kotlin.Long | updated at less than or equal to
-
-val result : GetOrdersResponse = webService.getOrders(acceptLanguage, xChildCompanyId, limit, search, next, previous, paymentStatus, lastPaymentInfoStatus, createdAt, createdAtGte, createdAtLte, updatedAtGte, updatedAtLte)
+OrdersApi apiInstance = new OrdersApi();
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+Integer limit = 20; // Integer | The numbers of items to return, the maximum value is 250
+String search = null; // String | General order search, e.g. by mail, reference etc.
+String next = null; // String | next page
+String previous = null; // String | previous page
+String paymentStatus = paid; // String | Filters by order status
+String lastPaymentInfoStatus = pending_payment; // String | Filters by last payment info status
+Long createdAt = 1612137600; // Long | created equal to
+Long createdAtGte = 1612137600; // Long | created at greater than or equal to
+Long createdAtLte = 1612137600; // Long | created at less than or equal to
+Long updatedAtGte = 1612137600; // Long | updated at greater than or equal to
+Long updatedAtLte = 1612137600; // Long | updated at less than or equal to
+try {
+    GetOrdersResponse result = apiInstance.getOrders(acceptLanguage, xChildCompanyId, limit, search, next, previous, paymentStatus, lastPaymentInfoStatus, createdAt, createdAtGte, createdAtLte, updatedAtGte, updatedAtLte);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrdersApi#getOrders");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
- **limit** | **kotlin.Int**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20]
- **search** | **kotlin.String**| General order search, e.g. by mail, reference etc. | [optional]
- **next** | **kotlin.String**| next page | [optional]
- **previous** | **kotlin.String**| previous page | [optional]
- **paymentStatus** | **kotlin.String**| Filters by order status | [optional]
- **lastPaymentInfoStatus** | **kotlin.String**| Filters by last payment info status | [optional]
- **createdAt** | **kotlin.Long**| created equal to | [optional]
- **createdAtGte** | **kotlin.Long**| created at greater than or equal to | [optional]
- **createdAtLte** | **kotlin.Long**| created at less than or equal to | [optional]
- **updatedAtGte** | **kotlin.Long**| updated at greater than or equal to | [optional]
- **updatedAtLte** | **kotlin.Long**| updated at less than or equal to | [optional]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
+ **limit** | **Integer**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20]
+ **search** | **String**| General order search, e.g. by mail, reference etc. | [optional] [default to null]
+ **next** | **String**| next page | [optional] [default to null]
+ **previous** | **String**| previous page | [optional] [default to null]
+ **paymentStatus** | **String**| Filters by order status | [optional] [default to null]
+ **lastPaymentInfoStatus** | **String**| Filters by last payment info status | [optional] [default to null]
+ **createdAt** | **Long**| created equal to | [optional] [default to null]
+ **createdAtGte** | **Long**| created at greater than or equal to | [optional] [default to null]
+ **createdAtLte** | **Long**| created at less than or equal to | [optional] [default to null]
+ **updatedAtGte** | **Long**| updated at greater than or equal to | [optional] [default to null]
+ **updatedAtLte** | **Long**| updated at less than or equal to | [optional] [default to null]
 
 ### Return type
 
@@ -205,46 +227,51 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## orderCancelRefund
+
+> OrderResponse orderCancelRefund(id, refundId, acceptLanguage, xChildCompanyId)
 
 Cancel Refund
 
 A refunded order describes the items, amount, and reason an order is being refunded.
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.OrdersApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(OrdersApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val refundId : kotlin.String = 6407b5bee1329a000175ba11 // kotlin.String | refund identifier
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-
-val result : OrderResponse = webService.orderCancelRefund(id, refundId, acceptLanguage, xChildCompanyId)
+OrdersApi apiInstance = new OrdersApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+String refundId = 6407b5bee1329a000175ba11; // String | refund identifier
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+try {
+    OrderResponse result = apiInstance.orderCancelRefund(id, refundId, acceptLanguage, xChildCompanyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrdersApi#orderCancelRefund");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
- **refundId** | **kotlin.String**| refund identifier |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **id** | **String**| Identifier of the resource | [default to null]
+ **refundId** | **String**| refund identifier | [default to null]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
 
 ### Return type
 
@@ -252,46 +279,51 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## orderRefund
+
+> OrderResponse orderRefund(id, orderRefundRequest, acceptLanguage, xChildCompanyId)
 
 Refund Order
 
 A refunded order describes the items, amount, and reason an order is being refunded.
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.OrdersApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(OrdersApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val orderRefundRequest : OrderRefundRequest =  // OrderRefundRequest | requested field for a refund
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-
-val result : OrderResponse = webService.orderRefund(id, orderRefundRequest, acceptLanguage, xChildCompanyId)
+OrdersApi apiInstance = new OrdersApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+OrderRefundRequest orderRefundRequest = new OrderRefundRequest(); // OrderRefundRequest | requested field for a refund
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+try {
+    OrderResponse result = apiInstance.orderRefund(id, orderRefundRequest, acceptLanguage, xChildCompanyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrdersApi#orderRefund");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
+ **id** | **String**| Identifier of the resource | [default to null]
  **orderRefundRequest** | [**OrderRefundRequest**](OrderRefundRequest.md)| requested field for a refund |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
 
 ### Return type
 
@@ -299,45 +331,50 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: application/json
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## ordersCreateCapture
+
+> OrderResponse ordersCreateCapture(id, acceptLanguage, xChildCompanyId, orderCaptureRequest)
 
 Capture Order
 
 Processes an order that has been previously authorized.
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.OrdersApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(OrdersApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-val orderCaptureRequest : OrderCaptureRequest =  // OrderCaptureRequest | requested fields for capture order
-
-val result : OrderResponse = webService.ordersCreateCapture(id, acceptLanguage, xChildCompanyId, orderCaptureRequest)
+OrdersApi apiInstance = new OrdersApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+OrderCaptureRequest orderCaptureRequest = new OrderCaptureRequest(); // OrderCaptureRequest | requested fields for capture order
+try {
+    OrderResponse result = apiInstance.ordersCreateCapture(id, acceptLanguage, xChildCompanyId, orderCaptureRequest);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrdersApi#ordersCreateCapture");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **id** | **String**| Identifier of the resource | [default to null]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
  **orderCaptureRequest** | [**OrderCaptureRequest**](OrderCaptureRequest.md)| requested fields for capture order | [optional]
 
 ### Return type
@@ -346,44 +383,49 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: application/json
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## updateOrder
+
+> OrderResponse updateOrder(id, orderUpdateRequest, acceptLanguage)
 
 Update Order
 
 Update an existing Order.
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.OrdersApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(OrdersApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val orderUpdateRequest : OrderUpdateRequest =  // OrderUpdateRequest | requested field for an order
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-
-val result : OrderResponse = webService.updateOrder(id, orderUpdateRequest, acceptLanguage)
+OrdersApi apiInstance = new OrdersApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+OrderUpdateRequest orderUpdateRequest = new OrderUpdateRequest(); // OrderUpdateRequest | requested field for an order
+String acceptLanguage = es; // String | Use for knowing which language to use
+try {
+    OrderResponse result = apiInstance.updateOrder(id, orderUpdateRequest, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrdersApi#updateOrder");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
+ **id** | **String**| Identifier of the resource | [default to null]
  **orderUpdateRequest** | [**OrderUpdateRequest**](OrderUpdateRequest.md)| requested field for an order |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
 
 ### Return type
 
@@ -391,12 +433,10 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: application/json
+- **Accept**: application/vnd.conekta-v2.1.0+json
 

@@ -1,12 +1,15 @@
 
+
 # UpdateOrderDiscountLinesRequest
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **kotlin.Long** |  |  [optional]
-**code** | **kotlin.String** | Discount code. |  [optional]
-**type** | **kotlin.String** |  |  [optional]
+**amount** | **Long** |  |  [optional]
+**code** | **String** | Discount code. |  [optional]
+**type** | **String** |  |  [optional]
+
 
 
 

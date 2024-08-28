@@ -1,10 +1,13 @@
 
+
 # CustomerPaymentMethodRequest
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **kotlin.String** | Type of payment method | 
+**type** | **String** | Type of payment method | 
+
 
 
 

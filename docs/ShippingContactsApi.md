@@ -10,36 +10,43 @@ Method | HTTP request | Description
 
 
 
+## createCustomerShippingContacts
+
+> CustomerShippingContactsResponse createCustomerShippingContacts(id, customerShippingContacts, acceptLanguage, xChildCompanyId)
+
 Create a shipping contacts
 
 Create a shipping contacts for a customer.
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.ShippingContactsApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(ShippingContactsApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val customerShippingContacts : CustomerShippingContacts =  // CustomerShippingContacts | requested field for customer shippings contacts
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-
-val result : CustomerShippingContactsResponse = webService.createCustomerShippingContacts(id, customerShippingContacts, acceptLanguage, xChildCompanyId)
+ShippingContactsApi apiInstance = new ShippingContactsApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+CustomerShippingContacts customerShippingContacts = new CustomerShippingContacts(); // CustomerShippingContacts | requested field for customer shippings contacts
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+try {
+    CustomerShippingContactsResponse result = apiInstance.createCustomerShippingContacts(id, customerShippingContacts, acceptLanguage, xChildCompanyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ShippingContactsApi#createCustomerShippingContacts");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
+ **id** | **String**| Identifier of the resource | [default to null]
  **customerShippingContacts** | [**CustomerShippingContacts**](CustomerShippingContacts.md)| requested field for customer shippings contacts |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
 
 ### Return type
 
@@ -47,46 +54,51 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: application/json
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## deleteCustomerShippingContacts
+
+> CustomerShippingContactsResponse deleteCustomerShippingContacts(id, shippingContactsId, acceptLanguage, xChildCompanyId)
 
 Delete shipping contacts
 
 Delete shipping contact that corresponds to a customer ID.
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.ShippingContactsApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(ShippingContactsApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val shippingContactsId : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | identifier
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-
-val result : CustomerShippingContactsResponse = webService.deleteCustomerShippingContacts(id, shippingContactsId, acceptLanguage, xChildCompanyId)
+ShippingContactsApi apiInstance = new ShippingContactsApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+String shippingContactsId = 6307a60c41de27127515a575; // String | identifier
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+try {
+    CustomerShippingContactsResponse result = apiInstance.deleteCustomerShippingContacts(id, shippingContactsId, acceptLanguage, xChildCompanyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ShippingContactsApi#deleteCustomerShippingContacts");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
- **shippingContactsId** | **kotlin.String**| identifier |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **id** | **String**| Identifier of the resource | [default to null]
+ **shippingContactsId** | **String**| identifier | [default to null]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
 
 ### Return type
 
@@ -94,48 +106,53 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## updateCustomerShippingContacts
+
+> CustomerShippingContactsResponse updateCustomerShippingContacts(id, shippingContactsId, customerUpdateShippingContacts, acceptLanguage, xChildCompanyId)
 
 Update shipping contacts
 
 Update shipping contact that corresponds to a customer ID.
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.ShippingContactsApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(ShippingContactsApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val shippingContactsId : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | identifier
-val customerUpdateShippingContacts : CustomerUpdateShippingContacts =  // CustomerUpdateShippingContacts | requested field for customer update shippings contacts
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-
-val result : CustomerShippingContactsResponse = webService.updateCustomerShippingContacts(id, shippingContactsId, customerUpdateShippingContacts, acceptLanguage, xChildCompanyId)
+ShippingContactsApi apiInstance = new ShippingContactsApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+String shippingContactsId = 6307a60c41de27127515a575; // String | identifier
+CustomerUpdateShippingContacts customerUpdateShippingContacts = new CustomerUpdateShippingContacts(); // CustomerUpdateShippingContacts | requested field for customer update shippings contacts
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+try {
+    CustomerShippingContactsResponse result = apiInstance.updateCustomerShippingContacts(id, shippingContactsId, customerUpdateShippingContacts, acceptLanguage, xChildCompanyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ShippingContactsApi#updateCustomerShippingContacts");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
- **shippingContactsId** | **kotlin.String**| identifier |
+ **id** | **String**| Identifier of the resource | [default to null]
+ **shippingContactsId** | **String**| identifier | [default to null]
  **customerUpdateShippingContacts** | [**CustomerUpdateShippingContacts**](CustomerUpdateShippingContacts.md)| requested field for customer update shippings contacts |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
 
 ### Return type
 
@@ -143,12 +160,10 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: application/json
+- **Accept**: application/vnd.conekta-v2.1.0+json
 

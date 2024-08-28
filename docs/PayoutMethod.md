@@ -1,10 +1,13 @@
 
+
 # PayoutMethod
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **kotlin.String** | The type of the payout method. | 
+**type** | **String** | The type of the payout method. | 
+
 
 
 

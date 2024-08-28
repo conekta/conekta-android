@@ -1,17 +1,20 @@
 
+
 # CustomerShippingContactsResponseAddress
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**&#x60;object&#x60;** | **kotlin.String** |  |  [optional]
-**street1** | **kotlin.String** |  |  [optional]
-**street2** | **kotlin.String** |  |  [optional]
-**postalCode** | **kotlin.String** |  |  [optional]
-**city** | **kotlin.String** |  |  [optional]
-**state** | **kotlin.String** |  |  [optional]
-**country** | **kotlin.String** |  |  [optional]
-**residential** | **kotlin.Boolean** |  |  [optional]
+**_object** | **String** |  |  [optional]
+**street1** | **String** |  |  [optional]
+**street2** | **String** |  |  [optional]
+**postalCode** | **String** |  |  [optional]
+**city** | **String** |  |  [optional]
+**state** | **String** |  |  [optional]
+**country** | **String** |  |  [optional]
+**residential** | **Boolean** |  |  [optional]
+
 
 
 

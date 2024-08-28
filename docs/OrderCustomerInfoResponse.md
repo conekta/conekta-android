@@ -1,15 +1,18 @@
 
+
 # OrderCustomerInfoResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**customerCustomReference** | **kotlin.String** | Custom reference |  [optional]
-**name** | **kotlin.String** |  |  [optional]
-**email** | **kotlin.String** |  |  [optional]
-**phone** | **kotlin.String** |  |  [optional]
-**corporate** | **kotlin.Boolean** |  |  [optional]
-**&#x60;object&#x60;** | **kotlin.String** |  |  [optional]
+**customerCustomReference** | **String** | Custom reference |  [optional]
+**name** | **String** |  |  [optional]
+**email** | **String** |  |  [optional]
+**phone** | **String** |  |  [optional]
+**corporate** | **Boolean** |  |  [optional]
+**_object** | **String** |  |  [optional]
+
 
 
 

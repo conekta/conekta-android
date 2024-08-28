@@ -12,36 +12,43 @@ Method | HTTP request | Description
 
 
 
+## ordersCreateDiscountLine
+
+> DiscountLinesResponse ordersCreateDiscountLine(id, orderDiscountLinesRequest, acceptLanguage, xChildCompanyId)
+
 Create Discount
 
 Create discount lines for an existing orden
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.DiscountsApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(DiscountsApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val orderDiscountLinesRequest : OrderDiscountLinesRequest =  // OrderDiscountLinesRequest | requested field for a discount lines
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-
-val result : DiscountLinesResponse = webService.ordersCreateDiscountLine(id, orderDiscountLinesRequest, acceptLanguage, xChildCompanyId)
+DiscountsApi apiInstance = new DiscountsApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+OrderDiscountLinesRequest orderDiscountLinesRequest = new OrderDiscountLinesRequest(); // OrderDiscountLinesRequest | requested field for a discount lines
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+try {
+    DiscountLinesResponse result = apiInstance.ordersCreateDiscountLine(id, orderDiscountLinesRequest, acceptLanguage, xChildCompanyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DiscountsApi#ordersCreateDiscountLine");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
+ **id** | **String**| Identifier of the resource | [default to null]
  **orderDiscountLinesRequest** | [**OrderDiscountLinesRequest**](OrderDiscountLinesRequest.md)| requested field for a discount lines |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
 
 ### Return type
 
@@ -49,46 +56,51 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: application/json
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## ordersDeleteDiscountLines
+
+> DiscountLinesResponse ordersDeleteDiscountLines(id, discountLinesId, acceptLanguage, xChildCompanyId)
 
 Delete Discount
 
 Delete an existing discount lines for an existing orden
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.DiscountsApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(DiscountsApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val discountLinesId : kotlin.String = dis_lin_2tQ974hSHcsdeSZHG // kotlin.String | discount line id identifier
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-
-val result : DiscountLinesResponse = webService.ordersDeleteDiscountLines(id, discountLinesId, acceptLanguage, xChildCompanyId)
+DiscountsApi apiInstance = new DiscountsApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+String discountLinesId = dis_lin_2tQ974hSHcsdeSZHG; // String | discount line id identifier
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+try {
+    DiscountLinesResponse result = apiInstance.ordersDeleteDiscountLines(id, discountLinesId, acceptLanguage, xChildCompanyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DiscountsApi#ordersDeleteDiscountLines");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
- **discountLinesId** | **kotlin.String**| discount line id identifier |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **id** | **String**| Identifier of the resource | [default to null]
+ **discountLinesId** | **String**| discount line id identifier | [default to null]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
 
 ### Return type
 
@@ -96,46 +108,51 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## ordersGetDiscountLine
+
+> DiscountLinesResponse ordersGetDiscountLine(id, discountLinesId, acceptLanguage, xChildCompanyId)
 
 Get Discount
 
 Get an existing discount lines for an existing orden
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.DiscountsApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(DiscountsApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val discountLinesId : kotlin.String = dis_lin_2tQ974hSHcsdeSZHG // kotlin.String | discount line id identifier
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-
-val result : DiscountLinesResponse = webService.ordersGetDiscountLine(id, discountLinesId, acceptLanguage, xChildCompanyId)
+DiscountsApi apiInstance = new DiscountsApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+String discountLinesId = dis_lin_2tQ974hSHcsdeSZHG; // String | discount line id identifier
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+try {
+    DiscountLinesResponse result = apiInstance.ordersGetDiscountLine(id, discountLinesId, acceptLanguage, xChildCompanyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DiscountsApi#ordersGetDiscountLine");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
- **discountLinesId** | **kotlin.String**| discount line id identifier |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **id** | **String**| Identifier of the resource | [default to null]
+ **discountLinesId** | **String**| discount line id identifier | [default to null]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
 
 ### Return type
 
@@ -143,52 +160,57 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## ordersGetDiscountLines
+
+> GetOrderDiscountLinesResponse ordersGetDiscountLines(id, acceptLanguage, xChildCompanyId, limit, search, next, previous)
 
 Get a List of Discount
 
 Get discount lines for an existing orden
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.DiscountsApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(DiscountsApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-val limit : kotlin.Int = 56 // kotlin.Int | The numbers of items to return, the maximum value is 250
-val search : kotlin.String = search_example // kotlin.String | General order search, e.g. by mail, reference etc.
-val next : kotlin.String = next_example // kotlin.String | next page
-val previous : kotlin.String = previous_example // kotlin.String | previous page
-
-val result : GetOrderDiscountLinesResponse = webService.ordersGetDiscountLines(id, acceptLanguage, xChildCompanyId, limit, search, next, previous)
+DiscountsApi apiInstance = new DiscountsApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+Integer limit = 20; // Integer | The numbers of items to return, the maximum value is 250
+String search = null; // String | General order search, e.g. by mail, reference etc.
+String next = null; // String | next page
+String previous = null; // String | previous page
+try {
+    GetOrderDiscountLinesResponse result = apiInstance.ordersGetDiscountLines(id, acceptLanguage, xChildCompanyId, limit, search, next, previous);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DiscountsApi#ordersGetDiscountLines");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
- **limit** | **kotlin.Int**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20]
- **search** | **kotlin.String**| General order search, e.g. by mail, reference etc. | [optional]
- **next** | **kotlin.String**| next page | [optional]
- **previous** | **kotlin.String**| previous page | [optional]
+ **id** | **String**| Identifier of the resource | [default to null]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
+ **limit** | **Integer**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20]
+ **search** | **String**| General order search, e.g. by mail, reference etc. | [optional] [default to null]
+ **next** | **String**| next page | [optional] [default to null]
+ **previous** | **String**| previous page | [optional] [default to null]
 
 ### Return type
 
@@ -196,48 +218,53 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## ordersUpdateDiscountLines
+
+> DiscountLinesResponse ordersUpdateDiscountLines(id, discountLinesId, updateOrderDiscountLinesRequest, acceptLanguage, xChildCompanyId)
 
 Update Discount
 
 Update an existing discount lines for an existing orden
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.DiscountsApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(DiscountsApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val discountLinesId : kotlin.String = dis_lin_2tQ974hSHcsdeSZHG // kotlin.String | discount line id identifier
-val updateOrderDiscountLinesRequest : UpdateOrderDiscountLinesRequest =  // UpdateOrderDiscountLinesRequest | requested field for a discount lines
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-
-val result : DiscountLinesResponse = webService.ordersUpdateDiscountLines(id, discountLinesId, updateOrderDiscountLinesRequest, acceptLanguage, xChildCompanyId)
+DiscountsApi apiInstance = new DiscountsApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+String discountLinesId = dis_lin_2tQ974hSHcsdeSZHG; // String | discount line id identifier
+UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest = new UpdateOrderDiscountLinesRequest(); // UpdateOrderDiscountLinesRequest | requested field for a discount lines
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+try {
+    DiscountLinesResponse result = apiInstance.ordersUpdateDiscountLines(id, discountLinesId, updateOrderDiscountLinesRequest, acceptLanguage, xChildCompanyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DiscountsApi#ordersUpdateDiscountLines");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
- **discountLinesId** | **kotlin.String**| discount line id identifier |
+ **id** | **String**| Identifier of the resource | [default to null]
+ **discountLinesId** | **String**| discount line id identifier | [default to null]
  **updateOrderDiscountLinesRequest** | [**UpdateOrderDiscountLinesRequest**](UpdateOrderDiscountLinesRequest.md)| requested field for a discount lines |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
 
 ### Return type
 
@@ -245,12 +272,10 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: application/json
+- **Accept**: application/vnd.conekta-v2.1.0+json
 

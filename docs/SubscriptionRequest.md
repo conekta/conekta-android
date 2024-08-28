@@ -1,12 +1,15 @@
 
+
 # SubscriptionRequest
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**planId** | **kotlin.String** |  | 
-**cardId** | **kotlin.String** |  |  [optional]
-**trialEnd** | **kotlin.Int** |  |  [optional]
+**planId** | **String** |  | 
+**cardId** | **String** |  |  [optional]
+**trialEnd** | **Integer** |  |  [optional]
+
 
 
 

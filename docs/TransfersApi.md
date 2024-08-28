@@ -9,34 +9,41 @@ Method | HTTP request | Description
 
 
 
+## getTransfer
+
+> TransferResponse getTransfer(id, acceptLanguage, xChildCompanyId)
+
 Get Transfer
 
 Get the details of a Transfer
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.TransfersApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(TransfersApi::class.java)
-val id : kotlin.String = 6307a60c41de27127515a575 // kotlin.String | Identifier of the resource
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-
-val result : TransferResponse = webService.getTransfer(id, acceptLanguage, xChildCompanyId)
+TransfersApi apiInstance = new TransfersApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+try {
+    TransferResponse result = apiInstance.getTransfer(id, acceptLanguage, xChildCompanyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TransfersApi#getTransfer");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **kotlin.String**| Identifier of the resource |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
+ **id** | **String**| Identifier of the resource | [default to null]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
 
 ### Return type
 
@@ -44,50 +51,55 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
+
+## getTransfers
+
+> GetTransfersResponse getTransfers(acceptLanguage, xChildCompanyId, limit, search, next, previous)
 
 Get a list of transfers
 
 Get transfers details in the form of a list
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.TransfersApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(TransfersApi::class.java)
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-val xChildCompanyId : kotlin.String = 6441b6376b60c3a638da80af // kotlin.String | In the case of a holding company, the company id of the child company to which will process the request.
-val limit : kotlin.Int = 56 // kotlin.Int | The numbers of items to return, the maximum value is 250
-val search : kotlin.String = search_example // kotlin.String | General order search, e.g. by mail, reference etc.
-val next : kotlin.String = next_example // kotlin.String | next page
-val previous : kotlin.String = previous_example // kotlin.String | previous page
-
-val result : GetTransfersResponse = webService.getTransfers(acceptLanguage, xChildCompanyId, limit, search, next, previous)
+TransfersApi apiInstance = new TransfersApi();
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+Integer limit = 20; // Integer | The numbers of items to return, the maximum value is 250
+String search = null; // String | General order search, e.g. by mail, reference etc.
+String next = null; // String | next page
+String previous = null; // String | previous page
+try {
+    GetTransfersResponse result = apiInstance.getTransfers(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TransfersApi#getTransfers");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
- **xChildCompanyId** | **kotlin.String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional]
- **limit** | **kotlin.Int**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20]
- **search** | **kotlin.String**| General order search, e.g. by mail, reference etc. | [optional]
- **next** | **kotlin.String**| next page | [optional]
- **previous** | **kotlin.String**| previous page | [optional]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
+ **limit** | **Integer**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20]
+ **search** | **String**| General order search, e.g. by mail, reference etc. | [optional] [default to null]
+ **next** | **String**| next page | [optional] [default to null]
+ **previous** | **String**| previous page | [optional] [default to null]
 
 ### Return type
 
@@ -95,12 +107,10 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.conekta-v2.1.0+json
 

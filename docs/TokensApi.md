@@ -8,32 +8,39 @@ Method | HTTP request | Description
 
 
 
+## createToken
+
+> TokenResponse createToken(token, acceptLanguage)
+
 Create Token
 
 Generate a payment token, to associate it with a card 
 
 ### Example
-```kotlin
+
+```java
 // Import classes:
-//import org.openapitools.client.*
-//import org.openapitools.client.infrastructure.*
-//import io.conekta.model.*
+//import io.conekta.TokensApi;
 
-val apiClient = ApiClient()
-apiClient.setBearerToken("TOKEN")
-val webService = apiClient.createWebservice(TokensApi::class.java)
-val token : Token =  // Token | requested field for token
-val acceptLanguage : kotlin.String = es // kotlin.String | Use for knowing which language to use
-
-val result : TokenResponse = webService.createToken(token, acceptLanguage)
+TokensApi apiInstance = new TokensApi();
+Token token = new Token(); // Token | requested field for token
+String acceptLanguage = es; // String | Use for knowing which language to use
+try {
+    TokenResponse result = apiInstance.createToken(token, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TokensApi#createToken");
+    e.printStackTrace();
+}
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | [**Token**](Token.md)| requested field for token |
- **acceptLanguage** | **kotlin.String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
 
 ### Return type
 
@@ -41,12 +48,10 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-
-Configure bearerAuth:
-    ApiClient().setBearerToken("TOKEN")
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: application/json
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
