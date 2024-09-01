@@ -117,7 +117,7 @@ public class ApiInvoker {
 
   public static String parameterToString(Object param) {
     if (param == null) {
-      return "";
+      return null;
     } else if (param instanceof Date) {
       return formatDateTime((Date) param);
     } else if (param instanceof Collection) {
@@ -268,7 +268,9 @@ public class ApiInvoker {
     HashMap<String, String> headers = new HashMap<String, String>();
 
     for(String key : headerParams.keySet()) {
-      headers.put(key, headerParams.get(key));
+      if (headerParams.get(key)!= null) {
+        headers.put(key, headerParams.get(key));
+      }
     }
 
     for(String key : defaultHeaderMap.keySet()) {
