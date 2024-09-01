@@ -1,7 +1,6 @@
 plugins {
     id 'com.android.library' version '7.3.1'
     id 'maven-publish'
-    id 'signing'
 }
 
 android {
@@ -48,22 +47,14 @@ dependencies {
 
 publishing {
     publications {
-        release(MavenPublication) {
-            groupId = 'io.conekta'
-            artifactId = 'conektasdk'
-            version = '6.0.0-beta'
+        
+         mavenJava(MavenPublication) {
+                groupId = 'io.conekta'
+                artifactId = 'conektasdk'
+                version = '6.0.0-SNAPSHOT'
 
-            afterEvaluate {
-                from components.release
-            }
-        }
-        aar(MavenPublication) {
-            groupId = 'io.conekta'
-            artifactId = 'conektasdk'
-            version = '6.0.0-beta'
-
-            // Usa el archivo AAR generado
-            artifact("$buildDir/outputs/aar/conektasdk-release.aar")
+                // Usa el archivo AAR generado
+                artifact("$buildDir/outputs/aar/conektasdk-release.aar")
 
             pom {
                 name = 'sdk conekta android'
@@ -73,7 +64,7 @@ publishing {
                 licenses {
                     license {
                         name = 'The Apache License, Version 2.0'
-                        url = 'http://www.apache.org/licenses/LICENSE-2.0'
+                        url = 'https://www.apache.org/licenses/LICENSE-2.0'
                     }
                 }
                 developers {
@@ -87,13 +78,14 @@ publishing {
                     developerConnection = 'scm:git:ssh://github.com/conekta/conekta-android.git'
                     url = 'http://github.com/conekta/conekta-android'
                 }
+
             }
         }
     }
-   repositories {
+    repositories {
         maven {
             name = 'OSSRH'
-            url = uri('https://oss.sonatype.org/service/local/staging/deploy/maven2/')
+            url = uri('https://oss.sonatype.org/content/repositories/snapshots')
 
             credentials {
                 username = project.findProperty('ossrhUsername')
@@ -101,8 +93,4 @@ publishing {
             }
         }
     }
-}
-
-tasks.named('publishAarPublicationToOSSRHRepository').configure {
-    dependsOn tasks.named('bundleReleaseAar')
 }

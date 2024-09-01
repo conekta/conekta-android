@@ -321,6 +321,7 @@ src/main/java/io/conekta/model/GetWebhooksResponse.java
 src/main/java/io/conekta/model/LogResponse.java
 src/main/java/io/conekta/model/LogsResponse.java
 src/main/java/io/conekta/model/LogsResponseData.java
+src/main/java/io/conekta/model/OasAnyTypeNotMapped.java
 src/main/java/io/conekta/model/OrderCaptureRequest.java
 src/main/java/io/conekta/model/OrderCustomerInfoResponse.java
 src/main/java/io/conekta/model/OrderDiscountLinesRequest.java
@@ -410,4 +411,3 @@ src/main/java/io/conekta/model/WebhookRequest.java
 src/main/java/io/conekta/model/WebhookResponse.java
 src/main/java/io/conekta/model/WebhookUpdateRequest.java
 src/main/java/io/conekta/model/WhitelistlistRuleResponse.java
-src/mainjava/io/conekta/model/OasAnyTypeNotMapped.java
