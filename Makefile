@@ -4,6 +4,9 @@ test:
 build:
 	./gradlew clean build -x lintDebug
 
+deploy:
+    ./gradlew publish
+
 android:
 	rm -rf src/main/kotlin && \
 	rm -rf docs && \

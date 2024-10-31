@@ -89,8 +89,8 @@ publishing {
             url = uri('https://oss.sonatype.org/content/repositories/snapshots')
 
             credentials {
-                username = project.findProperty('ossrhUsername')
-                password = project.findProperty('ossrhPassword')
+                username = System.getenv('OSSRH_USERNAME') ?:  project.findProperty('ossrhUsername')
+                password = System.getenv('OSSRH_PASSWORD') ?: project.findProperty('ossrhPassword')
             }
         }
     }
