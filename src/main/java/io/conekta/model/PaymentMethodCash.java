@@ -17,6 +17,8 @@ public class PaymentMethodCash  {
   private String type = null;
   @SerializedName("object")
   private String _object = null;
+  @SerializedName("agreement")
+  private String agreement = null;
   @SerializedName("auth_code")
   private Integer authCode = null;
   @SerializedName("cashier_id")
@@ -27,6 +29,8 @@ public class PaymentMethodCash  {
   private String barcodeUrl = null;
   @SerializedName("expires_at")
   private Long expiresAt = null;
+  @SerializedName("product_type")
+  private String productType = null;
   @SerializedName("service_name")
   private String serviceName = null;
   @SerializedName("store")
@@ -54,6 +58,17 @@ public class PaymentMethodCash  {
   }
   public void setObject(String _object) {
     this._object = _object;
+  }
+
+  /**
+   * Agreement ID
+   **/
+  @ApiModelProperty(value = "Agreement ID")
+  public String getAgreement() {
+    return agreement;
+  }
+  public void setAgreement(String agreement) {
+    this.agreement = agreement;
   }
 
   /**
@@ -104,6 +119,17 @@ public class PaymentMethodCash  {
   }
   public void setExpiresAt(Long expiresAt) {
     this.expiresAt = expiresAt;
+  }
+
+  /**
+   * Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc.
+   **/
+  @ApiModelProperty(value = "Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc.")
+  public String getProductType() {
+    return productType;
+  }
+  public void setProductType(String productType) {
+    this.productType = productType;
   }
 
   /**
@@ -158,11 +184,13 @@ public class PaymentMethodCash  {
     PaymentMethodCash paymentMethodCash = (PaymentMethodCash) o;
     return (this.type == null ? paymentMethodCash.type == null : this.type.equals(paymentMethodCash.type)) &&
         (this._object == null ? paymentMethodCash._object == null : this._object.equals(paymentMethodCash._object)) &&
+        (this.agreement == null ? paymentMethodCash.agreement == null : this.agreement.equals(paymentMethodCash.agreement)) &&
         (this.authCode == null ? paymentMethodCash.authCode == null : this.authCode.equals(paymentMethodCash.authCode)) &&
         (this.cashierId == null ? paymentMethodCash.cashierId == null : this.cashierId.equals(paymentMethodCash.cashierId)) &&
         (this.reference == null ? paymentMethodCash.reference == null : this.reference.equals(paymentMethodCash.reference)) &&
         (this.barcodeUrl == null ? paymentMethodCash.barcodeUrl == null : this.barcodeUrl.equals(paymentMethodCash.barcodeUrl)) &&
         (this.expiresAt == null ? paymentMethodCash.expiresAt == null : this.expiresAt.equals(paymentMethodCash.expiresAt)) &&
+        (this.productType == null ? paymentMethodCash.productType == null : this.productType.equals(paymentMethodCash.productType)) &&
         (this.serviceName == null ? paymentMethodCash.serviceName == null : this.serviceName.equals(paymentMethodCash.serviceName)) &&
         (this.store == null ? paymentMethodCash.store == null : this.store.equals(paymentMethodCash.store)) &&
         (this.storeName == null ? paymentMethodCash.storeName == null : this.storeName.equals(paymentMethodCash.storeName)) &&
@@ -174,11 +202,13 @@ public class PaymentMethodCash  {
     int result = 17;
     result = 31 * result + (this.type == null ? 0: this.type.hashCode());
     result = 31 * result + (this._object == null ? 0: this._object.hashCode());
+    result = 31 * result + (this.agreement == null ? 0: this.agreement.hashCode());
     result = 31 * result + (this.authCode == null ? 0: this.authCode.hashCode());
     result = 31 * result + (this.cashierId == null ? 0: this.cashierId.hashCode());
     result = 31 * result + (this.reference == null ? 0: this.reference.hashCode());
     result = 31 * result + (this.barcodeUrl == null ? 0: this.barcodeUrl.hashCode());
     result = 31 * result + (this.expiresAt == null ? 0: this.expiresAt.hashCode());
+    result = 31 * result + (this.productType == null ? 0: this.productType.hashCode());
     result = 31 * result + (this.serviceName == null ? 0: this.serviceName.hashCode());
     result = 31 * result + (this.store == null ? 0: this.store.hashCode());
     result = 31 * result + (this.storeName == null ? 0: this.storeName.hashCode());
@@ -193,11 +223,13 @@ public class PaymentMethodCash  {
     
     sb.append("  type: ").append(type).append("\n");
     sb.append("  _object: ").append(_object).append("\n");
+    sb.append("  agreement: ").append(agreement).append("\n");
     sb.append("  authCode: ").append(authCode).append("\n");
     sb.append("  cashierId: ").append(cashierId).append("\n");
     sb.append("  reference: ").append(reference).append("\n");
     sb.append("  barcodeUrl: ").append(barcodeUrl).append("\n");
     sb.append("  expiresAt: ").append(expiresAt).append("\n");
+    sb.append("  productType: ").append(productType).append("\n");
     sb.append("  serviceName: ").append(serviceName).append("\n");
     sb.append("  store: ").append(store).append("\n");
     sb.append("  storeName: ").append(storeName).append("\n");

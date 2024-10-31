@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **id** | **String** |  |  [optional]
 **isRedirectOnFailure** | **Boolean** |  |  [optional]
 **livemode** | **Boolean** |  |  [optional]
+**maxFailedRetries** | **Integer** | Number of retries allowed before the checkout is marked as failed |  [optional]
 **metadata** | [**Map&lt;String, OasAnyTypeNotMapped&gt;**](OasAnyTypeNotMapped.md) |  |  [optional]
 **monthlyInstallmentsEnabled** | **Boolean** |  |  [optional]
 **monthlyInstallmentsOptions** | **List&lt;Integer&gt;** |  |  [optional]

@@ -24,6 +24,7 @@ import io.conekta.model.ChargeOrderResponse;
 import io.conekta.model.ChargeRequest;
 import io.conekta.model.ChargeResponse;
 import io.conekta.model.ChargeUpdateRequest;
+import io.conekta.model.ChargesOrderResponse;
 import io.conekta.model.Error;
 import io.conekta.model.GetChargesResponse;
 
@@ -92,8 +93,9 @@ public class ChargesApi {
     localVarQueryParams.addAll(ApiInvoker.parameterToPairs("", "previous", previous));
     localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
     localVarHeaderParams.put("X-Child-Company-Id", ApiInvoker.parameterToString(xChildCompanyId));
-    
+
     localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    localVarHeaderParams.put("Conekta-Client-User-Agent", "{\"agent\": \"Conekta Android SDK\"}");
     
     String[] localVarContentTypes = {
       
@@ -154,8 +156,9 @@ public class ChargesApi {
 
     localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
     localVarHeaderParams.put("X-Child-Company-Id", ApiInvoker.parameterToString(xChildCompanyId));
-    
+
     localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    localVarHeaderParams.put("Conekta-Client-User-Agent", "{\"agent\": \"Conekta Android SDK\"}");
     
     String[] localVarContentTypes = {
       "application/json"
@@ -176,6 +179,69 @@ public class ChargesApi {
       String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
       if(localVarResponse != null){
         return (ChargeOrderResponse) ApiInvoker.deserialize(localVarResponse, "", ChargeOrderResponse.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      throw ex;
+    }
+  }
+  /**
+   * Create charges
+   * Create charges for an existing orden
+   * @param id Identifier of the resource
+   * @param chargeRequest requested field for a charge
+   * @param acceptLanguage Use for knowing which language to use
+   * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request.
+   * @return ChargesOrderResponse
+   */
+  public ChargesOrderResponse  ordersCreateCharges (String id, ChargeRequest chargeRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+    Object localVarPostBody = chargeRequest;
+    // verify the required parameter 'id' is set
+    if (id == null) {
+       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersCreateCharges");
+    }
+    // verify the required parameter 'chargeRequest' is set
+    if (chargeRequest == null) {
+       throw new ApiException(400, "Missing the required parameter 'chargeRequest' when calling ordersCreateCharges");
+    }
+
+    // create path and map variables
+    String localVarPath = "/orders/{id}/add_charges".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> localVarFormParams = new HashMap<String, String>();
+
+    localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
+    localVarHeaderParams.put("X-Child-Company-Id", ApiInvoker.parameterToString(xChildCompanyId));
+
+    localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    localVarHeaderParams.put("Conekta-Client-User-Agent", "{\"agent\": \"Conekta Android SDK\"}");
+    
+    String[] localVarContentTypes = {
+      "application/json"
+    };
+    String localVarContentType = localVarContentTypes.length > 0 ? localVarContentTypes[0] : "application/json";
+
+    if (localVarContentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      localVarPostBody = localVarBuilder.build();
+    } else {
+      // normal form params
+          }
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      if(localVarResponse != null){
+        return (ChargesOrderResponse) ApiInvoker.deserialize(localVarResponse, "", ChargesOrderResponse.class);
       }
       else {
         return null;
@@ -216,8 +282,9 @@ public class ChargesApi {
 
     localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
     localVarHeaderParams.put("X-Child-Company-Id", ApiInvoker.parameterToString(xChildCompanyId));
-    
+
     localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    localVarHeaderParams.put("Conekta-Client-User-Agent", "{\"agent\": \"Conekta Android SDK\"}");
     
     String[] localVarContentTypes = {
       "application/json"

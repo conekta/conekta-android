@@ -85,8 +85,9 @@ public class PayoutOrdersApi {
     Map<String, String> localVarFormParams = new HashMap<String, String>();
 
     localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
-    
+
     localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    localVarHeaderParams.put("Conekta-Client-User-Agent", "{\"agent\": \"Conekta Android SDK\"}");
     
     String[] localVarContentTypes = {
       "application/json"
@@ -140,8 +141,9 @@ public class PayoutOrdersApi {
     Map<String, String> localVarFormParams = new HashMap<String, String>();
 
     localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
-    
+
     localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    localVarHeaderParams.put("Conekta-Client-User-Agent", "{\"agent\": \"Conekta Android SDK\"}");
     
     String[] localVarContentTypes = {
       
@@ -198,8 +200,9 @@ public class PayoutOrdersApi {
     localVarQueryParams.addAll(ApiInvoker.parameterToPairs("", "next", next));
     localVarQueryParams.addAll(ApiInvoker.parameterToPairs("", "previous", previous));
     localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
-    
+
     localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    localVarHeaderParams.put("Conekta-Client-User-Agent", "{\"agent\": \"Conekta Android SDK\"}");
     
     String[] localVarContentTypes = {
       

@@ -87,8 +87,9 @@ public class CompaniesApi {
     localVarQueryParams.addAll(ApiInvoker.parameterToPairs("", "next", next));
     localVarQueryParams.addAll(ApiInvoker.parameterToPairs("", "previous", previous));
     localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
-    
+
     localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    localVarHeaderParams.put("Conekta-Client-User-Agent", "{\"agent\": \"Conekta Android SDK\"}");
     
     String[] localVarContentTypes = {
       
@@ -142,8 +143,9 @@ public class CompaniesApi {
     Map<String, String> localVarFormParams = new HashMap<String, String>();
 
     localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
-    
+
     localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    localVarHeaderParams.put("Conekta-Client-User-Agent", "{\"agent\": \"Conekta Android SDK\"}");
     
     String[] localVarContentTypes = {
       

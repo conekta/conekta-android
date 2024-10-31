@@ -86,8 +86,9 @@ public class TransactionsApi {
 
     localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
     localVarHeaderParams.put("X-Child-Company-Id", ApiInvoker.parameterToString(xChildCompanyId));
-    
+
     localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    localVarHeaderParams.put("Conekta-Client-User-Agent", "{\"agent\": \"Conekta Android SDK\"}");
     
     String[] localVarContentTypes = {
       
@@ -152,8 +153,9 @@ public class TransactionsApi {
     localVarQueryParams.addAll(ApiInvoker.parameterToPairs("", "currency", currency));
     localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
     localVarHeaderParams.put("X-Child-Company-Id", ApiInvoker.parameterToString(xChildCompanyId));
-    
+
     localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    localVarHeaderParams.put("Conekta-Client-User-Agent", "{\"agent\": \"Conekta Android SDK\"}");
     
     String[] localVarContentTypes = {
       

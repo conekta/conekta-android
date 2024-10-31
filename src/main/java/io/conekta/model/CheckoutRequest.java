@@ -27,6 +27,8 @@ public class CheckoutRequest  {
   private Boolean monthlyInstallmentsEnabled = null;
   @SerializedName("monthly_installments_options")
   private List<Integer> monthlyInstallmentsOptions = null;
+  @SerializedName("max_failed_retries")
+  private Integer maxFailedRetries = null;
   @SerializedName("name")
   private String name = null;
   @SerializedName("on_demand_enabled")
@@ -89,6 +91,17 @@ public class CheckoutRequest  {
   }
   public void setMonthlyInstallmentsOptions(List<Integer> monthlyInstallmentsOptions) {
     this.monthlyInstallmentsOptions = monthlyInstallmentsOptions;
+  }
+
+  /**
+   * Number of retries allowed before the checkout is marked as failed
+   **/
+  @ApiModelProperty(value = "Number of retries allowed before the checkout is marked as failed")
+  public Integer getMaxFailedRetries() {
+    return maxFailedRetries;
+  }
+  public void setMaxFailedRetries(Integer maxFailedRetries) {
+    this.maxFailedRetries = maxFailedRetries;
   }
 
   /**
@@ -160,6 +173,7 @@ public class CheckoutRequest  {
         (this.failureUrl == null ? checkoutRequest.failureUrl == null : this.failureUrl.equals(checkoutRequest.failureUrl)) &&
         (this.monthlyInstallmentsEnabled == null ? checkoutRequest.monthlyInstallmentsEnabled == null : this.monthlyInstallmentsEnabled.equals(checkoutRequest.monthlyInstallmentsEnabled)) &&
         (this.monthlyInstallmentsOptions == null ? checkoutRequest.monthlyInstallmentsOptions == null : this.monthlyInstallmentsOptions.equals(checkoutRequest.monthlyInstallmentsOptions)) &&
+        (this.maxFailedRetries == null ? checkoutRequest.maxFailedRetries == null : this.maxFailedRetries.equals(checkoutRequest.maxFailedRetries)) &&
         (this.name == null ? checkoutRequest.name == null : this.name.equals(checkoutRequest.name)) &&
         (this.onDemandEnabled == null ? checkoutRequest.onDemandEnabled == null : this.onDemandEnabled.equals(checkoutRequest.onDemandEnabled)) &&
         (this.redirectionTime == null ? checkoutRequest.redirectionTime == null : this.redirectionTime.equals(checkoutRequest.redirectionTime)) &&
@@ -175,6 +189,7 @@ public class CheckoutRequest  {
     result = 31 * result + (this.failureUrl == null ? 0: this.failureUrl.hashCode());
     result = 31 * result + (this.monthlyInstallmentsEnabled == null ? 0: this.monthlyInstallmentsEnabled.hashCode());
     result = 31 * result + (this.monthlyInstallmentsOptions == null ? 0: this.monthlyInstallmentsOptions.hashCode());
+    result = 31 * result + (this.maxFailedRetries == null ? 0: this.maxFailedRetries.hashCode());
     result = 31 * result + (this.name == null ? 0: this.name.hashCode());
     result = 31 * result + (this.onDemandEnabled == null ? 0: this.onDemandEnabled.hashCode());
     result = 31 * result + (this.redirectionTime == null ? 0: this.redirectionTime.hashCode());
@@ -193,6 +208,7 @@ public class CheckoutRequest  {
     sb.append("  failureUrl: ").append(failureUrl).append("\n");
     sb.append("  monthlyInstallmentsEnabled: ").append(monthlyInstallmentsEnabled).append("\n");
     sb.append("  monthlyInstallmentsOptions: ").append(monthlyInstallmentsOptions).append("\n");
+    sb.append("  maxFailedRetries: ").append(maxFailedRetries).append("\n");
     sb.append("  name: ").append(name).append("\n");
     sb.append("  onDemandEnabled: ").append(onDemandEnabled).append("\n");
     sb.append("  redirectionTime: ").append(redirectionTime).append("\n");

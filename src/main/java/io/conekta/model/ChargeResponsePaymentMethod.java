@@ -21,6 +21,8 @@ public class ChargeResponsePaymentMethod  {
   private String type = null;
   @SerializedName("object")
   private String _object = null;
+  @SerializedName("agreement")
+  private String agreement = null;
   @SerializedName("auth_code")
   private String authCode = null;
   @SerializedName("cashier_id")
@@ -31,6 +33,8 @@ public class ChargeResponsePaymentMethod  {
   private String barcodeUrl = null;
   @SerializedName("expires_at")
   private Long expiresAt = null;
+  @SerializedName("product_type")
+  private String productType = null;
   @SerializedName("service_name")
   private String serviceName = null;
   @SerializedName("store")
@@ -111,6 +115,17 @@ public class ChargeResponsePaymentMethod  {
   }
 
   /**
+   * Agreement ID
+   **/
+  @ApiModelProperty(value = "Agreement ID")
+  public String getAgreement() {
+    return agreement;
+  }
+  public void setAgreement(String agreement) {
+    this.agreement = agreement;
+  }
+
+  /**
    **/
   @ApiModelProperty(value = "")
   public String getAuthCode() {
@@ -158,6 +173,17 @@ public class ChargeResponsePaymentMethod  {
   }
   public void setExpiresAt(Long expiresAt) {
     this.expiresAt = expiresAt;
+  }
+
+  /**
+   * Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc.
+   **/
+  @ApiModelProperty(value = "Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc.")
+  public String getProductType() {
+    return productType;
+  }
+  public void setProductType(String productType) {
+    this.productType = productType;
   }
 
   /**
@@ -471,11 +497,13 @@ public class ChargeResponsePaymentMethod  {
     ChargeResponsePaymentMethod chargeResponsePaymentMethod = (ChargeResponsePaymentMethod) o;
     return (this.type == null ? chargeResponsePaymentMethod.type == null : this.type.equals(chargeResponsePaymentMethod.type)) &&
         (this._object == null ? chargeResponsePaymentMethod._object == null : this._object.equals(chargeResponsePaymentMethod._object)) &&
+        (this.agreement == null ? chargeResponsePaymentMethod.agreement == null : this.agreement.equals(chargeResponsePaymentMethod.agreement)) &&
         (this.authCode == null ? chargeResponsePaymentMethod.authCode == null : this.authCode.equals(chargeResponsePaymentMethod.authCode)) &&
         (this.cashierId == null ? chargeResponsePaymentMethod.cashierId == null : this.cashierId.equals(chargeResponsePaymentMethod.cashierId)) &&
         (this.reference == null ? chargeResponsePaymentMethod.reference == null : this.reference.equals(chargeResponsePaymentMethod.reference)) &&
         (this.barcodeUrl == null ? chargeResponsePaymentMethod.barcodeUrl == null : this.barcodeUrl.equals(chargeResponsePaymentMethod.barcodeUrl)) &&
         (this.expiresAt == null ? chargeResponsePaymentMethod.expiresAt == null : this.expiresAt.equals(chargeResponsePaymentMethod.expiresAt)) &&
+        (this.productType == null ? chargeResponsePaymentMethod.productType == null : this.productType.equals(chargeResponsePaymentMethod.productType)) &&
         (this.serviceName == null ? chargeResponsePaymentMethod.serviceName == null : this.serviceName.equals(chargeResponsePaymentMethod.serviceName)) &&
         (this.store == null ? chargeResponsePaymentMethod.store == null : this.store.equals(chargeResponsePaymentMethod.store)) &&
         (this.storeName == null ? chargeResponsePaymentMethod.storeName == null : this.storeName.equals(chargeResponsePaymentMethod.storeName)) &&
@@ -512,11 +540,13 @@ public class ChargeResponsePaymentMethod  {
     int result = 17;
     result = 31 * result + (this.type == null ? 0: this.type.hashCode());
     result = 31 * result + (this._object == null ? 0: this._object.hashCode());
+    result = 31 * result + (this.agreement == null ? 0: this.agreement.hashCode());
     result = 31 * result + (this.authCode == null ? 0: this.authCode.hashCode());
     result = 31 * result + (this.cashierId == null ? 0: this.cashierId.hashCode());
     result = 31 * result + (this.reference == null ? 0: this.reference.hashCode());
     result = 31 * result + (this.barcodeUrl == null ? 0: this.barcodeUrl.hashCode());
     result = 31 * result + (this.expiresAt == null ? 0: this.expiresAt.hashCode());
+    result = 31 * result + (this.productType == null ? 0: this.productType.hashCode());
     result = 31 * result + (this.serviceName == null ? 0: this.serviceName.hashCode());
     result = 31 * result + (this.store == null ? 0: this.store.hashCode());
     result = 31 * result + (this.storeName == null ? 0: this.storeName.hashCode());
@@ -556,11 +586,13 @@ public class ChargeResponsePaymentMethod  {
     
     sb.append("  type: ").append(type).append("\n");
     sb.append("  _object: ").append(_object).append("\n");
+    sb.append("  agreement: ").append(agreement).append("\n");
     sb.append("  authCode: ").append(authCode).append("\n");
     sb.append("  cashierId: ").append(cashierId).append("\n");
     sb.append("  reference: ").append(reference).append("\n");
     sb.append("  barcodeUrl: ").append(barcodeUrl).append("\n");
     sb.append("  expiresAt: ").append(expiresAt).append("\n");
+    sb.append("  productType: ").append(productType).append("\n");
     sb.append("  serviceName: ").append(serviceName).append("\n");
     sb.append("  store: ").append(store).append("\n");
     sb.append("  storeName: ").append(storeName).append("\n");

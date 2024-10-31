@@ -95,7 +95,7 @@ public class ApiInvoker {
     DATE_FORMAT.setTimeZone(TimeZone.getTimeZone("UTC"));
 
     // Set default User-Agent.
-    setUserAgent("Conekta/v2 Android/6.0.0-SNAPSHOT");
+    setUserAgent("Conekta/v2 Android/6.0.1-SNAPSHOT");
   }
 
   public static void setUserAgent(String userAgent) {

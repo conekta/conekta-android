@@ -23,7 +23,7 @@ public class Product  {
   @SerializedName("description")
   private String description = null;
   @SerializedName("metadata")
-  private Map<String, OasAnyTypeNotMapped> metadata = new HashMap<>();
+  private Map<String, OasAnyTypeNotMapped> metadata = {};
   @SerializedName("name")
   private String name = null;
   @SerializedName("quantity")

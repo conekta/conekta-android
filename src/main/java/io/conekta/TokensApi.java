@@ -84,10 +84,10 @@ public class TokensApi {
     Map<String, String> localVarFormParams = new HashMap<String, String>();
 
     localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
-    
-    localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
-    localVarHeaderParams.put("Conekta-Client-User-Agent",   "{\"agent\": \"Conekta Android SDK\"}");
 
+    localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    localVarHeaderParams.put("Conekta-Client-User-Agent", "{\"agent\": \"Conekta Android SDK\"}");
+    
     String[] localVarContentTypes = {
       "application/json"
     };

@@ -111,6 +111,14 @@ public class JsonUtil {
       return new TypeToken<List<ChargesDataResponse>>(){}.getType();
     }
     
+    if ("ChargesOrderResponse".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ChargesOrderResponse>>(){}.getType();
+    }
+    
+    if ("ChargesOrderResponseAllOfData".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ChargesOrderResponseAllOfData>>(){}.getType();
+    }
+    
     if ("Checkout".equalsIgnoreCase(className)) {
       return new TypeToken<List<Checkout>>(){}.getType();
     }
@@ -815,6 +823,14 @@ public class JsonUtil {
     
     if ("ChargesDataResponse".equalsIgnoreCase(className)) {
       return new TypeToken<ChargesDataResponse>(){}.getType();
+    }
+    
+    if ("ChargesOrderResponse".equalsIgnoreCase(className)) {
+      return new TypeToken<ChargesOrderResponse>(){}.getType();
+    }
+    
+    if ("ChargesOrderResponseAllOfData".equalsIgnoreCase(className)) {
+      return new TypeToken<ChargesOrderResponseAllOfData>(){}.getType();
     }
     
     if ("Checkout".equalsIgnoreCase(className)) {

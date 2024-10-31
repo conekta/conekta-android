@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>io.conekta</groupId>
     <artifactId>conektasdk</artifactId>
-    <version>6.0.0-SNAPSHOT</version>
+    <version>6.0.1-SNAPSHOT</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.conekta:conektasdk:6.0.0-SNAPSHOT"
+compile "io.conekta:conektasdk:6.0.1-SNAPSHOT"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-- target/conektasdk-6.0.0-SNAPSHOT.jar
+- target/conektasdk-6.0.1-SNAPSHOT.jar
 - target/lib/*.jar
 
 ## Getting Started
@@ -98,6 +98,7 @@ Class | Method | HTTP request | Description
 *BalancesApi* | [**getBalance**](docs/BalancesApi.md#getBalance) | **GET** /balance | Get a company&#39;s balance
 *ChargesApi* | [**getCharges**](docs/ChargesApi.md#getCharges) | **GET** /charges | Get A List of Charges
 *ChargesApi* | [**ordersCreateCharge**](docs/ChargesApi.md#ordersCreateCharge) | **POST** /orders/{id}/charges | Create charge
+*ChargesApi* | [**ordersCreateCharges**](docs/ChargesApi.md#ordersCreateCharges) | **POST** /orders/{id}/add_charges | Create charges
 *ChargesApi* | [**updateCharge**](docs/ChargesApi.md#updateCharge) | **PUT** /charges/{id} | Update a charge
 *CompaniesApi* | [**getCompanies**](docs/CompaniesApi.md#getCompanies) | **GET** /companies | Get List of Companies
 *CompaniesApi* | [**getCompany**](docs/CompaniesApi.md#getCompany) | **GET** /companies/{id} | Get Company
@@ -202,6 +203,8 @@ Class | Method | HTTP request | Description
  - [ChargeResponseRefundsData](docs/ChargeResponseRefundsData.md)
  - [ChargeUpdateRequest](docs/ChargeUpdateRequest.md)
  - [ChargesDataResponse](docs/ChargesDataResponse.md)
+ - [ChargesOrderResponse](docs/ChargesOrderResponse.md)
+ - [ChargesOrderResponseAllOfData](docs/ChargesOrderResponseAllOfData.md)
  - [Checkout](docs/Checkout.md)
  - [CheckoutOrderTemplate](docs/CheckoutOrderTemplate.md)
  - [CheckoutOrderTemplateCustomerInfo](docs/CheckoutOrderTemplateCustomerInfo.md)

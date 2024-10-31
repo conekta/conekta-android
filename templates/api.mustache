@@ -85,7 +85,7 @@ public class {{classname}} {
     localVarHeaderParams.put("{{baseName}}", ApiInvoker.parameterToString({{paramName}}));
     {{/headerParams}}
 
-    localVarHeaderParams.put("{{baseName}}", ApiInvoker.parameterToString({{paramName}}));
+    localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
     localVarHeaderParams.put("Conekta-Client-User-Agent", "{\"agent\": \"Conekta Android SDK\"}");
     
     String[] localVarContentTypes = {

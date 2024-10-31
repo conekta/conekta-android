@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getCharges**](ChargesApi.md#getCharges) | **GET** /charges | Get A List of Charges
 [**ordersCreateCharge**](ChargesApi.md#ordersCreateCharge) | **POST** /orders/{id}/charges | Create charge
+[**ordersCreateCharges**](ChargesApi.md#ordersCreateCharges) | **POST** /orders/{id}/add_charges | Create charges
 [**updateCharge**](ChargesApi.md#updateCharge) | **PUT** /charges/{id} | Update a charge
 
 
@@ -105,6 +106,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ChargeOrderResponse**](ChargeOrderResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/vnd.conekta-v2.1.0+json
+
+
+## ordersCreateCharges
+
+> ChargesOrderResponse ordersCreateCharges(id, chargeRequest, acceptLanguage, xChildCompanyId)
+
+Create charges
+
+Create charges for an existing orden
+
+### Example
+
+```java
+// Import classes:
+//import io.conekta.ChargesApi;
+
+ChargesApi apiInstance = new ChargesApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+ChargeRequest chargeRequest = new ChargeRequest(); // ChargeRequest | requested field for a charge
+String acceptLanguage = es; // String | Use for knowing which language to use
+String xChildCompanyId = 6441b6376b60c3a638da80af; // String | In the case of a holding company, the company id of the child company to which will process the request.
+try {
+    ChargesOrderResponse result = apiInstance.ordersCreateCharges(id, chargeRequest, acceptLanguage, xChildCompanyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChargesApi#ordersCreateCharges");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| Identifier of the resource | [default to null]
+ **chargeRequest** | [**ChargeRequest**](ChargeRequest.md)| requested field for a charge |
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+ **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] [default to null]
+
+### Return type
+
+[**ChargesOrderResponse**](ChargesOrderResponse.md)
 
 ### Authorization
 

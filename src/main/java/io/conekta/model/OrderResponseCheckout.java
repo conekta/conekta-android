@@ -36,6 +36,8 @@ public class OrderResponseCheckout  {
   private Boolean isRedirectOnFailure = null;
   @SerializedName("livemode")
   private Boolean livemode = null;
+  @SerializedName("max_failed_retries")
+  private Integer maxFailedRetries = null;
   @SerializedName("metadata")
   private Map<String, OasAnyTypeNotMapped> metadata = null;
   @SerializedName("monthly_installments_enabled")
@@ -169,6 +171,17 @@ public class OrderResponseCheckout  {
   }
   public void setLivemode(Boolean livemode) {
     this.livemode = livemode;
+  }
+
+  /**
+   * Number of retries allowed before the checkout is marked as failed
+   **/
+  @ApiModelProperty(value = "Number of retries allowed before the checkout is marked as failed")
+  public Integer getMaxFailedRetries() {
+    return maxFailedRetries;
+  }
+  public void setMaxFailedRetries(Integer maxFailedRetries) {
+    this.maxFailedRetries = maxFailedRetries;
   }
 
   /**
@@ -362,6 +375,7 @@ public class OrderResponseCheckout  {
         (this.id == null ? orderResponseCheckout.id == null : this.id.equals(orderResponseCheckout.id)) &&
         (this.isRedirectOnFailure == null ? orderResponseCheckout.isRedirectOnFailure == null : this.isRedirectOnFailure.equals(orderResponseCheckout.isRedirectOnFailure)) &&
         (this.livemode == null ? orderResponseCheckout.livemode == null : this.livemode.equals(orderResponseCheckout.livemode)) &&
+        (this.maxFailedRetries == null ? orderResponseCheckout.maxFailedRetries == null : this.maxFailedRetries.equals(orderResponseCheckout.maxFailedRetries)) &&
         (this.metadata == null ? orderResponseCheckout.metadata == null : this.metadata.equals(orderResponseCheckout.metadata)) &&
         (this.monthlyInstallmentsEnabled == null ? orderResponseCheckout.monthlyInstallmentsEnabled == null : this.monthlyInstallmentsEnabled.equals(orderResponseCheckout.monthlyInstallmentsEnabled)) &&
         (this.monthlyInstallmentsOptions == null ? orderResponseCheckout.monthlyInstallmentsOptions == null : this.monthlyInstallmentsOptions.equals(orderResponseCheckout.monthlyInstallmentsOptions)) &&
@@ -394,6 +408,7 @@ public class OrderResponseCheckout  {
     result = 31 * result + (this.id == null ? 0: this.id.hashCode());
     result = 31 * result + (this.isRedirectOnFailure == null ? 0: this.isRedirectOnFailure.hashCode());
     result = 31 * result + (this.livemode == null ? 0: this.livemode.hashCode());
+    result = 31 * result + (this.maxFailedRetries == null ? 0: this.maxFailedRetries.hashCode());
     result = 31 * result + (this.metadata == null ? 0: this.metadata.hashCode());
     result = 31 * result + (this.monthlyInstallmentsEnabled == null ? 0: this.monthlyInstallmentsEnabled.hashCode());
     result = 31 * result + (this.monthlyInstallmentsOptions == null ? 0: this.monthlyInstallmentsOptions.hashCode());
@@ -429,6 +444,7 @@ public class OrderResponseCheckout  {
     sb.append("  id: ").append(id).append("\n");
     sb.append("  isRedirectOnFailure: ").append(isRedirectOnFailure).append("\n");
     sb.append("  livemode: ").append(livemode).append("\n");
+    sb.append("  maxFailedRetries: ").append(maxFailedRetries).append("\n");
     sb.append("  metadata: ").append(metadata).append("\n");
     sb.append("  monthlyInstallmentsEnabled: ").append(monthlyInstallmentsEnabled).append("\n");
     sb.append("  monthlyInstallmentsOptions: ").append(monthlyInstallmentsOptions).append("\n");

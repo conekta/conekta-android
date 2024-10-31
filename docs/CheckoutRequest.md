@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **failureUrl** | **String** | Redirection url back to the site in case of failed payment, applies only to HostedPayment. |  [optional]
 **monthlyInstallmentsEnabled** | **Boolean** |  |  [optional]
 **monthlyInstallmentsOptions** | **List&lt;Integer&gt;** |  |  [optional]
+**maxFailedRetries** | **Integer** | Number of retries allowed before the checkout is marked as failed |  [optional]
 **name** | **String** | Reason for payment |  [optional]
 **onDemandEnabled** | **Boolean** |  |  [optional]
 **redirectionTime** | **Integer** | number of seconds to wait before redirecting to the success_url |  [optional]
