@@ -95,3 +95,6 @@ publishing {
         }
     }
 }
+tasks.named("publishMavenJavaPublicationToOSSRHRepository") {
+    dependsOn tasks.named("bundleReleaseAar")
+}
