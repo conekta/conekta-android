@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **issuer** | **String** | Issuer of the card |  [optional]
 **last4** | **String** | Last 4 digits of the card |  [optional]
 **name** | **String** | Name of the cardholder |  [optional]
+**customerIpAddress** | **String** | Optional field used to capture the customer&#39;s IP address for fraud prevention and security monitoring purposes |  [optional]
 
 
 

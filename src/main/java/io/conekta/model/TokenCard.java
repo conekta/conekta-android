@@ -2,7 +2,9 @@ package io.conekta.model;
 
 
 import io.swagger.annotations.*;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import io.conekta.EncryptedTypeAdapter;
 
 
 @ApiModel(description = "")
@@ -12,6 +14,7 @@ public class TokenCard  {
   
   
   @SerializedName("cvc")
+  @JsonAdapter(EncryptedTypeAdapter.class)
   private String cvc = null;
   @SerializedName("device_fingerprint")
   private String deviceFingerprint = null;
@@ -22,6 +25,7 @@ public class TokenCard  {
   @SerializedName("name")
   private String name = null;
   @SerializedName("number")
+  @JsonAdapter(EncryptedTypeAdapter.class)
   private String number = null;
 
   /**

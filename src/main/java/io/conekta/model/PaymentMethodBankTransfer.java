@@ -4,7 +4,9 @@ import io.conekta.model.OasAnyTypeNotMapped;
 import java.util.*;
 
 import io.swagger.annotations.*;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import io.conekta.EncryptedTypeAdapter;
 
 
 @ApiModel(description = "")
@@ -49,6 +51,8 @@ public class PaymentMethodBankTransfer  {
   private String referenceNumber = null;
   @SerializedName("tracking_code")
   private String trackingCode = null;
+  @SerializedName("customer_ip_address")
+  private String customerIpAddress = null;
 
   /**
    **/
@@ -230,6 +234,16 @@ public class PaymentMethodBankTransfer  {
     this.trackingCode = trackingCode;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getCustomerIpAddress() {
+    return customerIpAddress;
+  }
+  public void setCustomerIpAddress(String customerIpAddress) {
+    this.customerIpAddress = customerIpAddress;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -257,7 +271,8 @@ public class PaymentMethodBankTransfer  {
         (this.receivingAccountBank == null ? paymentMethodBankTransfer.receivingAccountBank == null : this.receivingAccountBank.equals(paymentMethodBankTransfer.receivingAccountBank)) &&
         (this.receivingAccountTaxId == null ? paymentMethodBankTransfer.receivingAccountTaxId == null : this.receivingAccountTaxId.equals(paymentMethodBankTransfer.receivingAccountTaxId)) &&
         (this.referenceNumber == null ? paymentMethodBankTransfer.referenceNumber == null : this.referenceNumber.equals(paymentMethodBankTransfer.referenceNumber)) &&
-        (this.trackingCode == null ? paymentMethodBankTransfer.trackingCode == null : this.trackingCode.equals(paymentMethodBankTransfer.trackingCode));
+        (this.trackingCode == null ? paymentMethodBankTransfer.trackingCode == null : this.trackingCode.equals(paymentMethodBankTransfer.trackingCode)) &&
+        (this.customerIpAddress == null ? paymentMethodBankTransfer.customerIpAddress == null : this.customerIpAddress.equals(paymentMethodBankTransfer.customerIpAddress));
   }
 
   @Override
@@ -281,6 +296,7 @@ public class PaymentMethodBankTransfer  {
     result = 31 * result + (this.receivingAccountTaxId == null ? 0: this.receivingAccountTaxId.hashCode());
     result = 31 * result + (this.referenceNumber == null ? 0: this.referenceNumber.hashCode());
     result = 31 * result + (this.trackingCode == null ? 0: this.trackingCode.hashCode());
+    result = 31 * result + (this.customerIpAddress == null ? 0: this.customerIpAddress.hashCode());
     return result;
   }
 
@@ -307,6 +323,7 @@ public class PaymentMethodBankTransfer  {
     sb.append("  receivingAccountTaxId: ").append(receivingAccountTaxId).append("\n");
     sb.append("  referenceNumber: ").append(referenceNumber).append("\n");
     sb.append("  trackingCode: ").append(trackingCode).append("\n");
+    sb.append("  customerIpAddress: ").append(customerIpAddress).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

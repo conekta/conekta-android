@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **receivingAccountTaxId** | **String** |  |  [optional]
 **referenceNumber** | **String** |  |  [optional]
 **trackingCode** | **String** |  |  [optional]
+**customerIpAddress** | **String** |  |  [optional]
 
 
 

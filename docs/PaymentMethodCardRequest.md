@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **expYear** | **String** | Card expiration year | 
 **name** | **String** | Cardholder name | 
 **number** | **String** | Card number | 
+**customerIpAddress** | **String** | Optional field used to capture the customer&#39;s IP address for fraud prevention and security monitoring purposes |  [optional]
 
 
 

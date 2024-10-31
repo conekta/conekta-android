@@ -5,15 +5,17 @@ import java.util.*;
 import java.util.Map;
 
 import io.swagger.annotations.*;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import io.conekta.EncryptedTypeAdapter;
 
 
 @ApiModel(description = "")
 public class Product  {
   
   private static final String MXN = "MXN";
-
-
+  
+  
   @SerializedName("antifraud_info")
   private Map<String, OasAnyTypeNotMapped> antifraudInfo = null;
   @SerializedName("brand")

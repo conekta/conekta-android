@@ -4,7 +4,9 @@ import io.conekta.model.PaymentMethodCardRequest;
 import io.conekta.model.PaymentMethodGeneralRequest;
 
 import io.swagger.annotations.*;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import io.conekta.EncryptedTypeAdapter;
 
 
 @ApiModel(description = "")
@@ -25,6 +27,8 @@ public class ChargeRequestPaymentMethod  {
   private String name = null;
   @SerializedName("number")
   private String number = null;
+  @SerializedName("customer_ip_address")
+  private String customerIpAddress = null;
   @SerializedName("expires_at")
   private Long expiresAt = null;
   @SerializedName("monthly_installments")
@@ -48,9 +52,9 @@ public class ChargeRequestPaymentMethod  {
   }
 
   /**
-   * Card security code
+   * Optional, It is a value that allows identifying the security code of the card. Only for PCI merchants
    **/
-  @ApiModelProperty(required = true, value = "Card security code")
+  @ApiModelProperty(required = true, value = "Optional, It is a value that allows identifying the security code of the card. Only for PCI merchants")
   public String getCvc() {
     return cvc;
   }
@@ -100,6 +104,17 @@ public class ChargeRequestPaymentMethod  {
   }
   public void setNumber(String number) {
     this.number = number;
+  }
+
+  /**
+   * Optional field used to capture the customer's IP address for fraud prevention and security monitoring purposes
+   **/
+  @ApiModelProperty(value = "Optional field used to capture the customer's IP address for fraud prevention and security monitoring purposes")
+  public String getCustomerIpAddress() {
+    return customerIpAddress;
+  }
+  public void setCustomerIpAddress(String customerIpAddress) {
+    this.customerIpAddress = customerIpAddress;
   }
 
   /**
@@ -171,6 +186,7 @@ public class ChargeRequestPaymentMethod  {
         (this.expYear == null ? chargeRequestPaymentMethod.expYear == null : this.expYear.equals(chargeRequestPaymentMethod.expYear)) &&
         (this.name == null ? chargeRequestPaymentMethod.name == null : this.name.equals(chargeRequestPaymentMethod.name)) &&
         (this.number == null ? chargeRequestPaymentMethod.number == null : this.number.equals(chargeRequestPaymentMethod.number)) &&
+        (this.customerIpAddress == null ? chargeRequestPaymentMethod.customerIpAddress == null : this.customerIpAddress.equals(chargeRequestPaymentMethod.customerIpAddress)) &&
         (this.expiresAt == null ? chargeRequestPaymentMethod.expiresAt == null : this.expiresAt.equals(chargeRequestPaymentMethod.expiresAt)) &&
         (this.monthlyInstallments == null ? chargeRequestPaymentMethod.monthlyInstallments == null : this.monthlyInstallments.equals(chargeRequestPaymentMethod.monthlyInstallments)) &&
         (this.tokenId == null ? chargeRequestPaymentMethod.tokenId == null : this.tokenId.equals(chargeRequestPaymentMethod.tokenId)) &&
@@ -187,6 +203,7 @@ public class ChargeRequestPaymentMethod  {
     result = 31 * result + (this.expYear == null ? 0: this.expYear.hashCode());
     result = 31 * result + (this.name == null ? 0: this.name.hashCode());
     result = 31 * result + (this.number == null ? 0: this.number.hashCode());
+    result = 31 * result + (this.customerIpAddress == null ? 0: this.customerIpAddress.hashCode());
     result = 31 * result + (this.expiresAt == null ? 0: this.expiresAt.hashCode());
     result = 31 * result + (this.monthlyInstallments == null ? 0: this.monthlyInstallments.hashCode());
     result = 31 * result + (this.tokenId == null ? 0: this.tokenId.hashCode());
@@ -206,6 +223,7 @@ public class ChargeRequestPaymentMethod  {
     sb.append("  expYear: ").append(expYear).append("\n");
     sb.append("  name: ").append(name).append("\n");
     sb.append("  number: ").append(number).append("\n");
+    sb.append("  customerIpAddress: ").append(customerIpAddress).append("\n");
     sb.append("  expiresAt: ").append(expiresAt).append("\n");
     sb.append("  monthlyInstallments: ").append(monthlyInstallments).append("\n");
     sb.append("  tokenId: ").append(tokenId).append("\n");

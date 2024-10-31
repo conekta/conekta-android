@@ -2,7 +2,9 @@ package io.conekta.model;
 
 
 import io.swagger.annotations.*;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import io.conekta.EncryptedTypeAdapter;
 
 
 @ApiModel(description = "")
@@ -31,6 +33,8 @@ public class PaymentMethodCash  {
   private String store = null;
   @SerializedName("store_name")
   private String storeName = null;
+  @SerializedName("customer_ip_address")
+  private String customerIpAddress = null;
 
   /**
    **/
@@ -132,6 +136,16 @@ public class PaymentMethodCash  {
     this.storeName = storeName;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getCustomerIpAddress() {
+    return customerIpAddress;
+  }
+  public void setCustomerIpAddress(String customerIpAddress) {
+    this.customerIpAddress = customerIpAddress;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -151,7 +165,8 @@ public class PaymentMethodCash  {
         (this.expiresAt == null ? paymentMethodCash.expiresAt == null : this.expiresAt.equals(paymentMethodCash.expiresAt)) &&
         (this.serviceName == null ? paymentMethodCash.serviceName == null : this.serviceName.equals(paymentMethodCash.serviceName)) &&
         (this.store == null ? paymentMethodCash.store == null : this.store.equals(paymentMethodCash.store)) &&
-        (this.storeName == null ? paymentMethodCash.storeName == null : this.storeName.equals(paymentMethodCash.storeName));
+        (this.storeName == null ? paymentMethodCash.storeName == null : this.storeName.equals(paymentMethodCash.storeName)) &&
+        (this.customerIpAddress == null ? paymentMethodCash.customerIpAddress == null : this.customerIpAddress.equals(paymentMethodCash.customerIpAddress));
   }
 
   @Override
@@ -167,6 +182,7 @@ public class PaymentMethodCash  {
     result = 31 * result + (this.serviceName == null ? 0: this.serviceName.hashCode());
     result = 31 * result + (this.store == null ? 0: this.store.hashCode());
     result = 31 * result + (this.storeName == null ? 0: this.storeName.hashCode());
+    result = 31 * result + (this.customerIpAddress == null ? 0: this.customerIpAddress.hashCode());
     return result;
   }
 
@@ -185,6 +201,7 @@ public class PaymentMethodCash  {
     sb.append("  serviceName: ").append(serviceName).append("\n");
     sb.append("  store: ").append(store).append("\n");
     sb.append("  storeName: ").append(storeName).append("\n");
+    sb.append("  customerIpAddress: ").append(customerIpAddress).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

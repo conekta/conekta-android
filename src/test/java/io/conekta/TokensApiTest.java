@@ -22,13 +22,14 @@ public class TokensApiTest {
         TokenCard card = new TokenCard();
         card.setCvc("123");
         card.setExpYear("29");
+        card.setExpMonth("12");
         card.setName("fran carrero");
-        card.setNumber("5475040095304607");
+        card.setNumber("4242424242424242");
         token.setCard(card);
         
         TokenResponse response = instance.createToken(token, "es");
         
-        assertEquals("tok_2toPJUcZ27AH5LsZk", response.getId());
+        assertEquals("tok_1toPJUcZ27AH5LsZk", response.getId());
     }
 
     @Test(expected = ApiException.class)
@@ -37,7 +38,7 @@ public class TokensApiTest {
         TokenCard card = new TokenCard();
         card.setCvc("123");
         card.setExpYear("29");
-        card.setName("fran carrero");
+        card.setName("fran fail");
         card.setNumber("4242424242424242");
         token.setCard(card);
 

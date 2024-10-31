@@ -2,7 +2,9 @@ package io.conekta.model;
 
 
 import io.swagger.annotations.*;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import io.conekta.EncryptedTypeAdapter;
 
 
 /**
@@ -24,8 +26,12 @@ public class PaymentMethodGeneralRequest  {
   private String tokenId = null;
   @SerializedName("payment_source_id")
   private String paymentSourceId = null;
+  @SerializedName("cvc")
+  private String cvc = null;
   @SerializedName("contract_id")
   private String contractId = null;
+  @SerializedName("customer_ip_address")
+  private String customerIpAddress = null;
 
   /**
    * Method expiration date as unix timestamp
@@ -81,6 +87,17 @@ public class PaymentMethodGeneralRequest  {
   }
 
   /**
+   * Optional, It is a value that allows identifying the security code of the card. Only for PCI merchants
+   **/
+  @ApiModelProperty(value = "Optional, It is a value that allows identifying the security code of the card. Only for PCI merchants")
+  public String getCvc() {
+    return cvc;
+  }
+  public void setCvc(String cvc) {
+    this.cvc = cvc;
+  }
+
+  /**
    * Optional id sent to indicate the bank contract for recurrent card charges.
    **/
   @ApiModelProperty(value = "Optional id sent to indicate the bank contract for recurrent card charges.")
@@ -89,6 +106,17 @@ public class PaymentMethodGeneralRequest  {
   }
   public void setContractId(String contractId) {
     this.contractId = contractId;
+  }
+
+  /**
+   * Optional field used to capture the customer's IP address for fraud prevention and security monitoring purposes
+   **/
+  @ApiModelProperty(value = "Optional field used to capture the customer's IP address for fraud prevention and security monitoring purposes")
+  public String getCustomerIpAddress() {
+    return customerIpAddress;
+  }
+  public void setCustomerIpAddress(String customerIpAddress) {
+    this.customerIpAddress = customerIpAddress;
   }
 
 
@@ -106,7 +134,9 @@ public class PaymentMethodGeneralRequest  {
         (this.type == null ? paymentMethodGeneralRequest.type == null : this.type.equals(paymentMethodGeneralRequest.type)) &&
         (this.tokenId == null ? paymentMethodGeneralRequest.tokenId == null : this.tokenId.equals(paymentMethodGeneralRequest.tokenId)) &&
         (this.paymentSourceId == null ? paymentMethodGeneralRequest.paymentSourceId == null : this.paymentSourceId.equals(paymentMethodGeneralRequest.paymentSourceId)) &&
-        (this.contractId == null ? paymentMethodGeneralRequest.contractId == null : this.contractId.equals(paymentMethodGeneralRequest.contractId));
+        (this.cvc == null ? paymentMethodGeneralRequest.cvc == null : this.cvc.equals(paymentMethodGeneralRequest.cvc)) &&
+        (this.contractId == null ? paymentMethodGeneralRequest.contractId == null : this.contractId.equals(paymentMethodGeneralRequest.contractId)) &&
+        (this.customerIpAddress == null ? paymentMethodGeneralRequest.customerIpAddress == null : this.customerIpAddress.equals(paymentMethodGeneralRequest.customerIpAddress));
   }
 
   @Override
@@ -117,7 +147,9 @@ public class PaymentMethodGeneralRequest  {
     result = 31 * result + (this.type == null ? 0: this.type.hashCode());
     result = 31 * result + (this.tokenId == null ? 0: this.tokenId.hashCode());
     result = 31 * result + (this.paymentSourceId == null ? 0: this.paymentSourceId.hashCode());
+    result = 31 * result + (this.cvc == null ? 0: this.cvc.hashCode());
     result = 31 * result + (this.contractId == null ? 0: this.contractId.hashCode());
+    result = 31 * result + (this.customerIpAddress == null ? 0: this.customerIpAddress.hashCode());
     return result;
   }
 
@@ -131,7 +163,9 @@ public class PaymentMethodGeneralRequest  {
     sb.append("  type: ").append(type).append("\n");
     sb.append("  tokenId: ").append(tokenId).append("\n");
     sb.append("  paymentSourceId: ").append(paymentSourceId).append("\n");
+    sb.append("  cvc: ").append(cvc).append("\n");
     sb.append("  contractId: ").append(contractId).append("\n");
+    sb.append("  customerIpAddress: ").append(customerIpAddress).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

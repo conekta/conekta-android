@@ -4,7 +4,9 @@ package {{package}};
 {{/imports}}
 
 import io.swagger.annotations.*;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import io.conekta.EncryptedTypeAdapter;
 {{#models}}
 
 {{#model}}{{#description}}
@@ -23,6 +25,9 @@ public class {{classname}} {{#parent}}extends {{{.}}}{{/parent}} {
   @SerializedName("{{baseName}}")
   private {{{datatypeWithEnum}}} {{name}} = {{{defaultValue}}};{{/isEnum}}{{^isEnum}}
   @SerializedName("{{baseName}}")
+  {{#vendorExtensions.x-encripted}}
+  @JsonAdapter(EncryptedTypeAdapter.class)
+  {{/vendorExtensions.x-encripted}}
   private {{{dataType}}} {{name}} = {{{defaultValue}}};{{/isEnum}}{{/vars}}
 
   {{#vars}}

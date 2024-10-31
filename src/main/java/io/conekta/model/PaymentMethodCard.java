@@ -4,7 +4,9 @@ import io.conekta.model.OasAnyTypeNotMapped;
 import java.util.*;
 
 import io.swagger.annotations.*;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import io.conekta.EncryptedTypeAdapter;
 
 
 @ApiModel(description = "")
@@ -39,6 +41,8 @@ public class PaymentMethodCard  {
   private String last4 = null;
   @SerializedName("name")
   private String name = null;
+  @SerializedName("customer_ip_address")
+  private String customerIpAddress = null;
 
   /**
    **/
@@ -179,6 +183,17 @@ public class PaymentMethodCard  {
     this.name = name;
   }
 
+  /**
+   * Optional field used to capture the customer's IP address for fraud prevention and security monitoring purposes
+   **/
+  @ApiModelProperty(value = "Optional field used to capture the customer's IP address for fraud prevention and security monitoring purposes")
+  public String getCustomerIpAddress() {
+    return customerIpAddress;
+  }
+  public void setCustomerIpAddress(String customerIpAddress) {
+    this.customerIpAddress = customerIpAddress;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -201,7 +216,8 @@ public class PaymentMethodCard  {
         (this.fraudIndicators == null ? paymentMethodCard.fraudIndicators == null : this.fraudIndicators.equals(paymentMethodCard.fraudIndicators)) &&
         (this.issuer == null ? paymentMethodCard.issuer == null : this.issuer.equals(paymentMethodCard.issuer)) &&
         (this.last4 == null ? paymentMethodCard.last4 == null : this.last4.equals(paymentMethodCard.last4)) &&
-        (this.name == null ? paymentMethodCard.name == null : this.name.equals(paymentMethodCard.name));
+        (this.name == null ? paymentMethodCard.name == null : this.name.equals(paymentMethodCard.name)) &&
+        (this.customerIpAddress == null ? paymentMethodCard.customerIpAddress == null : this.customerIpAddress.equals(paymentMethodCard.customerIpAddress));
   }
 
   @Override
@@ -220,6 +236,7 @@ public class PaymentMethodCard  {
     result = 31 * result + (this.issuer == null ? 0: this.issuer.hashCode());
     result = 31 * result + (this.last4 == null ? 0: this.last4.hashCode());
     result = 31 * result + (this.name == null ? 0: this.name.hashCode());
+    result = 31 * result + (this.customerIpAddress == null ? 0: this.customerIpAddress.hashCode());
     return result;
   }
 
@@ -241,6 +258,7 @@ public class PaymentMethodCard  {
     sb.append("  issuer: ").append(issuer).append("\n");
     sb.append("  last4: ").append(last4).append("\n");
     sb.append("  name: ").append(name).append("\n");
+    sb.append("  customerIpAddress: ").append(customerIpAddress).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

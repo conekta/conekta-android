@@ -2,7 +2,9 @@ package io.conekta.model;
 
 
 import io.swagger.annotations.*;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import io.conekta.EncryptedTypeAdapter;
 
 
 @ApiModel(description = "")
@@ -23,6 +25,8 @@ public class PaymentMethodCardRequest  {
   private String name = null;
   @SerializedName("number")
   private String number = null;
+  @SerializedName("customer_ip_address")
+  private String customerIpAddress = null;
 
   /**
    * Type of payment method
@@ -90,6 +94,17 @@ public class PaymentMethodCardRequest  {
     this.number = number;
   }
 
+  /**
+   * Optional field used to capture the customer's IP address for fraud prevention and security monitoring purposes
+   **/
+  @ApiModelProperty(value = "Optional field used to capture the customer's IP address for fraud prevention and security monitoring purposes")
+  public String getCustomerIpAddress() {
+    return customerIpAddress;
+  }
+  public void setCustomerIpAddress(String customerIpAddress) {
+    this.customerIpAddress = customerIpAddress;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -105,7 +120,8 @@ public class PaymentMethodCardRequest  {
         (this.expMonth == null ? paymentMethodCardRequest.expMonth == null : this.expMonth.equals(paymentMethodCardRequest.expMonth)) &&
         (this.expYear == null ? paymentMethodCardRequest.expYear == null : this.expYear.equals(paymentMethodCardRequest.expYear)) &&
         (this.name == null ? paymentMethodCardRequest.name == null : this.name.equals(paymentMethodCardRequest.name)) &&
-        (this.number == null ? paymentMethodCardRequest.number == null : this.number.equals(paymentMethodCardRequest.number));
+        (this.number == null ? paymentMethodCardRequest.number == null : this.number.equals(paymentMethodCardRequest.number)) &&
+        (this.customerIpAddress == null ? paymentMethodCardRequest.customerIpAddress == null : this.customerIpAddress.equals(paymentMethodCardRequest.customerIpAddress));
   }
 
   @Override
@@ -117,6 +133,7 @@ public class PaymentMethodCardRequest  {
     result = 31 * result + (this.expYear == null ? 0: this.expYear.hashCode());
     result = 31 * result + (this.name == null ? 0: this.name.hashCode());
     result = 31 * result + (this.number == null ? 0: this.number.hashCode());
+    result = 31 * result + (this.customerIpAddress == null ? 0: this.customerIpAddress.hashCode());
     return result;
   }
 
@@ -131,6 +148,7 @@ public class PaymentMethodCardRequest  {
     sb.append("  expYear: ").append(expYear).append("\n");
     sb.append("  name: ").append(name).append("\n");
     sb.append("  number: ").append(number).append("\n");
+    sb.append("  customerIpAddress: ").append(customerIpAddress).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

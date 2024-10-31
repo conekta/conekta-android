@@ -6,7 +6,9 @@ import io.conekta.model.PaymentMethodCash;
 import java.util.*;
 
 import io.swagger.annotations.*;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import io.conekta.EncryptedTypeAdapter;
 
 
 @ApiModel(description = "")
@@ -35,6 +37,8 @@ public class ChargeResponsePaymentMethod  {
   private String store = null;
   @SerializedName("store_name")
   private String storeName = null;
+  @SerializedName("customer_ip_address")
+  private String customerIpAddress = null;
   @SerializedName("account_type")
   private String accountType = null;
   @SerializedName("brand")
@@ -184,6 +188,16 @@ public class ChargeResponsePaymentMethod  {
   }
   public void setStoreName(String storeName) {
     this.storeName = storeName;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getCustomerIpAddress() {
+    return customerIpAddress;
+  }
+  public void setCustomerIpAddress(String customerIpAddress) {
+    this.customerIpAddress = customerIpAddress;
   }
 
   /**
@@ -465,6 +479,7 @@ public class ChargeResponsePaymentMethod  {
         (this.serviceName == null ? chargeResponsePaymentMethod.serviceName == null : this.serviceName.equals(chargeResponsePaymentMethod.serviceName)) &&
         (this.store == null ? chargeResponsePaymentMethod.store == null : this.store.equals(chargeResponsePaymentMethod.store)) &&
         (this.storeName == null ? chargeResponsePaymentMethod.storeName == null : this.storeName.equals(chargeResponsePaymentMethod.storeName)) &&
+        (this.customerIpAddress == null ? chargeResponsePaymentMethod.customerIpAddress == null : this.customerIpAddress.equals(chargeResponsePaymentMethod.customerIpAddress)) &&
         (this.accountType == null ? chargeResponsePaymentMethod.accountType == null : this.accountType.equals(chargeResponsePaymentMethod.accountType)) &&
         (this.brand == null ? chargeResponsePaymentMethod.brand == null : this.brand.equals(chargeResponsePaymentMethod.brand)) &&
         (this.contractId == null ? chargeResponsePaymentMethod.contractId == null : this.contractId.equals(chargeResponsePaymentMethod.contractId)) &&
@@ -505,6 +520,7 @@ public class ChargeResponsePaymentMethod  {
     result = 31 * result + (this.serviceName == null ? 0: this.serviceName.hashCode());
     result = 31 * result + (this.store == null ? 0: this.store.hashCode());
     result = 31 * result + (this.storeName == null ? 0: this.storeName.hashCode());
+    result = 31 * result + (this.customerIpAddress == null ? 0: this.customerIpAddress.hashCode());
     result = 31 * result + (this.accountType == null ? 0: this.accountType.hashCode());
     result = 31 * result + (this.brand == null ? 0: this.brand.hashCode());
     result = 31 * result + (this.contractId == null ? 0: this.contractId.hashCode());
@@ -548,6 +564,7 @@ public class ChargeResponsePaymentMethod  {
     sb.append("  serviceName: ").append(serviceName).append("\n");
     sb.append("  store: ").append(store).append("\n");
     sb.append("  storeName: ").append(storeName).append("\n");
+    sb.append("  customerIpAddress: ").append(customerIpAddress).append("\n");
     sb.append("  accountType: ").append(accountType).append("\n");
     sb.append("  brand: ").append(brand).append("\n");
     sb.append("  contractId: ").append(contractId).append("\n");

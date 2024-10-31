@@ -4,7 +4,9 @@ import io.conekta.model.CustomerInfo;
 import io.conekta.model.CustomerInfoJustCustomerId;
 
 import io.swagger.annotations.*;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import io.conekta.EncryptedTypeAdapter;
 
 
 @ApiModel(description = "")

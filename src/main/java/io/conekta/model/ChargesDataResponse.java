@@ -5,7 +5,9 @@ import io.conekta.model.ChargeResponsePaymentMethod;
 import io.conekta.model.ChargeResponseRefunds;
 
 import io.swagger.annotations.*;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import io.conekta.EncryptedTypeAdapter;
 
 
 @ApiModel(description = "")

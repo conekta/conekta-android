@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **serviceName** | **String** |  |  [optional]
 **store** | **String** |  |  [optional]
 **storeName** | **String** |  |  [optional]
+**customerIpAddress** | **String** |  |  [optional]
 **accountType** | **String** | Account type of the card |  [optional]
 **brand** | **String** | Brand of the card |  [optional]
 **contractId** | **String** | Id sent for recurrent charges. |  [optional]

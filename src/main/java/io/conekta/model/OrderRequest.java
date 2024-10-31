@@ -15,7 +15,9 @@ import java.util.*;
 import java.util.Map;
 
 import io.swagger.annotations.*;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import io.conekta.EncryptedTypeAdapter;
 
 
 /**
@@ -179,9 +181,9 @@ public class OrderRequest  {
   }
 
   /**
-   * Indicates the redirection callback upon completion of the 3DS2 flow.
+   * Indicates the redirection callback upon completion of the 3DS2 flow. Do not use this parameter if your order has a checkout parameter
    **/
-  @ApiModelProperty(value = "Indicates the redirection callback upon completion of the 3DS2 flow.")
+  @ApiModelProperty(value = "Indicates the redirection callback upon completion of the 3DS2 flow. Do not use this parameter if your order has a checkout parameter")
   public URI getReturnUrl() {
     return returnUrl;
   }

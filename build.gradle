@@ -39,6 +39,7 @@ dependencies {
     implementation ("org.apache.httpcomponents:httpcore:$httpcore_version") {
         exclude(group: 'org.apache.httpcomponents', module: 'httpclient')
     }
+    implementation 'org.bouncycastle:bcprov-jdk15on:1.70'
     implementation ("org.apache.httpcomponents:httpmime:$httpclient_version") {
         exclude(group: 'org.apache.httpcomponents', module: 'httpclient')
     }

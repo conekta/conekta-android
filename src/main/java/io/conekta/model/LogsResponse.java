@@ -4,7 +4,9 @@ import io.conekta.model.LogsResponseData;
 import java.util.*;
 
 import io.swagger.annotations.*;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import io.conekta.EncryptedTypeAdapter;
 
 
 /**

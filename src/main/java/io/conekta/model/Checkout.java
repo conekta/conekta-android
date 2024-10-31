@@ -4,7 +4,9 @@ import io.conekta.model.CheckoutOrderTemplate;
 import java.util.*;
 
 import io.swagger.annotations.*;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import io.conekta.EncryptedTypeAdapter;
 
 
 /**
@@ -24,6 +26,8 @@ public class Checkout  {
   private Boolean monthlyInstallmentsEnabled = null;
   @SerializedName("monthly_installments_options")
   private List<Integer> monthlyInstallmentsOptions = null;
+  @SerializedName("three_ds_mode")
+  private String threeDsMode = null;
   @SerializedName("name")
   private String name = null;
   @SerializedName("needs_shipping_contact")
@@ -81,6 +85,17 @@ public class Checkout  {
   }
   public void setMonthlyInstallmentsOptions(List<Integer> monthlyInstallmentsOptions) {
     this.monthlyInstallmentsOptions = monthlyInstallmentsOptions;
+  }
+
+  /**
+   * Indicates the 3DS2 mode for the order, either smart or strict.
+   **/
+  @ApiModelProperty(value = "Indicates the 3DS2 mode for the order, either smart or strict.")
+  public String getThreeDsMode() {
+    return threeDsMode;
+  }
+  public void setThreeDsMode(String threeDsMode) {
+    this.threeDsMode = threeDsMode;
   }
 
   /**
@@ -173,6 +188,7 @@ public class Checkout  {
         (this.expiresAt == null ? checkout.expiresAt == null : this.expiresAt.equals(checkout.expiresAt)) &&
         (this.monthlyInstallmentsEnabled == null ? checkout.monthlyInstallmentsEnabled == null : this.monthlyInstallmentsEnabled.equals(checkout.monthlyInstallmentsEnabled)) &&
         (this.monthlyInstallmentsOptions == null ? checkout.monthlyInstallmentsOptions == null : this.monthlyInstallmentsOptions.equals(checkout.monthlyInstallmentsOptions)) &&
+        (this.threeDsMode == null ? checkout.threeDsMode == null : this.threeDsMode.equals(checkout.threeDsMode)) &&
         (this.name == null ? checkout.name == null : this.name.equals(checkout.name)) &&
         (this.needsShippingContact == null ? checkout.needsShippingContact == null : this.needsShippingContact.equals(checkout.needsShippingContact)) &&
         (this.onDemandEnabled == null ? checkout.onDemandEnabled == null : this.onDemandEnabled.equals(checkout.onDemandEnabled)) &&
@@ -189,6 +205,7 @@ public class Checkout  {
     result = 31 * result + (this.expiresAt == null ? 0: this.expiresAt.hashCode());
     result = 31 * result + (this.monthlyInstallmentsEnabled == null ? 0: this.monthlyInstallmentsEnabled.hashCode());
     result = 31 * result + (this.monthlyInstallmentsOptions == null ? 0: this.monthlyInstallmentsOptions.hashCode());
+    result = 31 * result + (this.threeDsMode == null ? 0: this.threeDsMode.hashCode());
     result = 31 * result + (this.name == null ? 0: this.name.hashCode());
     result = 31 * result + (this.needsShippingContact == null ? 0: this.needsShippingContact.hashCode());
     result = 31 * result + (this.onDemandEnabled == null ? 0: this.onDemandEnabled.hashCode());
@@ -208,6 +225,7 @@ public class Checkout  {
     sb.append("  expiresAt: ").append(expiresAt).append("\n");
     sb.append("  monthlyInstallmentsEnabled: ").append(monthlyInstallmentsEnabled).append("\n");
     sb.append("  monthlyInstallmentsOptions: ").append(monthlyInstallmentsOptions).append("\n");
+    sb.append("  threeDsMode: ").append(threeDsMode).append("\n");
     sb.append("  name: ").append(name).append("\n");
     sb.append("  needsShippingContact: ").append(needsShippingContact).append("\n");
     sb.append("  onDemandEnabled: ").append(onDemandEnabled).append("\n");
