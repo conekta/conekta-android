@@ -2,17 +2,14 @@ package io.conekta.model;
 
 
 import io.swagger.annotations.*;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import io.conekta.EncryptedTypeAdapter;
 
-
 @ApiModel(description = "")
 public class OrderCaptureRequest  {
-  
+
   private static final String MXN = "MXN";
-  
-  
+
   @SerializedName("amount")
   private Long amount = null;
 
@@ -24,10 +21,10 @@ public class OrderCaptureRequest  {
   public Long getAmount() {
     return amount;
   }
+
   public void setAmount(Long amount) {
     this.amount = amount;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -39,22 +36,23 @@ public class OrderCaptureRequest  {
     }
     OrderCaptureRequest orderCaptureRequest = (OrderCaptureRequest) o;
     return (this.amount == null ? orderCaptureRequest.amount == null : this.amount.equals(orderCaptureRequest.amount));
+    
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (this.amount == null ? 0: this.amount.hashCode());
+    result = 31 * result + (this.amount == null ? 0 : this.amount.hashCode());
     return result;
   }
 
   @Override
-  public String toString()  {
+  public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrderCaptureRequest {\n");
     
     sb.append("  amount: ").append(amount).append("\n");
-    sb.append("}\n");
+    sb.append("}");
     return sb.toString();
   }
 }

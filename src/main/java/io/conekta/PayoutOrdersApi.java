@@ -61,6 +61,62 @@ public class PayoutOrdersApi {
   }
 
   /**
+   * Cancel Payout Order
+   * Cancel a payout Order resource that corresponds to a payout order ID.
+   * @param id Identifier of the resource
+   * @param acceptLanguage Use for knowing which language to use
+   * @return PayoutOrderResponse
+   */
+  public PayoutOrderResponse  cancelPayoutOrderById (String id, String acceptLanguage) throws ApiException {
+    Object localVarPostBody = null;
+    // verify the required parameter 'id' is set
+    if (id == null) {
+       throw new ApiException(400, "Missing the required parameter 'id' when calling cancelPayoutOrderById");
+    }
+
+    // create path and map variables
+    String localVarPath = "/payout_orders/{id}/cancel".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> localVarFormParams = new HashMap<String, String>();
+
+    localVarHeaderParams.put("Accept-Language", ApiInvoker.parameterToString(acceptLanguage));
+
+    localVarHeaderParams.put("Authorization",  ApiInvoker.parameterToString("Bearer " + apiKey));
+    localVarHeaderParams.put("Conekta-Client-User-Agent", "{\"agent\": \"Conekta Android SDK\"}");
+    
+    String[] localVarContentTypes = {
+      
+    };
+    String localVarContentType = localVarContentTypes.length > 0 ? localVarContentTypes[0] : "application/json";
+
+    if (localVarContentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      localVarPostBody = localVarBuilder.build();
+    } else {
+      // normal form params
+          }
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      if(localVarResponse != null){
+        return (PayoutOrderResponse) ApiInvoker.deserialize(localVarResponse, "", PayoutOrderResponse.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      throw ex;
+    }
+  }
+  /**
    * Create payout order
    * Create a new payout order.
    * @param payoutOrder requested field for payout order

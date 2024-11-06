@@ -2,20 +2,17 @@ package io.conekta.model;
 
 
 import io.swagger.annotations.*;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import io.conekta.EncryptedTypeAdapter;
-
 
 /**
  * It is a parameter that allows to identify in the response, the type of event that is being generated.
  **/
 @ApiModel(description = "It is a parameter that allows to identify in the response, the type of event that is being generated.")
 public class EventTypes  {
-  
+
   private static final String MXN = "MXN";
-  
-  
+
 
 
   @Override
@@ -37,11 +34,11 @@ public class EventTypes  {
   }
 
   @Override
-  public String toString()  {
+  public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class EventTypes {\n");
     
-    sb.append("}\n");
+        sb.append("}");
     return sb.toString();
   }
 }

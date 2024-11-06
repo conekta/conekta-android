@@ -4,10 +4,59 @@ All URIs are relative to *https://api.conekta.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**cancelPayoutOrderById**](PayoutOrdersApi.md#cancelPayoutOrderById) | **PUT** /payout_orders/{id}/cancel | Cancel Payout Order
 [**createPayoutOrder**](PayoutOrdersApi.md#createPayoutOrder) | **POST** /payout_orders | Create payout order
 [**getPayoutOrderById**](PayoutOrdersApi.md#getPayoutOrderById) | **GET** /payout_orders/{id} | Get Payout Order
 [**getPayoutOrders**](PayoutOrdersApi.md#getPayoutOrders) | **GET** /payout_orders | Get a list of Payout Orders
 
+
+
+## cancelPayoutOrderById
+
+> PayoutOrderResponse cancelPayoutOrderById(id, acceptLanguage)
+
+Cancel Payout Order
+
+Cancel a payout Order resource that corresponds to a payout order ID.
+
+### Example
+
+```java
+// Import classes:
+//import io.conekta.PayoutOrdersApi;
+
+PayoutOrdersApi apiInstance = new PayoutOrdersApi();
+String id = 6307a60c41de27127515a575; // String | Identifier of the resource
+String acceptLanguage = es; // String | Use for knowing which language to use
+try {
+    PayoutOrderResponse result = apiInstance.cancelPayoutOrderById(id, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PayoutOrdersApi#cancelPayoutOrderById");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| Identifier of the resource | [default to null]
+ **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en]
+
+### Return type
+
+[**PayoutOrderResponse**](PayoutOrderResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.conekta-v2.1.0+json
 
 
 ## createPayoutOrder
