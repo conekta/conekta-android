@@ -42,7 +42,7 @@ public class TokensApiTest {
         card.setNumber("4242424242424242");
         token.setCard(card);
 
-        TokenResponse response = instance.createToken(token, "es");
+        TokenResponse response = instance.createToken(token, "en");
 
         assertEquals("tok_2toPJUcZ27AH5LsZk", response.getId());
     }
