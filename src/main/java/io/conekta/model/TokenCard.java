@@ -57,7 +57,7 @@ public class TokenCard  {
   }
 
   public void setExpMonth(String expMonth) {
-    this.expMonth = expMonth;
+    this.expMonth = new EncryptedTypeAdapter().encryptValue(expMonth);
   }
   /**
    * It is a value that allows identifying the expiration year of the card.
@@ -69,7 +69,7 @@ public class TokenCard  {
   }
 
   public void setExpYear(String expYear) {
-    this.expYear = expYear;
+    this.expYear = new EncryptedTypeAdapter().encryptValue(expYear);
   }
   /**
    * It is a value that allows identifying the name of the cardholder.
@@ -81,7 +81,7 @@ public class TokenCard  {
   }
 
   public void setName(String name) {
-    this.name = name;
+    this.name = new EncryptedTypeAdapter().encryptValue(name);
   }
   /**
    * It is a value that allows identifying the number of the card.
