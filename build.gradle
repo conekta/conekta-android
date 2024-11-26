@@ -1,36 +1,100 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.library' version '7.3.1'
+    id 'maven-publish'
+}
 
-buildscript {
-    repositories {
-        jcenter()
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
+android {
+    namespace "io.conekta"
+    compileSdkVersion 33
+    buildToolsVersion '34.0.0'
+    useLibrary  'org.apache.http.legacy'
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 33
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+        }
     }
 }
 
-def isReleaseBuild(){
-    return version.contains("SNAPSHOT") == false
+ext {
+    swagger_annotations_version = "1.6.6"
+    gson_version = "2.10.1"
+    httpclient_version = "4.5.13"
+    httpcore_version = "4.4.4"
+    junit_version = "4.13"
 }
 
-allprojects {
-    version = VERSION_NAME
-    group = GROUP
+dependencies {
+    implementation "io.swagger:swagger-annotations:$swagger_annotations_version"
+    implementation "com.google.code.gson:gson:$gson_version"
+    implementation "org.apache.httpcomponents:httpcore:$httpcore_version"
+    implementation "org.apache.httpcomponents:httpclient:$httpclient_version"
+    implementation ("org.apache.httpcomponents:httpcore:$httpcore_version") {
+        exclude(group: 'org.apache.httpcomponents', module: 'httpclient')
+    }
+    implementation 'org.bouncycastle:bcprov-jdk15on:1.70'
+    implementation ("org.apache.httpcomponents:httpmime:$httpclient_version") {
+        exclude(group: 'org.apache.httpcomponents', module: 'httpclient')
+    }
+    testImplementation "junit:junit:$junit_version"
+}
 
-    repositories {
-        jcenter()
-        mavenCentral()
-        google()
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
+publishing {
+    publications {
+        
+         mavenJava(MavenPublication) {
+                groupId = 'io.conekta'
+                artifactId = 'conektasdk'
+                version = '6.0.1-SNAPSHOT'
+
+                // Usa el archivo AAR generado
+                artifact("$buildDir/outputs/aar/conektasdk-release.aar")
+
+            pom {
+                name = 'sdk conekta android'
+                description = 'sdk conekta android'
+                url = 'https://github.com/conekta/conekta-android'
+
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'https://www.apache.org/licenses/LICENSE-2.0'
+                    }
+                }
+                developers {
+                    developer {
+                        name = 'Conekta, Inc.'
+                        email = 'core@conekta.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/conekta/conekta-android.git'
+                    developerConnection = 'scm:git:ssh://github.com/conekta/conekta-android.git'
+                    url = 'http://github.com/conekta/conekta-android'
+                }
+
+            }
         }
     }
+    repositories {
+        maven {
+            name = 'OSSRH'
+            url = uri('https://oss.sonatype.org/content/repositories/snapshots')
+
+            credentials {
+                username = System.getenv('OSSRH_USERNAME') ?:  project.findProperty('ossrhUsername')
+                password = System.getenv('OSSRH_PASSWORD') ?: project.findProperty('ossrhPassword')
+            }
+        }
+    }
+}
+tasks.named("publishMavenJavaPublicationToOSSRHRepository") {
+    dependsOn tasks.named("bundleReleaseAar")
 }

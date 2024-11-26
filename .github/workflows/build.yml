@@ -1,0 +1,37 @@
+name: Build
+
+on:
+    push:
+      branches: [ master ]
+    pull_request:
+      branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+    - name: Run Mockoon CLI
+      uses: mockoon/cli-action@v2
+      with:
+        version: 'latest'
+        data-file: 'https://raw.githubusercontent.com/conekta/openapi/main/mocks/conekta_api.json'
+        port: 3000
+    - name: Build
+      run: |
+        make build
+    - name: test
+      run: |
+        make test
+    - name: Archive artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: app
+        path: app/build/outputs/aar/conektasdk-debug.aar
