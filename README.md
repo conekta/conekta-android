@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>io.conekta</groupId>
     <artifactId>conektasdk</artifactId>
-    <version>6.0.1-SNAPSHOT</version>
+    <version>6.0.1</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.conekta:conektasdk:6.0.1-SNAPSHOT"
+compile "io.conekta:conektasdk:6.0.1"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-- target/conektasdk-6.0.1-SNAPSHOT.jar
+- target/conektasdk-6.0.1.jar
 - target/lib/*.jar
 
 ## Getting Started
